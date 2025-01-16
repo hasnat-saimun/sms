@@ -42,7 +42,7 @@ All Session
                                         @foreach($itemData as $item)
                                             <tr>
                                                 <td>{{ $x }}</td>
-                                                <td>{{ $item->sessionName }}</td>
+                                                <td>{{ $item->session }}</td>
                                                 <td>
                                                     <a href="{{ route('editSession',['itemId'=>$item->id]) }}"><i class="fa-light fa-pen-to-square fa-xl"></i></a>
                                                     <a href="{{ route('delSession',['itemId'=>$item->id]) }}"><i class="fa-thin fa-circle-trash fa-xl"></i></a>

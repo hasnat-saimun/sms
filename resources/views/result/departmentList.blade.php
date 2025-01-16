@@ -42,7 +42,7 @@ Dashboard
                                         @foreach($itemData as $item)
                                             <tr>
                                                 <td>{{ $x }}</td>
-                                                <td>{{ $item->departmentName }}</td>
+                                                <td>{{ $item->section }}</td>
                                                 <td>
                                                     <a href="{{ route('editDepartment',['itemId'=>$item->id]) }}"><i class="fa-light fa-pen-to-square fa-xl"></i></a>
                                                     <a href="{{ route('delDepartment',['itemId'=>$item->id]) }}"><i class="fa-thin fa-circle-trash fa-xl"></i></a>

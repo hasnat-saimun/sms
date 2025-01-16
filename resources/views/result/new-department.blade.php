@@ -32,11 +32,11 @@ Create Department
                                 <div class="row">
                                     <div class="col-12 form-group">
                                         <label>Department Name *</label>
-                                        <input type="text" name="departmentName" placeholder="Enter department name" class="form-control" required>
+                                        <input type="text" name="section" placeholder="Enter department name" class="form-control" required>
                                     </div>
                                     <div class="col-12 form-group mg-t-8">
                                         <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
-                                        <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+                                        <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-bluedark">Reset</button>
                                     </div>
                                 </div>
                             </form>

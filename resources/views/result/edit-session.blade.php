@@ -34,7 +34,7 @@ Edit Session
                                 <div class="row">
                                     <div class="col-12 form-group">
                                         <label>Session Name *</label>
-                                        <input type="text" name="sessionName" value="{{ $item->sessionName }}" placeholder="Enter the class name" class="form-control" required>
+                                        <input type="text" name="session" value="{{ $item->session }}" placeholder="Enter the class name" class="form-control" required>
                                     </div>
                                     <div class="col-12 form-group mg-t-8">
                                         <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>

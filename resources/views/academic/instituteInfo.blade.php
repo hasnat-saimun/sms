@@ -59,9 +59,9 @@ Institute Info
                         <input type="text" name="ourVision" class="form-control" placeholder="Enter institute vision" value="{{ $vision }}">
                     </div>
                     <div class="mb-3">
-                        <label for="heroImg">Hero Image</label>
+                    <label for="heroImg">Avatar (150px X 150px)</label>
                         @if(empty($heroImg))
-                        <input type="file" name="heroImg" class="form-control">
+                        <input type="file" name="heroImg" id="heroImg"class="form-control-file">
                         @else
                         <div class="my-2">
                             <img class="w-25" src="{{ asset('public/upload/image/cultivation').'/'.$heroImg }}" class="form-control">
@@ -69,7 +69,7 @@ Institute Info
                         </div>
                         @endif
                     </div>
-                    <div class="mb-3">
+                    <div class="mt-3 ">
                         <button class="btn btn-success btn-lg" type="submit">Save</button>
                     </div>
                 </form>

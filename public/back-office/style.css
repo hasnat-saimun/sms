@@ -1493,7 +1493,7 @@ ul {
   box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.1);
 }
 .nav-bar-header-one {
-  background: linear-gradient(to right, #ff9d01, #ffaa01);
+  background: linear-gradient(to right, #ff9d01, #ff0101);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -2034,7 +2034,8 @@ ul {
 }
 .header-main-menu .navbar-nav .header-admin .dropdown-menu .item-header {
   text-align: center;
-  background-color: #ffa001;
+  
+  background: linear-gradient(to right, #ff9d01, #ff0101);
   padding: 20px 25px;
   border-radius: 4px 4px 0 0;
   position: relative;
@@ -4150,7 +4151,7 @@ ul {
   background-color: #304ffe;
 }
 .bg-blue-dark {
-  background-color: #042954;
+  background-color: #06675e;
 }
 .bg-yellow {
   background-color: #fbd540;
@@ -4273,7 +4274,7 @@ ul {
   background: linear-gradient(to right, #1565c0, #314ce0);
 }
 .btn-gradient-yellow {
-  background-color: #ffae01;
+  background-color: #06671c;
 }
 .gradient-dodger-blue {
   background: -webkit-gradient(linear, left top, right top, from(#2196f3), to(#21bff3));

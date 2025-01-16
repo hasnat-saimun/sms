@@ -1,0 +1,146 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\newAdmission;
+use App\Models\classManage;
+use App\Models\sectionManage;
+use File;
+
+
+class admissionController extends Controller
+{
+    public function admitStudent(){
+        $classDetails = classManage::all();
+        $sectionDetails= sectionManage::all();
+        $chk = newAdmission::orderBy('id','DESC')->first();
+        return view('cultivation.admit-student',['chk'=>$chk,'classDetails'=>$classDetails,'sectionDatails'=>$sectionDetails]);
+    }
+    // public function newAdmission(){
+    //     $classDetails = classManage::all();
+    //     $sectionDetails= sectionManage::all();
+    //     return view('cultivation.admit-student',['classDetails'=>$classDetails,'sectionDatails'=>$sectionDetails]);
+    // }
+
+    public function studentList(){
+        $stdData= newAdmission::all();
+        return view('admission.studentList',['studentData'=>$stdData]);
+    }
+    
+    
+    public function confirmAdmit(Request $requ){
+        $chk = newAdmission::where(['rollNumber'=>$requ->rollNumber,'className'=>$requ->className,'sessName'=>$requ->sessName,'sectionName'=>$requ->sectionName])->get();
+        if(!empty($chk) && count($chk)>0):
+            return back()->with('error','Data already exist');
+        else:
+            $data = new newAdmission();
+            
+            $data->fullName         = $requ->fullName;
+            $data->sureName         = $requ->sureName;
+            $data->father           = $requ->fatherName;
+            $data->mother           = $requ->motherName;
+            $data->gender           = $requ->gender;
+            $data->dob              = $requ->dob;
+            $data->blGroup          = $requ->blGroup;
+            $data->religion         = $requ->religion;
+            $data->address          = $requ->address;
+            $data->mail             = $requ->mail;
+            $data->phone            = $requ->phone;
+            $data->sessName         = $requ->sessName;
+            $data->className        = $requ->className;
+            $data->sectionName      = $requ->sectionName;
+            $data->rollNumber       = $requ->rollNumber;
+            $data->gurdianName      = $requ->gurdian;
+            $data->gurdianMobile    = $requ->gurdianPhone;
+            $data->relationGurdian  = $requ->relationWithStd;
+            $data->status           = "newProfile";
+
+            
+            $getId = newAdmission::latest()->first();
+            if(empty($getId)):
+                $uniqueId = 1;
+            else:
+                $uniqueId = $getId->id+1;
+            endif;
+            $newId = str_pad($uniqueId, 6, "0", STR_PAD_LEFT);
+            $stdId = date('Y').$newId;
+
+            $data->stdId = $stdId;
+
+            if(!empty($requ->avatar)):
+                $stdAvatar = $requ->file('avatar');
+                $newAvatar = rand().date('Ymd').'.'.$stdAvatar->getClientOriginalExtension();
+                $stdAvatar->move(public_path('upload/image/student/'),$newAvatar);
+
+                $data->avatar = $newAvatar;
+            endif;
+
+
+            if($data->save()):
+                return back()->with('success','Data saved sucessfully');
+            else:
+                return back()->with('error','An error ocoured! please try later');
+            endif;
+        endif;
+    }
+
+
+    public function stdIdCard($id){
+        $stdData = newAdmission::find($id);
+        return view('cultivation.stdIdCard',['std'=>$stdData]);
+    }
+
+    public function editStudent($id){
+        
+        $classDetails = classManage::all();
+        $sectionDetails= sectionManage::all();
+        $stdData= newAdmission::find($id);
+        return view('cultivation.edit-student',['classDetails'=>$classDetails,'sectionDatails'=>$sectionDetails,'stdData'=>$stdData]);
+    }
+
+    //update
+    public function updateAdmit(Request $requ){
+            $upData = newAdmission::find($requ->stdId);
+
+            $data->fullName         = $requ->fullName;
+            $data->sureName         = $requ->sureName;
+            $data->father           = $requ->fatherName;
+            $data->mother           = $requ->motherName;
+            $data->gender           = $requ->gender;
+            $data->dob              = $requ->dob;
+            $data->blGroup          = $requ->blGroup;
+            $data->religion         = $requ->religion;
+            $data->address          = $requ->address;
+            $data->mail             = $requ->mail;
+            $data->phone            = $requ->phone;
+            $data->sessName         = $requ->sessName;
+            $data->className        = $requ->className;
+            $data->sectionName      = $requ->sectionName;
+            $data->rollNumber       = $requ->rollNumber;
+            $data->gurdianName      = $requ->gurdian;
+            $data->gurdianMobile    = $requ->gurdianPhone;
+            $data->relationGurdian  = $requ->relationWithStd;
+            
+            if($upData->save()):
+                return redirect(route('studentList'))->with("success");
+            else:
+                return back()->with("error");
+            endif;
+
+     }
+     
+    //delelte 
+    public function delStudent($id){
+        $dltData = newAdmission::find($id);
+
+        if($dltData->delete()):
+            return back()->with('success','data entry successfully');
+        else:
+            return back()->with('error','data deletion failed');
+        endif;
+    
+     }
+
+
+}

@@ -91,7 +91,7 @@ Create Marksheet
                                         </select>
                                     </div>
                                     <div class="col-12 form-group mg-t-8">
-                                        <button type="submit" class="btn btn-warning">Generate Marksheet</button>
+                                        <button type="submit" class="btn btn-success">Generate Marksheet</button>
                                     </div>
                                 </div>
                             </form>

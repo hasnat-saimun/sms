@@ -29,7 +29,7 @@ class SessionController extends Controller
     }
 
     public function allSession(){
-        $itemData = Session::orderBy('id','DESC')->get();
+        $itemData = sessionData::orderBy('id','DESC')->get();
         return view('result.sessionList',['itemData'=>$itemData]);
     }
     

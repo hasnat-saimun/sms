@@ -8,7 +8,7 @@ use App\Models\Classes;
 class ClassController extends Controller
 {
     public function createClass(){
-        return view('academic.new-class');
+        return view('result.new-class');
     }
 
     public function confirmClass(Request $requ){
@@ -29,7 +29,7 @@ class ClassController extends Controller
 
     public function allClasses(){
         $itemData = Classes::orderBy('id','DESC')->get();
-        return view('academic.classList',['itemData'=>$itemData]);
+        return view('result.classList',['itemData'=>$itemData]);
     }
     
     public function editClass($item){

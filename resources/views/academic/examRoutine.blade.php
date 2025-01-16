@@ -121,10 +121,10 @@ Exam Routine Management
                             <a href="{{ route('delExamRoutineContent',['id'=>$itemId]) }}" class="fw-bold text-danger">Delete</a>
                         </div>
                         @else
-                        <input type="file" name="attachment" class="form-control">
+                        <input type="file" name="attachment" class="form-control-file">
                         @endif
                     </div>
-                    <div class="mb-3">
+                    <div class="mt-4">
                         <button class="btn btn-success btn-lg mx-2" type="submit">Save</button>
                         <a class="btn btn-primary btn-lg mx-2" href="{{ route('examRoutineManage') }}">Create New</a>
                     </div>

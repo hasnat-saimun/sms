@@ -9,6 +9,7 @@ use App\Models\TeacherManagement;
 use App\Models\CultivationAdmin;
 use Hash;
 use sessionData;
+use Session;
 
 class FrontController extends Controller
 {

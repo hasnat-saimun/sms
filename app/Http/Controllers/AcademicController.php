@@ -11,10 +11,6 @@ use File;
 
 class AcademicController extends Controller
 {
-    public function __construct(){
-        $this->middleware('cultivationAdmin');
-    }
-
     public function index(){
         return view('academic.index');
     }

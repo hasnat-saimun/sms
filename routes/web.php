@@ -3,9 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BackofficeController;
 use App\Http\Controllers\AcademicController;
-use App\Http\Controllers\ClassController;
 use App\Http\Controllers\CultivationController;
-use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\ExamController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\GalleryController;
@@ -14,9 +12,9 @@ use App\Http\Controllers\InstituteController;
 use App\Http\Controllers\MarksheetController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\PlacementCellController;
-use App\Http\Controllers\SessionController;
+use App\Http\Controllers\individualController;
 use App\Http\Controllers\StaffController;
-use App\Http\Controllers\StudentController;
+use App\Http\Controllers\admissionController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Middleware\Authenticate;
@@ -361,45 +359,45 @@ Route::get('/cultivation/account',[
 //Academic Part
 Route::get('/cultivation/academic',[
     BackofficeController::class ,
-    'academicPart'
+    'index'
 ])->name('academicPart');
 //Student route declaration
 Route::get('/cultivation/student/admit',[
-    StudentController::class ,
+    admissionController::class ,
     'admitStudent'
 ])->name('admitStudent');
 Route::post('/cultivation/student/admit/confirm',[
-    StudentController::class ,
+    admissionController::class ,
     'confirmAdmit'
 ])->name('confirmAdmit');
 Route::get('/cultivation/student/edit/{stdId}',[
-    StudentController::class ,
+    admissionController::class ,
     'editStudent'
 ])->name('editStudent');
 Route::post('/cultivation/student/edit/confirm',[
-    StudentController::class ,
+    admissionController::class ,
     'updateAdmit'
 ])->name('updateAdmit');
 Route::get('/cultivation/student/del/{stdId}',[
-    StudentController::class ,
+    admissionController::class ,
     'delStudent'
 ])->name('delStudent');
 Route::get('/cultivation/student/del/avatar/{stdId}',[
-    StudentController::class ,
+    admissionController::class ,
     'delStudent'
 ])->name('');
 
 Route::get('/cultivation/student/list',[
-    StudentController::class ,
+    admissionController::class ,
     'studentList'
 ])->name('studentList');
 
 Route::get('/cultivation/student/idCard/{stdId}',[
-    StudentController::class ,
+    admissionController::class ,
     'stdIdCard'
 ])->name('stdIdCard');
 Route::get('/cultivation/student/promotion',[
-    StudentController::class ,
+    admissionController::class ,
     'studentPromotion'
 ])->name('studentPromotion');
 
@@ -471,28 +469,28 @@ Route::get('/cultivation/staff/list',[
 //Classes route declaration
 
 Route::get('/cultivation/class/create',[
-    ClassController::class ,
+    individualController::class ,
     'createClass'
 ])->name('createClass');
 Route::post('/cultivation/class/create/confirm',[
-    ClassController::class ,
+    individualController::class ,
     'confirmClass'
 ])->name('confirmClass');
 Route::get('/cultivation/class/edit/{itemId}',[
-    ClassController::class ,
+    individualController::class ,
     ''
 ])->name('editClass');
 Route::post('/cultivation/class/edit/confirm',[
-    ClassController::class ,
+    individualController::class ,
     'updateClass'
 ])->name('updateClass');
 Route::get('/cultivation/class/del/{itemId}',[
-    ClassController::class ,
+    individualController::class ,
     'delClass'
 ])->name('delClass');
 
 Route::get('/cultivation/class/list',[
-    ClassController::class ,
+    individualController::class ,
     'allClasses'
 ])->name('allClasses');
 
@@ -500,56 +498,56 @@ Route::get('/cultivation/class/list',[
 //Department route declaration
 
 Route::get('/cultivation/department/create',[
-    DepartmentController::class ,
+    individualController::class ,
     'createDepartment'
 ])->name('createDepartment');
 Route::post('/cultivation/department/create/confirm',[
-    DepartmentController::class ,
+    individualController::class ,
     'confirmDepartment'
 ])->name('confirmDepartment');
 Route::get('/cultivation/department/edit/{itemId}',[
-    DepartmentController::class ,
+    individualController::class ,
     'editDepartment'
 ])->name('editDepartment');
 Route::post('/cultivation/department/edit/confirm',[
-    DepartmentController::class ,
+    individualController::class ,
     'updateDepartment'
 ])->name('updateDepartment');
 Route::get('/cultivation/department/del/{itemId}',[
-    DepartmentController::class ,
+    individualController::class ,
     'delDepartment'
 ])->name('delDepartment');
 
 Route::get('/cultivation/department/list',[
-    DepartmentController::class ,
+    individualController::class ,
     'allDepartment'
 ])->name('allDepartment');
 
 //Session route declaration
 
 Route::get('/cultivation/session/create',[
-    SessionController::class ,
+    individualController::class ,
     'createSession'
 ])->name('createSession');
 Route::post('/cultivation/session/create/confirm',[
-    SessionController::class ,
+    individualController::class ,
     'confirmSession'
 ])->name('confirmSession');
 Route::get('/cultivation/session/edit/{itemId}',[
-    SessionController::class ,
+    individualController::class ,
     'editSession'
 ])->name('editSession');
 Route::post('/cultivation/session/edit/confirm',[
-    SessionController::class ,
+    individualController::class ,
     'updateSession'
 ])->name('updateSession');
 Route::get('/cultivation/session/del/{itemId}',[
-    SessionController::class ,
+    individualController::class ,
     'delSession'
 ])->name('delSession');
 
 Route::get('/cultivation/session/list',[
-    SessionController::class ,
+    individualController::class ,
     'allSession'
 ])->name('allSession');
 

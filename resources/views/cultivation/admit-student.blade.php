@@ -23,6 +23,9 @@ New Admission
 @endphp
                 <!-- Dashboard summery Start Here -->
                 <div class="row gutters-20 mb-4">
+                    <div class="item-title">
+                        <h3>Add New Students</h3>
+                    </div>
                     <!-- Admit Form Area Start Here -->
                     <div class="card height-auto">
                         <div class="card-body">
@@ -41,9 +44,6 @@ New Admission
                                 </div>
                             </div>
                             <div class="heading-layout1">
-                                <div class="item-title">
-                                    <h3>Add New Students</h3>
-                                </div>
                                 <div class="dropdown">
                                     <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                                         aria-expanded="false">...</a>
@@ -60,18 +60,21 @@ New Admission
                             </div>
                             <form class="new-added-form" action="{{ route('confirmAdmit') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
+                                    <div class="row mb-2">
+                                        <h5 class="fw-semibold">Personal Information</h5>
+                                    </div>
                                 <div class="row">
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Admission ID</label>
-                                        <input type="text" name="admitId" value="{{ $stdIdPrefix }}-@if(empty($chk)) 1 @else {{ $chk->id+1 }} @endif" placeholder="Example:- {{ $stdIdPrefix }}-124734" class="form-control" required readonly>
+                                        <input type="text" name="stdId" value="{{ $stdIdPrefix }}-@if(empty($chk)) 1 @else {{ $chk->id+1 }} @endif" placeholder="Example:- {{ $stdIdPrefix }}-124734" class="form-control" required readonly>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                        <label>First Name *</label>
-                                        <input type="text" name="firstName" placeholder="Enter student first name" class="form-control" required>
+                                        <label>Full Name *</label>
+                                        <input type="text" name="fullName" placeholder="Enter student first name" class="form-control" required>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                        <label>Last Name *</label>
-                                        <input type="text" name="lastName" placeholder="Enter student last name" class="form-control" required>
+                                        <label>Sure Name *</label>
+                                        <input type="text" name="sureName" placeholder="Enter student last name" class="form-control" required>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Father's Name *</label>
@@ -79,7 +82,7 @@ New Admission
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Mother's Name *</label>
-                                        <input type="text" name="mothersName" placeholder="Enter mothers name" class="form-control" required>
+                                        <input type="text" name="motherName" placeholder="Enter mothers name" class="form-control" required>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Gender *</label>
@@ -95,10 +98,6 @@ New Admission
                                         <input type="text" name="dob" placeholder="dd/mm/yyyy" class="form-control air-datepicker"
                                             data-position='bottom right' required>
                                         <i class="far fa-calendar-alt"></i>
-                                    </div>
-                                    <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                        <label>Roll</label>
-                                        <input type="text" name="classRoll" placeholder="Enter student class roll" class="form-control" required>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Blood Group *</label>
@@ -127,18 +126,35 @@ New Admission
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>E-Mail</label>
-                                        <input type="email" name="studentEmail" placeholder="Enter student email" class="form-control">
+                                        <input type="email" name="mail" placeholder="Enter student email" class="form-control">
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                        <label>Phone</label>
+                                        <input type="number" name="phone" placeholder="Enter gurdian mobile number" class="form-control" required>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                        <label>Address</label>
+                                        <input type="address" class="form-control" placeholder="Student full address" name="address">
+                                    </div>
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group ">
+                                        <label class="text-dark-medium">Avatar (150px X 150px)</label>
+                                        <input type="file" name="avatar" class="form-control-file">
+                                    </div>
+                                </div>
+                                <div class="row mt-5 mb-2">
+                                    <h5 class="fw-semibold">Academic Information</h5>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Session *</label>
-                                        <select class="select2" name="sessionName" required>
+                                        <select class="select2" name="sessName" required>
                                             <option value="">Select *</option>
-                                            @php
-                                                $sessions = \App\Models\Session::orderBy('id','DESC')->get();
+                                            @php 
+                                                $sessionDetails = \App\Models\sessionManage::all();
                                             @endphp
-                                            @if(!empty($sessions))
-                                                @foreach($sessions as $sess)
-                                                <option value="{{ $sess->id }}">{{ $sess->sessionName }}</option>
+                                            @if(!empty($sessionDetails) && count($sessionDetails)>0)
+                                            @foreach($sessionDetails as $sd)
+                                                <option value="{{ $sd->id }}">{{ $sd->session}}</option>
                                                 @endforeach
                                             @endif
                                         </select>
@@ -146,13 +162,9 @@ New Admission
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Class *</label>
                                         <select class="select2" name="className" required>
-                                            <option value="">Select *</option>
-                                            @php
-                                                $classes = \App\Models\Classes::orderBy('id','DESC')->get();
-                                            @endphp
-                                            @if(!empty($classes))
-                                                @foreach($classes as $cls)
-                                                <option value="{{ $cls->id }}">{{ $cls->className }}</option>
+                                            <option value="">Select *</option>@if(!empty($classDetails) && count($classDetails)>0)
+                                            @foreach($classDetails as $cd)
+                                                <option value="{{ $cd->id }}">{{ $cd->className}}</option>
                                                 @endforeach
                                             @endif
                                         </select>
@@ -161,31 +173,47 @@ New Admission
                                         <label>Section/Group *</label>
                                         <select class="select2" name="sectionName" required>
                                             <option value="">Select *</option>
-                                            @php
-                                                $department = \App\Models\Department::orderBy('id','DESC')->get();
-                                            @endphp
-                                            @if(!empty($department))
-                                                @foreach($department as $dept)
-                                                <option value="{{ $dept->id }}">{{ $dept->departmentName }}</option>
-                                                @endforeach
+                                            @if(!empty($sectionDatails) && count($sectionDatails)>0)
+                                            @foreach($sectionDatails as $sec)
+                                            <option value="{{$sec->id}}">{{$sec->section}}</option>
+                                            @endforeach
                                             @endif
                                         </select>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                        <label>Phone</label>
-                                        <input type="text" name="mobile" placeholder="Enter gurdian mobile number" class="form-control" required>
+                                        <label>Roll</label>
+                                        <input type="text" name="rollNumber" placeholder="Enter student class roll" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="row mb-2 mt-5">
+                                    <h5 class="fw-semibold">Guardian Information</h5>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                        <label for="gurdian">Guardian Name</label>
+                                        <input type="text" class="form-control" placeholder="Enter guardian name" name="gurdian" id="gurdian" required>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                        <label>Address</label>
-                                        <input type="text" class="form-control" placeholder="Student full address" name="address">
+                                        <label for="gurdianPhone">Mobile Number</label>
+                                        <input type="number" class="form-control" placeholder="Enter phone number" name="gurdianPhone" id="gurdianPhone" required>
                                     </div>
-                                    <div class="col-xl-3 col-lg-6 col-12 form-group mg-t-30">
-                                        <label class="text-dark-medium">Avatar (150px X 150px)</label>
-                                        <input type="file" name="avatar" class="form-control-file">
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                        <label for="relationWithStd" >Relation *</label>
+                                        <select class="select2" id="relationWithStd"  name="relationWithStd">
+                                            <option value="">Select </option>
+                                            <option value="Father">Father</option>
+                                            <option value="Mother">Mother</option>
+                                            <option value="Brother">Brother</option>
+                                            <option value="Sister">Sister</option>
+                                            <option value="Uncle">Uncle</option>
+                                            <option value="Aunty">Aunty</option>
+                                            <option value="Other">Other</option>
+                                        </select>
                                     </div>
+                                    
                                     <div class="col-12 form-group mg-t-8">
                                         <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
-                                        <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>
+                                        <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-bluedark">Reset</button>
                                     </div>
                                 </div>
                             </form>

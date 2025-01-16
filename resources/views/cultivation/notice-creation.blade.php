@@ -35,7 +35,7 @@ Notice Creation
                                         <input type="text" name="noticeHeadline" placeholder="Enter notice headline" class="form-control" required>
                                     </div>
                                     <div class="col-12 form-group">
-                                        <label>Body *</label>
+                                        <label>Description *</label>
                                         <textarea name="noticeBody" placeholder="Describe the details of the notice" class="form-control" row="12" required></textarea>
                                     </div>
                                     <button type="submit" class="btn btn-success mx-2">Create Notice</button> 
