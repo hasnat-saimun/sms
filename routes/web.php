@@ -14,9 +14,12 @@ use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\PlacementCellController;
 use App\Http\Controllers\individualController;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\admissionController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\cashCalculasController;
+use App\Http\Controllers\tuitionController;
 use App\Http\Middleware\Authenticate;
 use App\Http\Middleware\cultivationAdmin;
 use App\Http\Middleware\EncryptCookies;
@@ -356,6 +359,137 @@ Route::get('/cultivation/account',[
     'accountPart'
 ])->name('accountPart');
 
+//Fees str
+Route::get('/add-fees',[
+    individualController::class, //add Fees
+    'feesForm'
+])->name('feesForm');
+
+Route::get('/edit-fees-data/{id}',[
+    individualController::class, //edit Fees
+    'editFees'
+])->name('editFees');
+
+Route::post('/update-fees',[
+    individualController::class, //update Fees
+    'updateFees'
+])->name('updateFees');
+
+
+Route::post('/save-fees',[
+    individualController::class, //add Fees
+    'saveFees'
+])->name('saveFees');
+
+Route::get('/delete-fees-data/{id}',[
+    individualController::class,      // delete Fees
+    'deleteFees'
+])->name('deleteFees');
+
+//Fees end
+
+    //cashCalculas str
+    Route::get('/cash-calculas-from',[
+        cashCalculasController::class,    //cashCalculas main page
+        'cashCalculasView'
+    ])->name('cashCalculasView');
+
+    Route::get('/get-report',[
+        cashCalculasController::class,    //reportList page
+        'reportListView'
+    ])->name('reportListView');
+
+    Route::get('/single-report/{id}',[
+        cashCalculasController::class,    // report single page
+        'singleView'
+    ])->name('singleView');
+
+
+    Route::post('/save-cash-calculas',[
+        cashCalculasController::class,    //saveCashCalculas brackhand
+        'saveCashCalculas'
+    ])->name('saveCashCalculas');
+
+    Route::get('/edit-cash-calculas/{id}',[
+        cashCalculasController::class,     // edit calculas 
+        'editCashCalculas'
+    ])->name('editCashCalculas');
+
+    Route::post('/update-cash-calculas',[
+        cashCalculasController::class,   //update calculas
+        'updateCashCalculas'
+    ])->name('updateCashCalculas');
+
+    Route::get('/delete-calculas-data/{id}',[
+        cashCalculasController::class,      // delete calculas
+        'dltCalculasData'
+    ])->name('dltCalculasData');
+
+    Route::get('/calculas-repot-generate/{id}',[
+        cashCalculasController::class,   // calculas Report
+        'cashReport'
+    ])->name('cashReport');
+    //cashCalculas end
+
+     //Tuition str
+     Route::get('/getStudentForTutionFee/{stdId}',[
+        tuitionController::class,
+        'getStudentForTutionFee'
+    ])->name('getStudentForTutionFee');
+
+    Route::get('/add-tuition-fee',[
+        tuitionController::class,   //add tuition free
+        'tuitionFee'
+    ])->name('tuitionFee');
+
+    Route::post('/save-tuition-fee',[
+        tuitionController::class,
+        'saveTuitionfee'
+    ])->name('saveTuitionfee');
+
+    Route::get('/tuition-fee-list',[
+        tuitionController::class,   // tuition free list
+        'tuitionFeeList'
+    ])->name('tuitionFeeList');
+
+    Route::get('/tuition-fee-view/{id}',[
+        tuitionController::class,   // tuition free view
+        'tuitionFeeView'
+    ])->name('tuitionFeeView');
+
+    Route::get('/edit-tuition-fee/{id}',[
+        tuitionController::class, //edit tuition free
+        'editTuitionFee'
+    ])->name('editTuitionFee');
+
+    Route::post('/update-tuition-fee',[
+        tuitionController::class, //update tuition free
+        'updateTuitionFee'
+    ])->name('updateTuitionFee');
+
+    Route::get('/delete-tuition-fee/{id}',[
+        tuitionController::class,      // delete tuition free
+        'dltTuitionFee'
+    ])->name('dltTuitionFee');
+
+    Route::get('/tuition-repot-generate/{id}',[
+        tuitionController::class,   // tuition free tuitionReport
+        'tuitionReport'
+    ])->name('tuitionReport');
+
+    Route::get('/student/fees/generate',[
+        tuitionController::class, //edit Fees
+        'feesReport'
+    ])->name('feesReport');
+
+    Route::post('/student/fees/generate/report',[
+        tuitionController::class, //update tuition free
+        'getFeesReport'
+    ])->name('getFeesReport');
+    //Tuition end
+
+//Account part end
+
 //Academic Part
 Route::get('/cultivation/academic',[
     BackofficeController::class ,
@@ -382,13 +516,19 @@ Route::get('/cultivation/student/del/{stdId}',[
     admissionController::class ,
     'delStudent'
 ])->name('delStudent');
+
+Route::get('/cultivation/student/del/avatar/{stdId}',[
+    admissionController::class ,
+    'delStdAvatar'
+])->name('delStdAvatar');
+
 Route::get('/cultivation/student/del/avatar/{stdId}',[
     admissionController::class ,
     'delStudent'
 ])->name('');
 
 Route::get('/cultivation/student/list',[
-    admissionController::class ,
+    admissionController::class,
     'studentList'
 ])->name('studentList');
 

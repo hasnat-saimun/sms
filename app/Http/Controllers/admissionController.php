@@ -24,8 +24,8 @@ class admissionController extends Controller
     // }
 
     public function studentList(){
-        $stdData= newAdmission::all();
-        return view('admission.studentList',['studentData'=>$stdData]);
+        $stdData = newAdmission::all();
+        return view('cultivation.studentList',['studentData'=>$stdData]);
     }
     
     
@@ -95,8 +95,8 @@ class admissionController extends Controller
         
         $classDetails = classManage::all();
         $sectionDetails= sectionManage::all();
-        $stdData= newAdmission::find($id);
-        return view('cultivation.edit-student',['classDetails'=>$classDetails,'sectionDatails'=>$sectionDetails,'stdData'=>$stdData]);
+        $stdDataa= newAdmission::find($id);
+        return view('cultivation.edit-student',['classDetails'=>$classDetails,'sectionDatails'=>$sectionDetails,'stdData'=>$stdDataa]);
     }
 
     //update
@@ -121,6 +121,13 @@ class admissionController extends Controller
             $data->gurdianName      = $requ->gurdian;
             $data->gurdianMobile    = $requ->gurdianPhone;
             $data->relationGurdian  = $requ->relationWithStd;
+            if(!empty($requ->avatar)):
+                $stdAvatar = $requ->file('avatar');
+                $newAvatar = rand().date('Ymd').'.'.$stdAvatar->getClientOriginalExtension();
+                $stdAvatar->move(public_path('upload/image/student/'),$newAvatar);
+
+                $data->avatar = $newAvatar;
+            endif;
             
             if($upData->save()):
                 return redirect(route('studentList'))->with("success");
@@ -130,6 +137,21 @@ class admissionController extends Controller
 
      }
      
+     public function delStdAvatar($id){
+        $stdData = newAdmission::find($id);
+        if(empty($stdData)):
+            // return public_path('uploads/image/student/'.$stdData->avatar);
+            return back()->with('error','Sorry! Profile picture failed to delete');
+        else:
+            if (File::exists(public_path('upload/image/student/'.$stdData->avatar))) {
+                File::delete(public_path('upload/image/student/'.$stdData->avatar));
+            }
+            // return public_path('upload/image/student/'.$stdData->avatar);
+            $stdData->avatar        = "";
+            $stdData->save();
+            return back()->with('success','Success! Profile picture deleted successfully');
+        endif;
+    }
     //delelte 
     public function delStudent($id){
         $dltData = newAdmission::find($id);

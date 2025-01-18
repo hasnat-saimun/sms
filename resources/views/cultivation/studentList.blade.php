@@ -39,12 +39,26 @@ Student List
                                     <tbody>
                                         @if(!empty($studentData))
                                         @foreach($studentData as $std)
+                                        @php 
+                                            $sessionDetails = \App\Models\sessionManage::all();
+                                            $sessionData  = \App\Models\sessionManage::find($std->sessName);
+                                            $classData  = \App\Models\classManage::find($std->className);
+                                            $sectionData  = \App\Models\sectionManage::find($std->sectionName);
+                                        @endphp
                                         <tr>
-                                            <td>{{ $std->admitId }}</td>
-                                            <td>{{ $std->firstName." ".$std->lastName }}</td>
-                                            <td>{{ $std->session }}</td>
-                                            <td>{{ $std->section }}</td>
-                                            <td>{{ $std->mobile }}</td>
+                                            <td>{{ $std->stdId }}</td>
+                                            <td>{{ $std->fullName." ".$std->sureName }}</td>
+                                            @if(!empty($sessionData))
+                                            <td>{{$sessionData->session}}</td>
+                                            @else
+                                            <td>-</td>
+                                            @endif
+                                            @if(!empty($sectionData))
+                                            <td>{{$sectionData->section}}</td>
+                                            @else
+                                            <td>-</td>
+                                            @endif
+                                            <td>{{ $std->phone }}</td>
                                             <td>
                                                 <a href="{{ route('editStudent',['stdId'=>$std->id]) }}"><i class="fa-light fa-pen-to-square fa-xl"></i></a>
                                                 <a href="{{ route('delStudent',['stdId'=>$std->id]) }}" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fa-thin fa-circle-trash fa-xl"></i></a>

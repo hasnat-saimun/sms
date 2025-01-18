@@ -218,7 +218,7 @@ class individualController extends Controller
      //add fees
     public function feesForm(){
         $feesLi = feesManager::all();
-        return view ('individualPart.feesForm',['feesList'=>$feesLi]); 
+        return view ('account.feesForm',['feesList'=>$feesLi]); 
     }
     //save fees 
     public function saveFees(Request $requ){
@@ -243,7 +243,7 @@ class individualController extends Controller
     //edit fees
     public function editFees($id){
         $feesData = feesManager::find($id);
-        return view('individualPart.editFees',['editData'=>$feesData]);
+        return view('account.editFees',['editData'=>$feesData]);
     }
 
     //update fees 

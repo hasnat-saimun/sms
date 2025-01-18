@@ -59,16 +59,16 @@ Edit Student
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Father's Name *</label>
-                                        <input type="text" name="fatherName" placeholder="Enter fathers name" class="form-control" value="{{ $stdData->father }}" required>
+                                        <input type="text" name="fatherName" placeholder="Enter fathers name" class="form-control" value="{{$stdData->father}}" required>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Mother's Name *</label>
-                                        <input type="text" name="motherName" placeholder="Enter mothers name" class="form-control" value="{{ $stdData->mother }}" required>
+                                        <input type="text" name="motherName" placeholder="Enter mothers name" class="form-control" value="{{ $stdData->mother}}" required>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Gender *</label>
                                         <select class="select2" name="gender" required>
-                                            <option value="{{ $stdData->gender }}">Male</option>
+                                            <option value="{{ $stdData->gender}}">Male</option>
                                             <option value="">Select *</option>
                                             <option value="1">Male</option>
                                             <option value="2">Female</option>
@@ -78,17 +78,17 @@ Edit Student
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Date Of Birth *</label>
                                         <input type="text" name="dob" placeholder="dd/mm/yyyy" class="form-control air-datepicker"
-                                            data-position='bottom right' value="{{ $stdData->dob }}" required>
+                                            data-position='bottom right' value="{{ $stdData->dob}}" required>
                                         <i class="far fa-calendar-alt"></i>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Roll</label>
-                                        <input type="text" name="rollNumber" placeholder="Enter student class roll" class="form-control" value="{{ $stdData->rollNumber }}" required>
+                                        <input type="text" name="rollNumber" placeholder="Enter student class roll" class="form-control" value="{{ $stdData->rollNumber}}" required>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Blood Group *</label>
                                         <select class="select2" name="blGroup">
-                                            <option value="{{ $stdData->blGroup }}">B+</option>
+                                            <option value="{{ $stdData->blGroup}}">B+</option>
                                             <option value="">Select *</option>
                                             <option value="A+">A+</option>
                                             <option value="A-">A-</option>
@@ -103,7 +103,7 @@ Edit Student
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Religion *</label>
                                         <select class="select2" name="religion" required>
-                                            <option value="{{ $stdData->religion }}">Islam</option>
+                                            <option value="{{ $stdData->religion}}">Islam</option>
                                             <option value="">Select *</option>
                                             <option value="Islam">Islam</option>
                                             <option value="Hindu">Hindu</option>
@@ -114,14 +114,14 @@ Edit Student
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>E-Mail</label>
-                                        <input type="email" name="mail" placeholder="Enter student email" class="form-control" value="{{ $stdData->mail }}">
+                                        <input type="email" name="mail" placeholder="Enter student email" class="form-control" value="{{ $stdData->mail}}">
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                     @php 
                                         $sessionDetails = \App\Models\sessionManage::all();
-                                        $sessionData  = \App\Models\sessionManage::find($editData->sessName);
-                                        $classData  = \App\Models\classManage::find($editData->className);
-                                        $sectionData  = \App\Models\sectionManage::find($editData->sectionName);
+                                        $sessionData  = \App\Models\sessionManage::find($stdData->sessName);
+                                        $classData  = \App\Models\classManage::find($stdData->className);
+                                        $sectionData  = \App\Models\sectionManage::find($stdData->sectionName);
                                     @endphp
                                         <label>Session *</label>
                                         <select class="select2" name="sessionName" required>
@@ -130,7 +130,7 @@ Edit Student
                                         @endif
                                             @if(!empty($sessionDetails) && count($sessionDetails)>0)
                                             @foreach($sessionDetails as $sd)
-                                                <option value="{{ $sd->id }}">{{ $sd->session}}</option>
+                                                <option value="{{ $sd->id}}">{{ $sd->session}}</option>
                                                 @endforeach
                                             @endif
                                         </select>
@@ -143,7 +143,7 @@ Edit Student
                                         @endif
                                         @if(!empty($classDetails) && count($classDetails)>0)
                                             @foreach($classDetails as $cd)
-                                            <option value="{{ $cd->id }}">{{ $cd->className}}</option>
+                                            <option value="{{ $cd->id}}">{{ $cd->className}}</option>
                                             @endforeach
                                         @endif
                                         </select>
@@ -163,16 +163,16 @@ Edit Student
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Phone</label>
-                                        <input type="text" name="phone" placeholder="Enter gurdian mobile number" class="form-control" value="{{ $stdData->phone }}" required>
+                                        <input type="text" name="phone" placeholder="Enter gurdian mobile number" class="form-control" value="{{ $stdData->phone}}" required>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group  ">
                                         <label>Address</label>
-                                        <input type="text" class="form-control" placeholder="Student full address" name="address" value="{{ $stdData->address }}">
+                                        <input type="text" class="form-control" placeholder="Student full address" name="address" value="{{ $stdData->address}}">
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group mg-t-30">
                                         @if(!empty($stdData->avatar))
-                                        <img class="w-75" src="{{ asset('/public/upload/image/student/') }}/{{ $stdData->avatar }}" alt="$stdData->firstName.' '.$stdData->lastName"><br>
-                                        <a href="{{ route('delStdAvatar',['stdId'=>$stdData->id]) }}" class="btn btn-danger btn-lg">Remove</a>
+                                        <img class="w-75" src="{{ asset('/public/upload/image/student/') }}/{{$stdData->avatar}}" alt="$stdData->firstName.' '.$stdData->lastName"><br>
+                                        <a href="{{route('delStdAvatar',['stdId'=>$stdData->id])}}" class="btn btn-danger btn-lg">Remove</a>
                                         @else
                                         <label class="text-dark-medium">Avatar (150px X 150px)</label>
                                         <input type="file" name="avatar" class="form-control-file">
@@ -184,16 +184,16 @@ Edit Student
                                 <div class="row">
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label for="gurdian">Guardian Name</label>
-                                        <input type="text" class="form-control" placeholder="Enter guardian name" name="gurdian" id="gurdian" value="{{ $stdData->gurdianName }}"  required>
+                                        <input type="text" class="form-control" placeholder="Enter guardian name" name="gurdian" id="gurdian" value="{{ $stdData->gurdianName}}"  required>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label for="gurdianPhone">Mobile Number</label>
-                                        <input type="number" class="form-control" placeholder="Enter phone number" name="gurdianPhone" id="gurdianPhone" value="{{ $stdData->gurdianMobile }}" required>
+                                        <input type="number" class="form-control" placeholder="Enter phone number" name="gurdianPhone" id="gurdianPhone" value="{{ $stdData->gurdianMobile}}" required>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label for="relationWithStd" >Relation *</label>
                                         <select class="select2" id="relationWithStd"  name="relationWithStd">
-                                            <option value="{{ $stdData->relationGurdian }}">{{ $stdData->relationGurdian }}</option>
+                                            <option value="{{ $stdData->relationGurdian}}">{{ $stdData->relationGurdian}}</option>
                                             <option value="Father">Father</option>
                                             <option value="Mother">Mother</option>
                                             <option value="Brother">Brother</option>
