@@ -19,7 +19,7 @@ Institute Info
                         {{session()->get('success')}}
                     </div>
                 @endif
-                    <form method="POST" class="card-body form" action="{{route('updateFees')}}">
+                    <form method="POST" class="card-body form form-group" action="{{route('updateFees')}}">
                         @csrf
                         <input type="hidden" name="feesId" value="{{$editData->id}}">
                         <div class="mb-2">
@@ -28,8 +28,8 @@ Institute Info
                             </select>
                         </div>
                         <div class=" mx-auto gap-2 mt-5">
-                            <a href="{{route('feesForm')}}" class="btn btn-success btn-color btn-sm" type="submit">Back</a>
-                            <button class="btn btn-primary btn-color btn-sm" type="submit">Update</button>
+                            <a href="{{route('feesForm')}}" class="btn-fill-lg bg-blue-dark btn-hover-bluedark" type="submit">Back</a>
+                            <button class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" type="submit">Update</button>
                         </div>
                     </form>
                 </div>

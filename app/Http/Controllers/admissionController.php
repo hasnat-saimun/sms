@@ -101,7 +101,7 @@ class admissionController extends Controller
 
     //update
     public function updateAdmit(Request $requ){
-            $upData = newAdmission::find($requ->stdId);
+            $data = newAdmission::find($requ->stdId);
 
             $data->fullName         = $requ->fullName;
             $data->sureName         = $requ->sureName;
@@ -129,7 +129,7 @@ class admissionController extends Controller
                 $data->avatar = $newAvatar;
             endif;
             
-            if($upData->save()):
+            if($data->save()):
                 return redirect(route('studentList'))->with("success");
             else:
                 return back()->with("error");

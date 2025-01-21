@@ -6,7 +6,8 @@ Institute Info
 <div class="row gutters-20 mb-4">
     <div class="col-10 mx-auto">
         <div class="row mx-auto ">
-            @if(session()->has('error'))
+            
+            <form method="POST" class="card-body form" action="{{route('saveTuitionfee')}}">@if(session()->has('error'))
                 <div class="alert alert-danger">
                     {{session()->get('error')}}
                 </div>
@@ -16,17 +17,16 @@ Institute Info
                     {{session()->get('success')}}
                 </div>
             @endif
-            <form method="POST" class="card-body form" action="{{route('saveTuitionfee')}}">
                 @csrf
                 <div class="row mb-4">
                     <h4 class="text-bold">Student Fees Collection</h4>
                 </div>
                 <div class="row align-items-center">
-                    <div class="col-4">
+                    <div class="col-4 form-group">
                         <input type="text" class="form-control" placeholder="Enter student ID to collect tution fee" name="stdId" id="stdId" required >
                     </div>
-                    <div class="col-2 text-center">
-                        <a href="#" onclick="getStudent()" class="btn btn-success w-100">Get Data</a>
+                    <div class="col-4 text-center form-group">
+                        <a href="#" onclick="getStudent()" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Get Data</a>
                     </div>
                 </div>
                 <div class="row" id="studentData">

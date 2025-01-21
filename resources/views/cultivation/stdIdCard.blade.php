@@ -15,10 +15,27 @@ Student ID Card
                             </div>
                             @if(isset($std))
                             @php 
-                                $sessionDetails = \App\Models\sessionManage::all();
                                 $sessionData  = \App\Models\sessionManage::find($std->sessName);
                                 $classData  = \App\Models\classManage::find($std->className);
                                 $sectionData  = \App\Models\sectionManage::find($std->sectionName);
+                                if(isset($sessionData) && count($sessionData)>0){
+                                    $sessionName= $sessionData->session;
+                                }else{
+                                    $sessionName= '-';
+                                }
+
+                                if(!empty($classData->className)){
+                                    $className = $classData->className;
+                                }else{
+                                    $className= '-';
+                                }
+
+                                if(!empty($sectionData->section)){
+                                    $sectionName = $sectionData->section;
+                                }else{
+                                    $sectionName= '-';
+                                }
+                                
                             @endphp
                             <div class="row">
                                 <div class="col-6 mx-auto">
@@ -43,8 +60,8 @@ Student ID Card
                                                             <p class="mb-0"><span class="fw-bold"> Student ID:</span> {{ $std->stdId }}</p>
                                                             <p class="mb-0"><span class="fw-bold"> Name:</span> {{ $std->fullName }} {{ $std->lastName }}</p>
                                                             <p class="mb-0"><span class="fw-bold"> Roll Number:</span> {{ $std->rollNumber}}</p>
-                                                            <p class="mb-0"><span class="fw-bold"> Class:</span> {{ $classData->className }}</p>
-                                                            <p class="mb-0"><span class="fw-bold"> Session:</span> {{ $sessionData->session }}</p>
+                                                            <p class="mb-0"><span class="fw-bold"> Class:</span> {{ $className}}</p>
+                                                            <p class="mb-0"><span class="fw-bold"> Session:</span> {{ $sessionName}}</p>
                                                         </div>
                                                         <div class="text-center mt-4 col-4">
                                                             <p class="fw-bold text-dark mb-0">Student Sign</p>
@@ -81,8 +98,8 @@ Student ID Card
                                                             <p class="mb-0"><span class="fw-bold"> Student ID:</span> {{ $std->stdId }}</p>
                                                             <p class="mb-0"><span class="fw-bold"> Name:</span> {{ $std->fullName }} {{ $std->lastName }}</p>
                                                             <p class="mb-0"><span class="fw-bold"> Roll Number:</span> {{ $std->rollNumber}}</p>
-                                                            <p class="mb-0"><span class="fw-bold"> Class:</span> {{ $classData->className }}</p>
-                                                            <p class="mb-0"><span class="fw-bold"> Session:</span> {{ $sessionData->session }}</p>
+                                                            <p class="mb-0"><span class="fw-bold"> Class:</span> {{ $className }}</p>
+                                                            <p class="mb-0"><span class="fw-bold"> Session:</span> {{ $sessionName }}</p>
                                                         </div>
                                                         <div class="text-center mt-4 col-4">
                                                             <p class="fw-bold text-dark mb-0">Student Sign</p>
@@ -119,8 +136,8 @@ Student ID Card
                                                             <p class="mb-0"><span class="fw-bold"> Student ID:</span> {{ $std->stdId }}</p>
                                                             <p class="mb-0"><span class="fw-bold"> Name:</span> {{ $std->fullName }} {{ $std->lastName }}</p>
                                                             <p class="mb-0"><span class="fw-bold"> Roll Number:</span> {{ $std->rollNumber}}</p>
-                                                            <p class="mb-0"><span class="fw-bold"> Class:</span> {{ $classData->className }}</p>
-                                                            <p class="mb-0"><span class="fw-bold"> Session:</span> {{ $sessionData->session }}</p>
+                                                            <p class="mb-0"><span class="fw-bold"> Class:</span> {{ $className }}</p>
+                                                            <p class="mb-0"><span class="fw-bold"> Session:</span> {{ $sessionName }}</p>
                                                         </div>
                                                         <div class="text-center mt-4 col-4">
                                                             <p class="fw-bold text-dark mb-0">Student Sign</p>

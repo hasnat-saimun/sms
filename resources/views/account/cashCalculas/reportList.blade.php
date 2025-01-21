@@ -51,7 +51,7 @@ Institute Info
                     </tbody>
                 </table>
                 <div class="mt-3">
-                    <a href="{{route('cashCalculasView')}}"class="btn btn-success btn-sm">Back</a>
+                    <a href="{{route('cashCalculasView')}}"class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Back</a>
                 </div>
             </div>
         </div>

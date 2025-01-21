@@ -131,8 +131,8 @@ Institute Info
                             </div>
                     </div>
                     <div class="row text-center">
-                        <div class=" col-2 mx-auto d-grid gap-2 mt-5">
-                            <button class="btn btn-primary btn-color btn-sm" type="submit">Print</button>
+                        <div class=" col-2  d-grid gap-2 mt-5">
+                            <button class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" type="submit">Print</button>
                         </div>
                     </div>
                 </div>

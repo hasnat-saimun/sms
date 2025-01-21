@@ -52,6 +52,9 @@
                                 <li class="nav-item">
                                     <a href="{{ route('reportListView') }}" class="nav-link"><i class="fas fa-angle-right"></i> Get Report</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('cashDateReport') }}" class="nav-link"><i class="fas fa-angle-right"></i> Get Date Report</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item sidebar-nav-item">

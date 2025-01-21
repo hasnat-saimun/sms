@@ -63,8 +63,13 @@ class tuitionController extends Controller
         $sectionData= sectionManage::all();
         $classData= classManage::all();
         $sessionData = sessionManage::all();
-        $tuitionFeeData = tuitionFee::find($id);    
-        return view('account.tuition.editTuitionFee',['editData'=>$tuitionFeeData,'sectionDetails'=>$sectionData,'classDetails'=>$classData ,'sessionDetails'=>$sessionData ]);
+        $tuitionFeeData = tuitionFee::find($id); 
+        if(!empty($tuitionFeeData) && count((array)$tuitionFeeData)):
+            $studentDetails =  newAdmission::where(['stdId' => $tuitionFeeData->stdId])->first();
+        else:
+            $studentDetails = 0;
+        endif;
+        return view('account.tuition.editTuitionFee',['editData'=>$tuitionFeeData,'sectionDetails'=>$sectionData,'classDetails'=>$classData ,'sessionDetails'=>$sessionData,'stdData'=>$studentDetails]);
     }
 
     //update tiutionfee 

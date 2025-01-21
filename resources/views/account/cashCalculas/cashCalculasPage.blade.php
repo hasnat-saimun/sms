@@ -16,7 +16,7 @@ Institute Info
                     {{session()->get('success')}}
                 </div>
             @endif
-            <form method="POST" class="card-body form" action="{{route('saveCashCalculas')}}">
+            <form method="POST" class="card-body form form-group" action="{{route('saveCashCalculas')}}">
                 @csrf
                 <div class="mb-2">
                     <label for="source" class="form-label ">Source</label>
@@ -29,15 +29,15 @@ Institute Info
                 </div>
                 <div class="mb-2">
                     <label for="transaction" class="form-label">Type Of Transaction</label>
-                    <select class="form-select form-select-sm" id="transaction" name="transaction" aria-label="Default select example" required>
+                    <select class="form-select select2" id="transaction" name="transaction" aria-label="Default select example" required>
                         <option selected>-select-</option>
                         <option value="Debit">Debit</option>
                         <option value="Crtedit">Crtedit</option>
                     </select>
                 </div>
-                <div class=" col-6 mx-auto d-grid gap-2 mt-5">
-                    <button class="btn btn-primary btn-color btn-sm" type="submit">Submit</button>
-                    <button class="btn btn-danger btn-color btn-sm" type="reset">Reset</button>
+                <div class=" col-6  d-grid gap-2 mt-5">
+                    <button class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" type="submit">Submit</button>
+                    <button class="btn-fill-lg bg-blue-dark btn-hover-bluedark" type="reset">Reset</button>
                 </div>
             </form>
         </div>

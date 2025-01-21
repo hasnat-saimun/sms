@@ -429,6 +429,16 @@ Route::get('/delete-fees-data/{id}',[
         cashCalculasController::class,   // calculas Report
         'cashReport'
     ])->name('cashReport');
+
+    Route::get('/calculas-date-repot-generate',[
+        cashCalculasController::class,   // calculas Report
+        'cashDateReport'
+    ])->name('cashDateReport');
+
+    Route::post('/calculas-date-repot-recipit',[
+        cashCalculasController::class, //  free
+        'getCashReport'
+    ])->name('getCashReport');
     //cashCalculas end
 
      //Tuition str
@@ -521,11 +531,6 @@ Route::get('/cultivation/student/del/avatar/{stdId}',[
     admissionController::class ,
     'delStdAvatar'
 ])->name('delStdAvatar');
-
-Route::get('/cultivation/student/del/avatar/{stdId}',[
-    admissionController::class ,
-    'delStudent'
-])->name('');
 
 Route::get('/cultivation/student/list',[
     admissionController::class,

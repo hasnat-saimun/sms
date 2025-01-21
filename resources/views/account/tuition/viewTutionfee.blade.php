@@ -9,7 +9,7 @@ Institute Info
             <div class="card card-body  border  ">
                 
             <div class="mb-3 text-center">
-            <u class="h4">View Student Profile</u>
+            <u class="h3">View Student Profile</u>
             </div>
                 <table class=" table table-striped table-hover hadow-lg p-3 rounded" >
                 @php
@@ -65,7 +65,7 @@ Institute Info
                     </tbody>
                 </table>
                 <div class="mt-3">
-                    <a href="{{route('tuitionFeeList')}}"class="btn btn-success btn-color btn-sm">Back</a>
+                    <a href="{{route('tuitionFeeList')}}"class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Back</a>
                 </div>
             </div>
         </div>

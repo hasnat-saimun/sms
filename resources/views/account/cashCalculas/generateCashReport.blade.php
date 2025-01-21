@@ -8,14 +8,9 @@ Institute Info
         <div class="row">
             @if(!empty($feesList))
                 @php
-                    if(!empty($student)):
-                        $sessionData= \App\Models\sessionManage::find($student->sessName);
-                        $classData = \App\Models\classManage::find($student->className);
-                        $sectionData = \App\Models\sectionManage::find($student->sectionName);
-                    endif;
                     $sumAmount = $feesList->sum('amount');
                 @endphp
-                @if(!empty($student))
+                @if(!empty($feesList))
                 <div class="receipt-main col-8 mx-auto">
                     <div class="receipt-header row">
                         <div class="col-xs-12 col-sm-12 col-md-12 text-center mb-3">
@@ -30,36 +25,13 @@ Institute Info
                     <div class="receipt-header receipt-header-mid row">
                         <div class="col-xs-8 col-sm-8 col-md-8 text-left">
                             <div class="receipt-right">
-                                <h5>{{$student->fullName}}</h5>
-
-                                <p><b>Student ID :</b> {{ $student->stdId }}</p>
-
-                                <p><b>Roll : </b> {{$student->rollNumber}}</p>
-
-                                @if(!empty($classData))
-                                <p><b>Class : </b> {{$classData->className}}</p>
-                                @else
-                                <p><b>Class : </b> -</p>
-                                @endif
-
-                                @if(!empty($sectionData))
-                                <p><b>Section : </b> {{$sectionData->section}}</p>
-                                @else
-                                <p><b>Section : </b> -</p>
-                                @endif
-
-                                @if(!empty($sessionData))
-                                <p><b>Session : </b> {{$sessionData->session}}</p>
-                                @else
-                                <p><b>Session : </b> -</p>
-                                @endif
+                                
                             </div>
                         </div>
                         <div class="col-xs-4 col-sm-4 col-md-4">
                             <div class="receipt-left">
                                 <p><b>Date : </b> {{date('d-M-Y')}}</p>
-                                <p><b>Mobile : </b> {{ $student->phone }}</p>
-                                <p><b>Email : </b> {{ $student->mail }}</p>
+                                
                             </div>
                         </div>
                     </div>
@@ -74,16 +46,10 @@ Institute Info
                             <tbody>
                                 @if(!empty($feesList))
                                 @foreach($feesList as $fl)
-                                    @php
-                                        $feesData = \App\Models\feesManager::find($fl->feesType);
-                                        if(!empty($feesData)):
-                                            $feesName   = $feesData->feesName;
+                                        @php
+                                            $feesName   = $fl->source;
                                             $amount     = $fl->amount;
-                                        else:
-                                            $feesName="-";
-                                            $amount="-";
-                                        endif;
-                                    @endphp
+                                        @endphp
                                     <tr>
                                         <td class="col-md-9">{{ $feesName }}</td>
                                         <td class="col-md-3"> {{ $amount }}/-</td>

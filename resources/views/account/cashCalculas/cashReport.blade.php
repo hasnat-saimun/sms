@@ -18,13 +18,8 @@ Institute Info
                         {{session()->get('success')}}
                     </div>
                 @endif
-                    <form method="POST" class="card-body form form-group" action="{{route('getFeesReport')}}">
+                    <form method="POST" class="card-body form form-group" action="{{route('getCashReport')}}">
                         @csrf
-                        <div class="mb-2">
-                            <label for="stdId" class="form-label ">Student ID</label>
-                            <input type="number" class="form-control form-control-sm" id="stdId" name="stdId" placeholder="Enter student ID to get report" required>
-                            </select>
-                        </div>
                         <div class="mb-2">
                             <label for="fromDate" class="form-label ">Form Date</label>
                             <input type="date" class="form-control form-control-sm" id="fromDate" name="fromDate" placeholder="" required>

@@ -5,7 +5,7 @@ Student List
 @section('backIndex')
                 <!-- Social Media Start Here -->
                 <div class="row gutters-20 mt-4">
-                    <div class="col-12 col-md-10 mx-auto">
+                    <div class="col-12 col-md-12 mx-auto">
                         <div class="card card-default">
                             <div class="card-header bg-light">
                                 <h3>Student List</h3>
@@ -60,9 +60,10 @@ Student List
                                             @endif
                                             <td>{{ $std->phone }}</td>
                                             <td>
-                                                <a href="{{ route('editStudent',['stdId'=>$std->id]) }}"><i class="fa-light fa-pen-to-square fa-xl"></i></a>
-                                                <a href="{{ route('delStudent',['stdId'=>$std->id]) }}" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fa-thin fa-circle-trash fa-xl"></i></a>
-                                                <a href="{{ route('stdIdCard',['stdId'=>$std->id]) }}" title="Get Id Card"><i class="fa-light fa-id-card fa-xl"></i></a>
+
+                                                <a href="{{ route('stdIdCard',['stdId'=>$std->id]) }}"><i class="fa-solid fa-eye mx-2" style="color:rgb(35 170 211);"></i></a>
+                                                <a href="{{ route('editStudent',['stdId'=>$std->id]) }}" ><i class="fa-solid fa-pen-to-square mx-2" style="color: #4125b1;"></i></a>
+                                                <a href="{{ route('delStudent',['stdId'=>$std->id]) }}" onclick="return confirm('Are you sure you want to delete this item?');" title="Get Id Card"><i class="fa-solid fa-trash mx-2" style="color: #c10b26;"></i></a>
                                             </td>
                                         </tr>
                                         @endforeach

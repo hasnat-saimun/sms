@@ -1,5 +1,5 @@
 @if($studentData)
-    <div class="col-6 mx-auto">
+    <div class="col-10 mx-auto">
         <div class="card mt-4 card-body">
             <div class="row">
                 <div class="col-md-6 mb-2">
@@ -22,7 +22,7 @@
                     <label for="rollNumber" class="form-label fw-bold">Session:</label>
                     {{ $sessionData->session }}
                 </div>
-                <div class="col-md-6 mb-2">
+                <div class="col-md-6 mb-2 form-group">
                     <label for="feesType" class="form-label">Purpose/Note</label>
                     <select name="feesType" id="" class="form-control">
                         <option>-select-</option>
@@ -33,13 +33,13 @@
                     @endif  
                     </select>
                 </div>
-                <div class="col-md-6 mb-2">
+                <div class="col-md-6 mb-2 form-group">
                     <label for="amount" class="form-label">Amount</label>
                     <input type="number" class="form-control" id="amount" name="amount" placeholder="Enter collected amount" required>
                 </div>
-                <div class="mx-auto  gap-2 mt-4">
-                    <button class="btn btn-primary btn-color btn-sm" type="submit">Submit</button>
-                    <button class="btn btn-danger btn-color btn-sm" type="reset">Reset</button>
+                <div class="mx-auto  gap-2 mt-4 form-group">
+                    <button class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" type="submit">Submit</button>
+                    <button class="btn-fill-lg bg-blue-dark btn-hover-bluedark" type="reset">Reset</button>
                 </div>
             </div>
         </div>

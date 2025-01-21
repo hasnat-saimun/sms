@@ -18,7 +18,7 @@ Institute Info
                         {{session()->get('success')}}
                     </div>
                 @endif
-                    <form method="POST" class="card-body form" action="{{route('saveFees')}}">
+                    <form method="POST" class="card-body form form-group" action="{{route('saveFees')}}">
                         @csrf
                         <div class="mb-2">
                             <label for="feesName" class="form-label ">Fees Entry</label>
@@ -26,8 +26,8 @@ Institute Info
                             </select>
                         </div>
                         <div class=" mx-auto gap-2 mt-5">
-                            <button class="btn btn-primary btn-color btn-sm" type="submit">Submit</button>
-                            <button class="btn btn-danger btn-color btn-sm" type="reset">Reset</button>
+                            <button class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" type="submit">Submit</button>
+                            <button class="btn-fill-lg bg-blue-dark btn-hover-bluedark" type="reset">Reset</button>
                         </div>
                     </form>
                 </div>

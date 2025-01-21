@@ -9,7 +9,7 @@ Institute Info
             <div class="card card-body  border  ">
                 
             <div class="mb-3 text-center">
-            <u class="h4">Calculas View</u>
+            <u class="h3">Calculas View</u>
             </div>
                 <table class=" table table-striped table-hover hadow-lg p-3 rounded" >
                     <tbody class="">
@@ -32,7 +32,7 @@ Institute Info
                     </tbody>
                 </table>
                 <div class="mt-3">
-                    <a href="{{route('reportListView')}}"class="btn btn-success btn-color btn-sm">Back</a>
+                    <a href="{{route('reportListView')}}"class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Back</a>
                 </div>
             </div>
         </div>
