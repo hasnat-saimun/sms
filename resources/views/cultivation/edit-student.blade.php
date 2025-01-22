@@ -41,9 +41,25 @@ Edit Student
                                 </div>
                             </div>
                             @if(!empty($stdData))
+                            
+                            <form class="new-added-form" action="{{ route('updateAdmit') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group mg-t-30">
+                                        @if(!empty($stdData->avatar))
+                                        <img class="w-75" src="{{ asset('/public/upload/image/student/') }}/{{$stdData->avatar}}" alt="$stdData->firstName.' '.$stdData->lastName"><br>
+                                        <a href="{{route('delStdAvatar',['stdId'=>$stdData->id])}}" class="btn btn-danger btn-lg">Remove</a>
+                                        @else
+                                        <label class="text-dark-medium">Avatar (150px X 150px)</label>
+                                        <input type="file" name="avatar" class="form-control-file">
+                                        @endif
+                                    </div>
+                            </form>
                             <form class="new-added-form" action="{{ route('updateAdmit') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" value="{{ $stdData->id }}" name="stdId">
+                                    <div class="row mb-2">
+                                        <h5 class="fw-semibold">Personal Information</h5>
+                                    </div>
                                 <div class="row">
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Admission ID</label>
@@ -82,10 +98,6 @@ Edit Student
                                         <i class="far fa-calendar-alt"></i>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                        <label>Roll</label>
-                                        <input type="text" name="rollNumber" placeholder="Enter student class roll" class="form-control" value="{{ $stdData->rollNumber}}" required>
-                                    </div>
-                                    <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Blood Group *</label>
                                         <select class="select2" name="blGroup">
                                             <option value="{{ $stdData->blGroup}}">B+</option>
@@ -117,12 +129,25 @@ Edit Student
                                         <input type="email" name="mail" placeholder="Enter student email" class="form-control" value="{{ $stdData->mail}}">
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                    @php 
-                                        $sessionDetails = \App\Models\sessionManage::all();
-                                        $sessionData  = \App\Models\sessionManage::find($stdData->sessName);
-                                        $classData  = \App\Models\classManage::find($stdData->className);
-                                        $sectionData  = \App\Models\sectionManage::find($stdData->sectionName);
-                                    @endphp
+                                        <label>Phone</label>
+                                        <input type="text" name="phone" placeholder="Enter gurdian mobile number" class="form-control" value="{{ $stdData->phone}}" required>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group  ">
+                                        <label>Address</label>
+                                        <input type="text" class="form-control" placeholder="Student full address" name="address" value="{{ $stdData->address}}">
+                                    </div>
+                                </div>
+                                <div class="row mt-5 mb-2">
+                                    <h5 class="fw-semibold">Academic Information</h5>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                        @php 
+                                            $sessionDetails = \App\Models\sessionManage::all();
+                                            $sessionData  = \App\Models\sessionManage::find($stdData->sessName);
+                                            $classData  = \App\Models\classManage::find($stdData->className);
+                                            $sectionData  = \App\Models\sectionManage::find($stdData->sectionName);
+                                        @endphp
                                         <label>Session *</label>
                                         <select class="select2" name="sessionName" required>
                                         @if(!empty($sessionData))
@@ -162,22 +187,10 @@ Edit Student
                                         </select>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                        <label>Phone</label>
-                                        <input type="text" name="phone" placeholder="Enter gurdian mobile number" class="form-control" value="{{ $stdData->phone}}" required>
+                                        <label>Roll</label>
+                                        <input type="text" name="rollNumber" placeholder="Enter student class roll" class="form-control" value="{{ $stdData->rollNumber}}" required>
                                     </div>
-                                    <div class="col-xl-3 col-lg-6 col-12 form-group  ">
-                                        <label>Address</label>
-                                        <input type="text" class="form-control" placeholder="Student full address" name="address" value="{{ $stdData->address}}">
-                                    </div>
-                                    <div class="col-xl-3 col-lg-6 col-12 form-group mg-t-30">
-                                        @if(!empty($stdData->avatar))
-                                        <img class="w-75" src="{{ asset('/public/upload/image/student/') }}/{{$stdData->avatar}}" alt="$stdData->firstName.' '.$stdData->lastName"><br>
-                                        <a href="{{route('delStdAvatar',['stdId'=>$stdData->id])}}" class="btn btn-danger btn-lg">Remove</a>
-                                        @else
-                                        <label class="text-dark-medium">Avatar (150px X 150px)</label>
-                                        <input type="file" name="avatar" class="form-control-file">
-                                        @endif
-                                    </div>
+                                </div>
                                 <div class="row mb-2 mt-5">
                                     <h5 class="fw-semibold">Guardian Information</h5>
                                 </div>
@@ -208,7 +221,6 @@ Edit Student
                                         <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
                                         <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-bluedark">Reset</button>
                                     </div>
-                                </div>
                                 </div>
                             </form>
                             @else
