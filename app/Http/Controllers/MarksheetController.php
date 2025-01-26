@@ -70,4 +70,16 @@ class MarksheetController extends Controller
         $studentList = StudentManagement::where(['admitId'=>$requ->stdId])->first();
         return view('result.marksheetGenerate',['studentDetails'=>$studentList,'groupId'=>$requ->groupId,'classId'=>$requ->classId,'sessionId'=>$requ->sessionId,'examId'=>$requ->examId]);
     }
+
+
+    //front web site str
+    public function internalResult(){
+        return view('frontend.result.internalResult');
+    }
+
+
+    public function individualResult(){
+        return view('frontend.result.individualResult');
+    }
+    //front web site end
 }

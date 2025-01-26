@@ -808,10 +808,40 @@ Route::get('/cultivation/grade/list',[
 ])->name('allGrade');
 
 // web font str 
-Route::get('/new/syllabus',[
+
+//academic str
+Route::get('/syllabus',[
     AcademicController::class ,
     'newSyllabus'
 ])->name('newSyllabus');
+
+Route::get('/class/schedule',[
+    AcademicController::class ,
+    'newClassSchedule'
+])->name('newClassSchedule');
+
+Route::get('/exam/schedule',[
+    AcademicController::class,
+    'newExamSchedule'
+])->name('newExamSchedule');
+
+Route::get('/semister/plan',[
+    AcademicController::class,
+    'newSemister'
+])->name('newSemister');
+//academic end
+
+//MarksheetController str
+Route::get('/internal/result',[
+    MarksheetController::class,
+    'internalResult'
+])->name('internalResult');
+
+Route::get('/individual/result',[
+    MarksheetController::class,
+    'individualResult'
+])->name('individualResult');
+//MarksheetController end
 //web font end
 
 

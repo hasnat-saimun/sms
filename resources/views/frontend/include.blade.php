@@ -90,9 +90,9 @@
                                         </a>
                                         <ul class="dropdown-menu">
                                             <li><a class="dropdown-item" href="{{route('newSyllabus')}}">Syllabus</a></li>
-                                            <li><a class="dropdown-item" href="#">Class Routine</a></li>
-                                            <li><a class="dropdown-item" href="#">Semister Plans</a></li>
-                                            <li><a class="dropdown-item" href="#">Exam Routine</a></li>
+                                            <li><a class="dropdown-item" href="{{route('newClassSchedule')}}">Class Routine</a>
+                                            <li><a class="dropdown-item" href="{{route('newExamSchedule')}}">Exam Routine</a></li></li>
+                                            <li><a class="dropdown-item" href="{{route('newSemister')}}">Semister Plans</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown">
@@ -100,8 +100,8 @@
                                         Result Archive
                                         </a>
                                         <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">Internal Result</a></li>
-                                            <li><a class="dropdown-item" href="#">Individual Result</a></li>
+                                            <li><a class="dropdown-item" href="{{route('internalResult')}}">Internal Result</a></li>
+                                            <li><a class="dropdown-item"href="{{route('individualResult')}}">Individual Result</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown">
@@ -156,7 +156,7 @@
             </div>
         </div>
     </div>
-        <footer class="mt-4 container-fluid">
+        <footer class="mt-5  container-fluid ">
             <div class="row g-0">
                 <div class="col-12 col-md-5 mx-auto">
                     <h3>Contact Details</h3>

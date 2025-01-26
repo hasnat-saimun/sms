@@ -280,5 +280,19 @@ class AcademicController extends Controller
         return view('frontend.academic.syllabus',);
     }
 
+    public function newClassSchedule()
+    {
+        return view('frontend.academic.classSchedule',);
+    }
+
+    public function newExamSchedule()
+    {
+        return view('frontend.academic.examSchedule',);
+    }
+
+    public function newSemister()
+    {
+        return view('frontend.academic.semister',);
+    }
      //web front controller end
 }

@@ -7,7 +7,7 @@ Syllabus
 <section class="container">
     <div class="row">
         <div class="col-md-12 text-center con-title">
-            <h2 class="wow fadeInLeft animated" data-wow-delay=".60s"> Syllabus</h2>
+            <h2 class="wow fadeInLeft animated" data-wow-delay=".60s"> Class Schedule</h2>
         </div>
     </div>
     <div calss="row">
