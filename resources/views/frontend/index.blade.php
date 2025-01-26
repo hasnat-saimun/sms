@@ -138,7 +138,8 @@ Enter to learn & Leave to serve
                                             <div class="col-12 col-md-9">
                                                 <ul class="list-group list-group-flush">
                                                     <li class="list-group-item"><i class="fa-regular fa-arrow-turn-down-right"></i> Semister Plan</li>
-                                                    <li class="list-group-item"><i class="fa-regular fa-arrow-turn-down-right"></i> Syllabus</li>
+                                                    <li><a class="list-group-item" href="{{route('newSyllabus')}}">Syllabus</a>
+                                                    </li>
                                                     <li class="list-group-item"><i class="fa-regular fa-arrow-turn-down-right"></i> Class Routine</li>
                                                     <li class="list-group-item"><i class="fa-regular fa-arrow-turn-down-right"></i> Exam Routine</li>
                                                 </ul>

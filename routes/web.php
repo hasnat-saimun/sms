@@ -807,5 +807,12 @@ Route::get('/cultivation/grade/list',[
     'allGrade'
 ])->name('allGrade');
 
+// web font str 
+Route::get('/new/syllabus',[
+    AcademicController::class ,
+    'newSyllabus'
+])->name('newSyllabus');
+//web font end
+
 
 

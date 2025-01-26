@@ -272,4 +272,13 @@ class AcademicController extends Controller
             return back()->with('success','Item failed to delete');
         endif;
     }
+
+
+    //web front controller str
+    public function newSyllabus()
+    {
+        return view('frontend.academic.syllabus',);
+    }
+
+     //web front controller end
 }
