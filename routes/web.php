@@ -42,9 +42,10 @@ use App\Http\Middleware\VerifyCsrfToken;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.index');
-});
+Route::get('/home',[
+    FrontController::class,
+    'homePage'
+])->name('homePage');
 
 //Result Part
 Route::get('/cultivation/result',[
@@ -810,38 +811,102 @@ Route::get('/cultivation/grade/list',[
 // web font str 
 
 //academic str
-Route::get('/syllabus',[
-    AcademicController::class ,
-    'newSyllabus'
-])->name('newSyllabus');
+    Route::get('/syllabus',[
+        AcademicController::class ,
+        'newSyllabus'
+    ])->name('newSyllabus');
 
-Route::get('/class/schedule',[
-    AcademicController::class ,
-    'newClassSchedule'
-])->name('newClassSchedule');
+    Route::get('/class/schedule',[
+        AcademicController::class ,
+        'newClassSchedule'
+    ])->name('newClassSchedule');
 
-Route::get('/exam/schedule',[
-    AcademicController::class,
-    'newExamSchedule'
-])->name('newExamSchedule');
+    Route::get('/exam/schedule',[
+        AcademicController::class,
+        'newExamSchedule'
+    ])->name('newExamSchedule');
 
-Route::get('/semister/plan',[
-    AcademicController::class,
-    'newSemister'
-])->name('newSemister');
+    Route::get('/semister/plan',[
+        AcademicController::class,
+        'newSemister'
+    ])->name('newSemister');
 //academic end
 
 //MarksheetController str
-Route::get('/internal/result',[
-    MarksheetController::class,
-    'internalResult'
-])->name('internalResult');
+    Route::get('/internal/result',[
+        MarksheetController::class,
+        'internalResult'
+    ])->name('internalResult');
 
-Route::get('/individual/result',[
-    MarksheetController::class,
-    'individualResult'
-])->name('individualResult');
+    Route::get('/individual/result',[
+        MarksheetController::class,
+        'individualResult'
+    ])->name('individualResult');
 //MarksheetController end
+
+//PlacementCellController str
+    Route::get('/job/placement-cell',[
+        PlacementCellController::class,
+        'placementCellView'
+    ])->name('placementCellView');
+
+    Route::get('/job/needy-student',[
+        PlacementCellController::class,
+        'jobNeedyStudentView'
+    ])->name('jobNeedyStudentView');
+//PlacementCellController end
+
+//GalleryController str
+    Route::get('/video/gallary',[
+        GalleryController::class,
+        'videoPage'
+    ])->name('videoPage');
+
+    Route::get('/image/gallary',[
+        GalleryController::class,
+        'imagePage'
+    ])->name('imagePage');
+//GalleryController end
+
+//InstituteController str
+    Route::get('/about-us',[
+    InstituteController::class,
+    'institutePage'
+    ])->name('institutePage');
+
+    Route::get('/principal-speech',[
+        InstituteController::class,
+        'principalSpeechPage'
+        ])->name('principalSpeechPage');
+
+    Route::get('/exPrincipal',[
+        InstituteController::class,
+        'exprincipalPage'
+        ])->name('exprincipalPage');
+
+    Route::get('/our-teacher',[
+        InstituteController::class,
+        'teacherPage'
+        ])->name('teacherPage');
+
+    Route::get('/our-staff',[
+        InstituteController::class,
+        'staffPage'
+        ])->name('staffPage');
+
+    Route::get('/our-comittee',[
+        InstituteController::class,
+        'comitteePage'
+        ])->name('comitteePage');
+        
+
+    Route::get('/contact-us',[
+        InstituteController::class,
+        'supportPage'
+    ])->name('supportPage');
+
+//InstituteController str
+
 //web font end
 
 

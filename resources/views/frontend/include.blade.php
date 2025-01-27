@@ -69,19 +69,19 @@
                             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                                 <ul class="navbar-nav text-white sbc">
                                     <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                        <a class="nav-link active" aria-current="page" href="{{route('homePage')}}">Home</a>
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         Institute
                                         </a>
                                         <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">About Us</a></li>
-                                            <li><a class="dropdown-item" href="#">Principal Speech</a></li>
-                                            <li><a class="dropdown-item" href="#">EX-Principals</a></li>
-                                            <li><a class="dropdown-item" href="#">Our Teacher</a></li>
-                                            <li><a class="dropdown-item" href="#">Staff Corner</a></li>
-                                            <li><a class="dropdown-item" href="#">Managing Comittee</a></li>
+                                            <li><a class="dropdown-item" href="{{route('institutePage')}}">About Us</a></li>
+                                            <li><a class="dropdown-item" href="{{route('principalSpeechPage')}}">Principal Speech</a></li>
+                                            <li><a class="dropdown-item" href="{{route('exprincipalPage')}}">EX-Principals</a></li>
+                                            <li><a class="dropdown-item" href="{{route('teacherPage')}}">Our Teacher</a></li>
+                                            <li><a class="dropdown-item" href="{{route('staffPage')}}">Staff Corner</a></li>
+                                            <li><a class="dropdown-item" href="{{route('comitteePage')}}">Managing Comittee</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown">
@@ -109,9 +109,9 @@
                                         Job Placement
                                         </a>
                                         <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">Placement Cell</a></li>
-                                            <li><a class="dropdown-item" href="#">Job Needy Student</a></li>
-                                            <li><a class="dropdown-item" href="#">Job Circular</a></li>
+                                            <li><a class="dropdown-item" href="{{route('placementCellView')}}">Placement Cell</a></li>
+                                            <li><a class="dropdown-item" href="{{route('jobNeedyStudentView')}}">Job Needy Student</a></li>
+                                            <li><a class="dropdown-item" href="https://bdjobs.com/">Job Circular</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item dropdown">
@@ -119,12 +119,12 @@
                                         Gallery
                                         </a>
                                         <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">Photo Gallery</a></li>
-                                            <li><a class="dropdown-item" href="#">Video Gallery</a></li>
+                                            <li><a class="dropdown-item" href="{{route('imagePage')}}">Photo Gallery</a></li>
+                                            <li><a class="dropdown-item" href="{{route('videoPage')}}">Video Gallery</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Support</a>
+                                        <a class="nav-link" href="{{route('supportPage')}}">Support</a>
                                     </li>
                                 </ul>
                             </div>

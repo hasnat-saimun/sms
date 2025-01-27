@@ -19,4 +19,12 @@ class PlacementCellController extends Controller
         $needy = PlacementCell::orderBy('id','DESC')->get();
         return view('academic.needyStudent',['needy'=>$needy]);
     }
+
+    public function placementCellView(){
+        return view('frontend.job.placementCell');
+    }
+
+    public function jobNeedyStudentView(){
+        return view('frontend.job.jobNeedyStudent');
+    }
 }

@@ -61,4 +61,10 @@ class FrontController extends Controller
         Session::flush();
         return redirect(route('adminLogin'))->with('success','Yes! Logout successfull');
     }
+
+
+    public function homePage(){
+        return view('frontend.index');
+    }
+    
 }

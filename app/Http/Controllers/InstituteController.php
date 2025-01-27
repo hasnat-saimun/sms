@@ -150,4 +150,37 @@ class InstituteController extends Controller
             return back()->with('error','Sorry! Data failed to delete. Please try later');
         endif;
     }
+
+    //web support
+    public function supportPage(){
+        return view('frontend.support');
+    }
+
+    //institute info
+    public function institutePage(){
+        return view('frontend.institute.instituteInfo');
+    }
+    //principalSpeech
+    public function principalSpeechPage(){
+        return view('frontend.institute.principalSpeech');
+    }
+    //X-principal
+    public function exprincipalPage(){
+        return view('frontend.institute.exprincipal');
+    }
+
+    //teacher list page
+    public function teacherPage(){
+        return view('frontend.institute.teachers');
+    }
+
+    //staff list page
+    public function staffPage(){
+        return view('frontend.institute.staff');
+    }
+
+    //comittee list page
+    public function comitteePage(){
+        return view('frontend.institute.comittee');
+    }
 }
