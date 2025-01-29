@@ -277,7 +277,8 @@ class AcademicController extends Controller
     //web front controller str
     public function newSyllabus()
     {
-        return view('frontend.academic.syllabus',);
+        $syllabus  =   Syllabus::all();
+        return view('frontend.academic.syllabus',['Datakey'=>$syllabus]);
     }
 
     public function newClassSchedule()
