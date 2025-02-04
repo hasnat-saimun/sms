@@ -118,6 +118,34 @@ Route::get('/cultivation/notice/preview/{id}',[
 
 //notice ends here
 
+//Image str
+
+Route::get('/cultivation/institute/photo/',[
+    GalleryController::class,
+    'newPhoto'
+])->name('newPhoto');
+
+Route::post('/cultivation/photo/save',[
+    GalleryController::class ,
+    'savePhoto'
+])->name('savePhoto');
+
+Route::get('/cultivation/photo/edit/{id}',[
+    GalleryController::class ,
+    'editPhoto'
+])->name('editPhoto');
+
+Route::get('/cultivation/photo/content/delete/{id}',[
+    GalleryController::class ,
+    'delPhotoContent'
+])->name('delPhotoContent');
+
+Route::get('/cultivation/photo/delete/{id}',[
+    GalleryController::class ,
+    'delPhoto'
+])->name('delPhoto');
+
+//image end
 Route::get('/cultivation/institute/info/',[
     InstituteController::class,
     'insInfo'

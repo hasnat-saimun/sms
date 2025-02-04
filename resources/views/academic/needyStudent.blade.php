@@ -1,6 +1,6 @@
 @extends('academic.include')
 @section('backTitle')
-Placement Cell
+Needy Student Panel
 @endsection
 @section('backIndex')
 @php 

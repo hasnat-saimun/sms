@@ -13,9 +13,8 @@ return new class extends Migration
     {
         Schema::create('photo_galleries', function (Blueprint $table) {
             $table->id();
-            $table->string('galleryHeading')->nullable();
-            $table->string('details')->nullable();
-            $table->string('attachment')->nullable();
+            $table->string('title')->nullable();
+            $table->string('avatar')->nullable();
             $table->timestamps();
         });
     }
