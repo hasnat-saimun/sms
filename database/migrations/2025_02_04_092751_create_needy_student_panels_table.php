@@ -11,18 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('placement_cells', function (Blueprint $table) {
+        Schema::create('needy_student_panels', function (Blueprint $table) {
             $table->id();
             $table->string('fullName')->nullable();
             $table->string('sessionYear')->nullable();
             $table->string('mobile')->nullable();
             $table->string('email')->nullable();
-            $table->string('companyName')->nullable();
-            $table->string('joinDate')->nullable();
             $table->string('rollNumber')->nullable();
-            $table->string('designation')->nullable();
-            $table->string('jobDetails')->nullable();
             $table->string('avatar')->nullable();
+            $table->string('attachment')->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('placement_cells');
+        Schema::dropIfExists('needy_student_panels');
     }
 };

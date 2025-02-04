@@ -282,18 +282,21 @@ class AcademicController extends Controller
     }
 
     public function newClassSchedule()
-    {
-        return view('frontend.academic.classSchedule',);
+    {   
+        $result=ClassRoutine::get();
+        return view('frontend.academic.classSchedule',['Datakey'=>$result]);
     }
 
     public function newExamSchedule()
     {
-        return view('frontend.academic.examSchedule',);
+        $result=ExamRoutine::get();
+        return view('frontend.academic.examSchedule',['Datakey'=>$result]);
     }
 
     public function newSemister()
     {
-        return view('frontend.academic.semister',);
+        $result = SemisterPlan::get();
+        return view('frontend.academic.semister',['Datakey'=>$result]);
     }
      //web front controller end
 }

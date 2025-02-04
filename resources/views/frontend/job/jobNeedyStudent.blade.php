@@ -59,10 +59,10 @@ Syllabus
                                         @foreach($Datakey as $data)
                                         <tr>
                                             <td class="d-none">{!!$data->id!!}</td>
-                                            <td>{!!$data->name!!}</td>
-                                            <td>{!!$data->session!!}</td>
-                                            <td>{!!$data->roll_number!!}</td>
-                                            <td><img class="w-50" src="{{ asset('/storage/app/public/frontend/uploads/').'/'.$data->photo}}" alt="{!! $data->name !!}" style="max-height:120px !important"></td>
+                                            <td>{!!$data->fullName!!}</td>
+                                            <td>{!!$data->sessionYear!!}</td>
+                                            <td>{!!$data->rollNumber!!}</td>
+                                            <td><img class="w-50" src="{{ asset('public/upload/image/neddyStudent/').'/'.$data->avatar}}" alt="{!! $data->fullName !!}" style="max-height:120px !important"></td>
                                             <td>
                                                 <a href="#" class="text-success my-2" data-bs-toggle="modal" data-bs-target="#getData{{ $data->id }}" >
                                                     <i class="fa fa-eye" style="color: green;"></i>
@@ -72,12 +72,12 @@ Syllabus
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <p class="modal-title fs-5" id="staticBackdropLabel">CV of {{ $data->name }}</p>
+        <p class="modal-title fs-5" id="staticBackdropLabel">CV of {{ $data->fullName }}</p>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
             <div class="text-center">
-                <embed class="w-100" height="550px" src="{{ asset('/storage/app/public/frontend/uploads/').'/'.$data->cv}}" alt="{!! $data->name !!}"></embed>
+                <embed class="w-100" height="550px" src="{{ asset('public/upload/image/neddyStudent/').'/'.$data->attachment}}" alt="{!! $data->fullName !!}"></embed>
             </div>
       </div>
       <div class="modal-footer">
@@ -97,7 +97,7 @@ Syllabus
                     </div>
                     <div class="tab-pane fade card rounded-0" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
                         <div class="card-body">
-                            <form class="form row" method="POST" action="" enctype="multipart/form-data">
+                            <form class="form row" method="POST" action="{{ route('saveNeedyStdPanel') }}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="col-12 col-md-6">
                                     <div class="mb-3">
@@ -109,8 +109,8 @@ Syllabus
                                         <input type="number" name="rollNumber" class="form-control" placeholder="Enter roll number(*)" minlength="6" maxlength="6" required>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="sessionNumber">Session</label>
-                                        <input type="text" name="sessionNumber" class="form-control" placeholder="Enter session year(*)" required>
+                                        <label for="sessionYear">Session</label>
+                                        <input type="text" name="sessionYear" class="form-control" placeholder="Enter session year(*)" required>
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6">
@@ -119,19 +119,19 @@ Syllabus
                                         <input type="email" name="email" class="form-control" placeholder="Enter a valid email(*)" required>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="mobileNumber">Mobile Number</label>
-                                        <input type="text" name="mobileNumber" class="form-control" placeholder="Enter mobile number(*)" required>
+                                        <label for="mobile">Mobile Number</label>
+                                        <input type="text" name="mobile" class="form-control" placeholder="Enter mobile number(*)" required>
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <div class="mb-3">
-                                        <label for="cv">CV</label>
-                                        <input type="file" class="form-control" name="cv" required>
+                                        <label for="attachment">CV</label>
+                                        <input type="file" class="form-control" name="attachment" required>
                                     </div>
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <div class="mb-3">
-                                        <label for="fullName">Photo</label>
+                                        <label for="avatar">Photo</label>
                                         <input type="file" class="form-control" name="avatar" required>
                                     </div>
                                 </div>

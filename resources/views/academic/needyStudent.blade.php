@@ -6,17 +6,14 @@ Placement Cell
 @php 
 
     if(!empty($itemId)):
-        $plcList       = \App\Models\PlacementCell::find($itemId);
+        $plcList       = \App\Models\needyStudentPanel::find($itemId);
         if(!empty($plcList)):
             $fullName       = $plcList->fullName;
             $mobileNumber   = $plcList->mobile;
             $emailAddress   = $plcList->email;
-            $joinDate       = $plcList->joinDate;
             $sessionYear    = $plcList->sessionYear;
             $rollNumber     = $plcList->rollNumber;
-            $designation    = $plcList->designation;
-            $companyName    = $plcList->companyName;
-            $jobDetails     = $plcList->jobDetails;
+            $attachment     = $plcList->attachment;
             $avatar         = $plcList->avatar;
         endif;
     else:
@@ -53,7 +50,7 @@ Placement Cell
                         @endif
                     </div>
                 </div>
-                <form action="{{ route('savePlacementCell') }}" class="form row" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('saveNeedyStdPanel') }}" class="form row" method="POST" enctype="multipart/form-data">
                     <div class="col-12 col-md-6">
                         <input type="hidden" name="itemId" value="{{$itemId}}">
                         @csrf
@@ -66,6 +63,19 @@ Placement Cell
                             <input type="text" name="mobile" class="form-control" placeholder="Enter mobile number" value="{{ $mobileNumber }}">
                         </div>
                         <div class="mb-3">
+                            <label for="attachment">Cv(PDF)</label>
+                            @if(!empty($attachment))
+                            <div>
+                                <iframe src="{{ asset('public/upload/image/neddyStudent/').'/'.$attachment }}" class="w-50" height="300px"></iframe>
+                                <a href="{{ route('delNeedyStdPaneldoc',['id'=>$itemId]) }}" class="fw-bold text-danger">Delete</a>
+                            </div>
+                            @else
+                            <input type="file" name="attachment" class="form-control-file">
+                            @endif
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="mb-3">
                             <label for="email">Email</label>
                             <input type="text" name="email" class="form-control" placeholder="Enter email address" value="{{ $emailAddress }}">
                         </div>
@@ -77,40 +87,21 @@ Placement Cell
                             <label for="rollNumber">Roll Number</label>
                             <input type="text" name="rollNumber" class="form-control" placeholder="Enter roll number" value="{{ $rollNumber }}">
                         </div>
-                        
                         <div class="mb-3">
                             <label for="avatar">Avatar(PDF/Photo)</label>
                             @if(!empty($avatar))
                             <div>
-                                <iframe src="{{ asset('public/upload/image/placementCell/').'/'.$avatar }}" class="w-50" height="300px"></iframe>
-                                <a href="{{ route('delPlcCon',['id'=>$itemId]) }}" class="fw-bold text-danger">Delete</a>
+                                <iframe src="{{ asset('public/upload/image/neddyStudent/').'/'.$avatar }}" class="w-50" height="300px"></iframe>
+                                <a href="{{ route('delNeedyStdPanelCon',['id'=>$itemId]) }}" class="fw-bold text-danger">Delete</a>
                             </div>
                             @else
                             <input type="file" name="avatar" class="form-control-file">
                             @endif
                         </div>
                     </div>
-                    <div class="col-12 col-md-6">
-                        <div class="mb-3">
-                            <label for="companyName">Company Name</label>
-                            <input type="text" name="companyName" class="form-control" placeholder="Enter company name" value="{{ $companyName }}">
-                        </div>
-                        <div class="mb-3">
-                            <label for="joinDate">Join Date</label>
-                            <input type="date" name="joinDate" class="form-control" placeholder="Enter company join date" value="{{ $joinDate }}">
-                        </div>
-                        <div class="mb-3">
-                            <label for="designation">Designation/Position</label>
-                            <input type="text" name="designation" class="form-control" placeholder="Enter your position/title/designation" value="{{ $designation }}">
-                        </div>
-                        <div class="mb-3">
-                            <label for="jobDetails">Job Details</label>
-                            <textarea class="form-control" name="jobDetails">{{ $jobDetails }}</textarea>
-                        </div>
-                    </div>
                     <div class="mb-3">
                         <button class="btn btn-success btn-lg mx-2" type="submit">Save</button>
-                        <a class="btn btn-primary btn-lg mx-2" href="{{ route('placementCell') }}">New Profile</a>
+                        <a class="btn btn-primary btn-lg mx-2" href="{{ route('needyStudentPanel') }}">New Profile</a>
                     </div>
                 </form>
             </div>
@@ -119,7 +110,7 @@ Placement Cell
     
     
             <div class="card-body cultivation">
-                <div class="card-header">Plcement List</div>
+                <div class="card-header">Jod Needy Student List</div>
                 <table id="myTable" class="table table-striped">
                     <thead>
                         <tr>
@@ -127,32 +118,29 @@ Placement Cell
                             <th>Email</th>
                             <th>Mobile</th>
                             <th>Session Year</th>
-                            <th>Company Name</th>
-                            <th>Designation</th>
+                            <th>Attachment</th>
                             <th>Photo</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @if(!empty($placementList))
-                        @foreach($placementList as $item)
+                        @if(!empty($needy))
+                        @foreach($needy as $item)
                             <tr>
                                 <td>{{ $item->fullName }}</td>
                                 <td>{{ $item->email }}</td>
                                 <td>{{ $item->mobile }}</td>
                                 <td>{{ $item->sessionYear }}</td>
-                                <td>{{ $item->companyName }}</td>
-                                <td>{{ $item->designation }}</td>
+                                <td>{{ $item->attachment }}</td>
                                 <td>{{ $item->avatar }}</td>
                                 <td>
-                                    <a href="{{ route('editPlc',['id'=>$item->id]) }}"><i class="fa-light fa-pen-to-square fa-xl"></i></a>
-                                    <a href="{{ route('delPlc',['id'=>$item->id]) }}" onclick="return confirm('Are you sure to delete?')"><i class="fa-thin fa-circle-trash fa-xl"></i></a>
+                                    <a href="{{ route('editNeedyStdPanel',['id'=>$item->id]) }}"><i class="fa-light fa-pen-to-square fa-xl"></i></a>
+                                    <a href="{{ route('delNeedyStdPanel',['id'=>$item->id]) }}" onclick="return confirm('Are you sure to delete?')"><i class="fa-thin fa-circle-trash fa-xl"></i></a>
                                 </td>
                             </tr>
                         @endforeach
                         @else
                             <tr>
-                                <td>-</td>
                                 <td>-</td>
                                 <td>-</td>
                                 <td>-</td>

@@ -291,25 +291,56 @@ Route::get('/cultivation/placement/jobPlacement/',[
     'placementCell'
 ])->name('placementCell');
 
+Route::post('/cultivation/placement/placementCell/save',[
+    PlacementCellController::class ,
+    'savePlacementCell'
+])->name('savePlacementCell');
+
 Route::get('/cultivation/placement/placementCell/edit/{id}',[
     PlacementCellController::class ,
     'editPlc'
 ])->name('editPlc');
+
+
+Route::get('/cultivation/academic/placementCell/content/delete/{id}',[
+    PlacementCellController::class ,
+    'delPlcCon'
+])->name('delPlcCon');
 
 Route::get('/cultivation/placement/placementCell/delete/{id}',[
     PlacementCellController::class ,
     'delPlc'
 ])->name('delPlc');
 
-Route::post('/cultivation/placement/placementCell/save',[
-    PlacementCellController::class ,
-    'savePlacementCell'
-])->name('savePlacementCell');
-
 Route::get('/cultivation/placement/needyStudentPanel/',[
     PlacementCellController::class ,
     'needyStudentPanel'
 ])->name('needyStudentPanel');
+
+Route::post('/cultivation/placement/needyStudentPanel/save',[
+    PlacementCellController::class ,
+    'saveNeedyStdPanel'
+])->name('saveNeedyStdPanel');
+
+Route::get('/cultivation/placement/needyStudentPanel/edit/{id}',[
+    PlacementCellController::class ,
+    'editNeedyStdPanel'
+])->name('editNeedyStdPanel');
+
+
+Route::get('/cultivation/academic/needyStudentPanel/photo/delete/{id}',[
+    PlacementCellController::class ,
+    'delNeedyStdPanelCon'
+])->name('delNeedyStdPanelCon');
+Route::get('/cultivation/academic/needyStudentPanel/documents/delete/{id}',[
+    PlacementCellController::class ,
+    'delNeedyStdPaneldoc'
+])->name('delNeedyStdPaneldoc');
+
+Route::get('/cultivation/placement/needyStudentPanel/delete/{id}',[
+    PlacementCellController::class ,
+    'delNeedyStdPanel'
+])->name('delNeedyStdPanel');
 //academic info ends here
 
 //
