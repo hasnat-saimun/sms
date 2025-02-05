@@ -40,27 +40,24 @@ Edit Student
                                     </div>
                                 </div>
                             </div>
+
+
                             @if(!empty($stdData))
-                            
-                            <form class="new-added-form" action="{{ route('updateAdmit') }}" method="POST" enctype="multipart/form-data">
-                                @csrf
-                                    <div class="col-xl-3 col-lg-6 col-12 form-group mg-t-30">
-                                        @if(!empty($stdData->avatar))
-                                        <img class="w-75" src="{{ asset('/public/upload/image/student/') }}/{{$stdData->avatar}}" alt="$stdData->firstName.' '.$stdData->lastName"><br>
-                                        <a href="{{route('delStdAvatar',['stdId'=>$stdData->id])}}" class="btn btn-danger btn-lg">Remove</a>
-                                        @else
-                                        <label class="text-dark-medium">Avatar (150px X 150px)</label>
-                                        <input type="file" name="avatar" class="form-control-file">
-                                        @endif
-                                    </div>
-                            </form>
                             <form class="new-added-form" action="{{ route('updateAdmit') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" value="{{ $stdData->id }}" name="stdId">
                                     <div class="row mb-2">
                                         <h5 class="fw-semibold">Personal Information</h5>
                                     </div>
-                                <div class="row">
+                                <div class="row"><div class="col-xl-3 col-lg-6 col-12 form-group mg-t-30">
+                                        @if(!empty($stdData->avatar))
+                                        <img class="w-75" src="{{ asset('/public/upload/image/student/') }}/{{$stdData->avatar}}" alt="$stdData->firstName.' '.$stdData->lastName"><br>
+                                        <a href="{{route('delStudentPhoto',['stdId'=>$stdData->id])}}" class="btn btn-danger btn-lg">Remove</a>
+                                        @else
+                                        <label class="text-dark-medium">Avatar (150px X 150px)</label>
+                                        <input type="file" name="avatar" class="form-control-file">
+                                        @endif
+                                    </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Admission ID</label>
                                         <input type="text" class="form-control" value="{{ $stdData->stdId }}" readonly>

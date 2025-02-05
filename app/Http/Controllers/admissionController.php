@@ -136,6 +136,22 @@ class admissionController extends Controller
             endif;
 
      }
+
+     public function delStudentPhoto($id){
+        $teacherProfileData = newAdmission::find($id);
+        if(empty($teacherProfileData)):
+            // return public_path('uploads/image/teacher/'.$teacherProfileData->avatar);
+            return back()->with('error','Sorry! Profile picture failed to delete');
+        else:
+            if (File::exists(public_path('upload/image/student/'.$teacherProfileData->avatar))) {
+                File::delete(public_path('upload/image/student/'.$teacherProfileData->avatar));
+            }
+            // return public_path('upload/image/teacher/'.$teacherProfileData->avatar);
+            $teacherProfileData->avatar        = "";
+            $teacherProfileData->save();
+            return back()->with('success','Success! Profile picture deleted successfully');
+        endif;
+    }
      
      public function delStdAvatar($id){
         $stdData = newAdmission::find($id);

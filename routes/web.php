@@ -617,6 +617,13 @@ Route::post('/cultivation/student/edit/confirm',[
     admissionController::class ,
     'updateAdmit'
 ])->name('updateAdmit');
+
+
+Route::get('/cultivation/teacher/del/avatar/{stdId}',[
+    admissionController::class ,
+    'delStudentPhoto'
+])->name('delStudentPhoto');
+
 Route::get('/cultivation/student/del/{stdId}',[
     admissionController::class ,
     'delStudent'
