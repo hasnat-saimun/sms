@@ -48,21 +48,23 @@ body {
            </div>
         </div>
         <div class="row align-items-center">
-        @if(!empty($Datakey))
+        @if(!empty($Datakey)) 
+        @foreach($Datakey as $data)
             <div class="col-8 col-md-3 text-center mx-auto">
                 <div class="card">
                     <img  class="w-100 wow bounce animated" data-wow-delay="1s" src="{{ asset('/public/') }}/img/sbcWhiteLogo.png"/>
                     <div class="card-footer">
-                        <p class="fw-bold mb-0">{{$Datakey->adminname}}</p>
+                        <p class="fw-bold mb-0">{{$data->importantSpeech}}</p>
                         <p>অধ্যক্ষ<br> বাংলাদেশ সার্ভে ইনস্টিটিউট </p>
                     </div>
                 </div>
            </div>
              <div class="col-12 col-md-9">
                  <p class="principalspace wow fadeIn animated" data-wow-delay=".60s">
-                     {{$Datakey->adminspeech}}
+                     {{$data->generalSpeech}}
                  </p>
-            </div>        
+            </div>  
+            @endforeach      
         @endif            
         </div>
 

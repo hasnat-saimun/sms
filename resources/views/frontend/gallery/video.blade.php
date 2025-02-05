@@ -1,6 +1,6 @@
 @extends('frontend.include')
 @section('fronttitle')
-Syllabus
+video
 @endsection
 @section('frontcontent')
 <style>
@@ -40,16 +40,15 @@ Syllabus
                     </div>
                 </div>
                 <div class="row row-cols-1 row-cols-md-2 ">
+                @if(!empty($Datakey)) 
+                @foreach($Datakey as $data)
                     <div class="col fit-videos text-center sm-margin-30px-bottom">
                         <!-- start vimeo video -->
-                        <iframe  width="550" height="315" src="https://player.vimeo.com/video/99585787?color=bb9b44&amp;title=0&amp;byline=0&amp;portrait=0&autoplay=true&muted=1"></iframe>
+                        <iframe  width="550" height="315" src="{{ asset('/public/upload/image/VideoGallery/').'/'.$data->avatar}}"></iframe>
                         <!-- end vimeo video -->
                     </div>
-                    <div class="col text-center fit-videos">
-                        <!-- start youtube video -->
-                        <iframe width="550" height="315" src="https://www.youtube.com/embed/sU3FkzUKHXU?autoplay=1;&mute=1;rel=0&amp;showinfo=0" allowfullscreen></iframe>
-                        <!-- end youtube video -->
-                    </div>
+                @endforeach
+                @endif
                 </div>
             </div>
         </section>

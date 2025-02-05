@@ -98,7 +98,7 @@
                                             class="fas fa-angle-right"></i>Photos</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('noticeList') }}" class="nav-link"><i class="fas fa-angle-right"></i> Videos</a>
+                                    <a href="{{ route('newVideo') }}" class="nav-link"><i class="fas fa-angle-right"></i> Videos</a>
                                 </li>
                             </ul>
                         </li>

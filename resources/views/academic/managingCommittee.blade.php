@@ -110,6 +110,17 @@ Managing Committee
                         <input type="text" name="validYear" class="form-control" placeholder="Enter committee valid date" value="{{ $validYear }}">
                     </div>
                     <div class="mb-3">
+                    <label for="avatar">Avatar (150px X 150px)</label>
+                        @if(empty($avatar))
+                        <input type="file" name="avatar" id="avatar"class="form-control-file">
+                        @else
+                        <div class="my-2">
+                            <img class="w-25" src="{{ asset('public/upload/image/cultivation').'/'.$avatar }}" class="form-control">
+                            <div><a href="{{ route('delImgContent',['id'=>$proId]) }}" class="text-danger fw-bold">Delete</a></div>
+                        </div>
+                        @endif
+                    </div>
+                    <div class="mb-3">
                         <button class="btn btn-success btn-lg mx-2" type="submit">Save</button>
                         <a class="btn btn-primary btn-lg mx-2" href="{{ route('managingCommittee') }}">New Profile</a>
                     </div>

@@ -43,7 +43,7 @@ Edit Profile
                             @if(!empty($profileData))
                             <form class="new-added-form" action="{{ route('updateTeacher') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <input type="hidden" value="{{ $profileData->id }}" name="profileId">
+                                <input type="hidden" value="{{ $profileData->id }}" name="teacherId">
                                 <div class="row">
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Teacher ID</label>
@@ -77,9 +77,7 @@ Edit Profile
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Date Of Birth *</label>
-                                        <input type="text" name="dob" placeholder="dd/mm/yyyy" class="form-control air-datepicker"
-                                            data-position='bottom right' value="{{ $profileData->dob }}">
-                                        <i class="far fa-calendar-alt"></i>
+                                        <input type="date" name="dob" placeholder="dd/mm/yyyy" class="form-control " value="{{ $profileData->dob }}">
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Designation *</label>
@@ -93,7 +91,7 @@ Edit Profile
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Join Date</label>
-                                        <input type="text" name="joinDate" placeholder="mm/dd/yyyy" class="form-control" value="{{ $profileData->joinDate }}">
+                                        <input type="date" name="joinDate" placeholder="mm/dd/yyyy" class="form-control" value="{{ $profileData->joinDate }}">
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Blood Group *</label>
@@ -124,7 +122,7 @@ Edit Profile
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>E-Mail</label>
-                                        <input type="email" name="teacherEmail" placeholder="Enter email" class="form-control" value="{{ $profileData->email }}">
+                                        <input type="email" name="teacherMail" placeholder="Enter email" class="form-control" value="{{ $profileData->email }}">
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Phone</label>

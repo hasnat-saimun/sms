@@ -39,14 +39,22 @@ body {
                         </tr>
                     </thead>
                     <tbody>
+                        @if(!empty($Datakey)) 
+                        @foreach($Datakey as $data)
                         
                         <tr class="text-center">
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>{{$data->fullName}}</td>
+                            <td>{{$data->startFrom}}</td>
+                            <td>{{$data->endTo}}</td>
                             <td> <img src="" style="width:70px; height:70px;"/></td>
                               
                         </tr>
+                        @endforeach
+                        @else
+                            <tr>
+                                <td colspan="6">Sorry! No data found</td>
+                            </tr>
+                        @endif   
                         
                         
                     </tbody>

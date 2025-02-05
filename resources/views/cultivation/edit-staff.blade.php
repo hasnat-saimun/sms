@@ -43,7 +43,7 @@ Edit Profile
                             @if(!empty($profileData))
                             <form class="new-added-form" action="{{ route('updateTeacher') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <input type="hidden" value="{{ $profileData->id }}" name="profileId">
+                                <input type="hidden" value="{{ $profileData->id }}" name="staffId">
                                 <div class="row">
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Staff ID</label>
@@ -77,9 +77,7 @@ Edit Profile
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Date Of Birth *</label>
-                                        <input type="text" name="dob" placeholder="dd/mm/yyyy" class="form-control air-datepicker"
-                                            data-position='bottom right' value="{{ $profileData->dob }}" required>
-                                        <i class="far fa-calendar-alt"></i>
+                                        <input type="date" name="dob" placeholder="dd/mm/yyyy" class="form-control" value="{{ $profileData->dob }}" required>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Designation *</label>
@@ -93,7 +91,7 @@ Edit Profile
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Join Date</label>
-                                        <input type="text" name="joinDate" placeholder="mm/dd/yyyy" class="form-control" value="{{ $profileData->joinDate }}" required>
+                                        <input type="date" name="joinDate" placeholder="mm/dd/yyyy" class="form-control" value="{{ $profileData->joinDate }}" required>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Blood Group *</label>
@@ -136,7 +134,7 @@ Edit Profile
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group mg-t-30">
                                         @if(!empty($profileData->avatar))
-                                            <img class="w-75" src="{{ asset('/public/upload/image/teacher/') }}/{{ $profileData->avatar }}" alt="$profileData->firstName.' '.$profileData->lastName"><br>
+                                            <img class="w-75" src="{{ asset('/public/upload/image/staff/') }}/{{ $profileData->avatar }}" alt="$profileData->firstName.' '.$profileData->lastName"><br>
                                             <a href="{{ route('delTeacherPhoto',['profileId'=>$profileData->id]) }}" class="btn btn-danger btn-lg">Remove</a>
                                         @else
                                             <label class="text-dark-medium">Avatar (150px X 150px)</label>

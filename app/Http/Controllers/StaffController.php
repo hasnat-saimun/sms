@@ -14,7 +14,7 @@ class StaffController extends Controller
         return view('cultivation.add-staff',['chk'=>$chk]);
     }
     public function confirmStaff(Request $requ){
-        $chk = StaffManagement::where(['email'=>$requ->staffEmail])->orWhere(['profileId'=>$requ->profileId])->get();
+        $chk = StaffManagement::where(['email'=>$requ->staffMail])->orWhere(['staffId'=>$requ->staffId])->get();
         if(count($chk)>0):
             // return 0;
             return back()->with('error','Opps Sorry! Profile already created');
@@ -42,7 +42,7 @@ class StaffController extends Controller
             $staffProfile->blGroup       = $requ->blGroup;
             $staffProfile->designation   = $requ->designation;
             $staffProfile->religion      = $requ->religion;
-            $staffProfile->profileId     = $requ->profileId;
+            $staffProfile->staffId     = $requ->staffId;
             $staffProfile->save();
 
             return back()->with('success','Owo Success! Profile created successfully');
@@ -60,7 +60,7 @@ class StaffController extends Controller
     }
 
     public function updateStaff(Request $requ){
-        $staffProfile = StaffManagement::find($requ->profileId);
+        $staffProfile = StaffManagement::find($requ->staffId);
         if(count($staffProfile)==0):
             return back()->with('error','Opps Sorry! Profile not found for update');
         else:
@@ -73,12 +73,12 @@ class StaffController extends Controller
             $staffProfile->gender        = $requ->gender;
             $staffProfile->dob           = $requ->dob;
             $staffProfile->joinDate      = $requ->joinDate;
-            $staffProfile->email         = $requ->staffEmail;
+            $staffProfile->email         = $requ->staffMail;
             $staffProfile->mobile        = $requ->mobile;
             $staffProfile->blGroup       = $requ->blGroup;
             $staffProfile->designation   = $requ->designation;
             $staffProfile->religion      = $requ->religion;
-            $staffProfile->profileId     = $requ->profileId;
+            $staffProfile->staffId     = $requ->staffId;
 
             if(!empty($requ->file('avatar'))):
                 $staffProfileAvatar = $requ->file('avatar');

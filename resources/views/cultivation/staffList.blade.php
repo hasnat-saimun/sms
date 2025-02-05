@@ -41,7 +41,7 @@ All Staffs
                                         @if(!empty($profileData))
                                         @foreach($profileData as $staff)
                                             <tr>
-                                                <td>{{ $staff->admitId }}</td>
+                                                <td>{{ $staff->staffId }}</td>
                                                 <td>{{ $staff->firstName." ".$staff->lastName }}</td>
                                                 <td>{{ $staff->joinDate }}</td>
                                                 <td>{{ $staff->email }}</td>

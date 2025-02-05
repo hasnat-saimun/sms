@@ -7,6 +7,9 @@ use App\Models\InstituteDetails;
 use App\Models\PrincipalSpeech;
 use App\Models\ExPrincipal;
 use App\Models\ManagingComittee;
+use App\Models\TeacherManagement;
+use App\Models\StaffManagement;
+use File;
 
 class InstituteController extends Controller
 {
@@ -142,7 +145,22 @@ class InstituteController extends Controller
         endif;
     }
 
-    public function delManagingComittee($id){
+    public function delImgContent($id){
+        $item = ManagingComittee::find($id);
+        // return public_path('upload/image/cultivation/syllabus/').$item->attachment;
+        if(!empty($item)):
+            if(File::exists(public_path('upload/image/cultivation/').$item->avatar)):
+                File::delete(public_path('upload/image/cultivation/').$item->avatar);
+            endif;
+            $item->avatar = NULL;
+            $item->save();
+            return back()->with('success','Item deleted successfully');
+        else:
+            return back()->with('success','Item failed to delete');
+        endif;
+    }
+
+    public function delManagingCommittee($id){
         $committee = ManagingComittee::find($id);
         if($committee->delete()):
             return back()->with('success','Congrats! Data delete successfully');
@@ -158,29 +176,35 @@ class InstituteController extends Controller
 
     //institute info
     public function institutePage(){
-        return view('frontend.institute.instituteInfo');
+        $syllabus  =   InstituteDetails::all();
+        return view('frontend.institute.instituteInfo',['Datakey'=>$syllabus]);
     }
     //principalSpeech
     public function principalSpeechPage(){
-        return view('frontend.institute.principalSpeech');
+        $syllabus  =   PrincipalSpeech::all();
+        return view('frontend.institute.principalSpeech',['Datakey'=>$syllabus]);
     }
     //X-principal
     public function exprincipalPage(){
-        return view('frontend.institute.exprincipal');
+        $syllabus  =   ExPrincipal::all();
+        return view('frontend.institute.exprincipal',['Datakey'=>$syllabus]);
     }
 
     //teacher list page
     public function teacherPage(){
-        return view('frontend.institute.teachers');
+        $syllabus  =   TeacherManagement::all();
+        return view('frontend.institute.teachers',['Datakey'=>$syllabus]);
     }
 
     //staff list page
     public function staffPage(){
-        return view('frontend.institute.staff');
+        $syllabus  =   StaffManagement::all();
+        return view('frontend.institute.staff',['Datakey'=>$syllabus]);
     }
 
     //comittee list page
     public function comitteePage(){
-        return view('frontend.institute.comittee');
+        $syllabus  =   ManagingComittee::all();
+        return view('frontend.institute.comittee',['Datakey'=>$syllabus]);
     }
 }

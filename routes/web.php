@@ -146,6 +146,36 @@ Route::get('/cultivation/photo/delete/{id}',[
 ])->name('delPhoto');
 
 //image end
+
+//video str
+
+Route::get('/cultivation/institute/video/',[
+    GalleryController::class,
+    'newVideo'
+])->name('newVideo');
+
+Route::post('/cultivation/video/save',[
+    GalleryController::class ,
+    'saveVideo'
+])->name('saveVideo');
+
+Route::get('/cultivation/video/edit/{id}',[
+    GalleryController::class ,
+    'editVideo'
+])->name('editVideo');
+
+Route::get('/cultivation/video/content/delete/{id}',[
+    GalleryController::class ,
+    'delVideoContent'
+])->name('delVideoContent');
+
+Route::get('/cultivation/video/delete/{id}',[
+    GalleryController::class ,
+    'delVideo'
+])->name('delVideo');
+
+//video end
+
 Route::get('/cultivation/institute/info/',[
     InstituteController::class,
     'insInfo'
@@ -205,6 +235,11 @@ Route::get('/cultivation/institute/committee/edit/{id}',[
     InstituteController::class ,
     'editManagingCommittee'
 ])->name('editManagingCommittee');
+
+Route::get('/cultivation/institute/committee/dlt/image/{id}',[
+    InstituteController::class ,
+    'delImgContent'
+])->name('delImgContent');
 
 Route::get('/cultivation/institute/committee/del/{id}',[
     InstituteController::class ,

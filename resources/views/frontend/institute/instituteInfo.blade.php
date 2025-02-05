@@ -34,20 +34,35 @@ Syllabus
 
  <section class="my-4">
     <div class="container">
+        @if(!empty($Datakey)) 
+        @foreach($Datakey as $data)
         <div class="row mb-1">
             <div class="col-md-12 text-center con-title">
-                <h2  class=" wow fadeInLeft animated" data-wow-delay=".60s">Sonar Bangla College</h2>
+                <h2  class=" wow fadeInLeft animated" data-wow-delay=".60s">{{$data->insHeadline}}</h2>
            </div>
         </div>
 
         <div class="row align-items-center mt-0">
              <div class="col-md-8 col-12 mx-auto">
-                <img  class="w-100 wow fadeIn animated" data-wow-delay="1s" src="{{ asset('/public/') }}/img/sbcWhiteLogo.png" />
+                <img  class="w-100 wow fadeIn animated" data-wow-delay="1s" src="{{ asset('/public/upload/image/cultivation/').'/'.$data->heroImg}}">
            </div>
              <div class="col-md-10 col-12 mx-auto">
-                 <p class="principalspace wow fadeIn animated" data-wow-delay="1s" >  সোনার বাংলা কলেজ একটি বেসরকারি কলেজ যা কুমিল্লা জেলার বুড়িচং উপজেলার গোবিন্দপুর গ্রামে কুমিল্লা-বুড়িচং আঞ্চলিক সড়কের পাশে ২০০০ সালে প্রতিষ্ঠিত হয়। সোনার বাংলা কলেজ. নীতিবাক্য, ভালো ছাত্রের পাশাপাশি ভালো মানুষ গড়তে চাই.</p>
+                 <p class="principalspace wow fadeIn animated" data-wow-delay="1s" >  {{$data->insDetails}}
+                 </p>
+                 <p class="principalspace wow fadeIn animated" data-wow-delay="1s" >  
+                 {{$data->establishDate}}
+                 </p><p class="principalspace wow fadeIn animated" data-wow-delay="1s" >  
+                 {{$data->landSize}}
+                 </p><p class="principalspace wow fadeIn animated" data-wow-delay="1s" > 
+                 {{$data->mission}}
+                 </p><p class="principalspace wow fadeIn animated" data-wow-delay="1s" > 
+                 {{$data->vision}}
+                 
+                 </p>
             </div>    
         </div>
+        @endforeach
+        @endif
     </div>
 </section>
 
