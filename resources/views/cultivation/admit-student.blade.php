@@ -95,9 +95,8 @@ New Admission
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Date Of Birth *</label>
-                                        <input type="date" name="dob" placeholder="dd/mm/yyyy" class="form-control air-datepicker"
-                                            data-position='bottom right' required>
-                                        <i class="far fa-calendar-alt"></i>
+                                        <input type="date" name="dob" placeholder="dd/mm/yyyy" class="form-control "
+                                            required>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Blood Group *</label>
