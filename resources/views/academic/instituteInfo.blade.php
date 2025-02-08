@@ -29,6 +29,20 @@ Institute Info
 <div class="row gutters-20 mb-4">
     <div class="col-10 mx-auto">
         <div class="card">
+            <div class="row">
+                <div class="col-12">
+                    @if(session()->has('success'))
+                        <div class="alert alert-success w-100">
+                            {{ session()->get('success') }}
+                        </div>
+                    @endif
+                    @if(session()->has('error'))
+                        <div class="alert alert-danger w-100">
+                            {{ session()->get('error') }}
+                        </div>
+                    @endif
+                </div>
+            </div>
             <div class="card-header">Institute Info</div>
             <div class="card-body cultivation">
                 <form action="{{ route('insDetails') }}" class="form" method="POST" enctype="multipart/form-data">

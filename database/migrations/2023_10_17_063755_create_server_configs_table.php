@@ -15,12 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('institueName')->nullable();
             $table->string('address')->nullable();
-            $table->string('officeMobiile')->nullable();
+            $table->string('officeMobile')->nullable();
             $table->string('officeEmail')->nullable();
             $table->string('loginPass')->nullable();
             $table->string('logo')->nullable();
             $table->string('favicon')->nullable();
             $table->string('facebookPage')->nullable();
+            $table->string('einNumber')->nullable();
             $table->string('twitterLink')->nullable();
             $table->string('youtubeChanel')->nullable();
             $table->string('linkedIn')->nullable();
@@ -30,6 +31,9 @@ return new class extends Migration
             $table->string('principalMobile')->nullable();
             $table->string('principalMail')->nullable();
             $table->string('principalSign')->nullable();
+            $table->string('studentIdPrefix')->nullable();
+            $table->string('teacherIdPrefix')->nullable();
+            $table->string('staffIdPrefix')->nullable();
             $table->string('establishDate')->nullable();
             $table->timestamps();
         });

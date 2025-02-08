@@ -55,7 +55,7 @@
                         @endif
                     </div>
                 </div>
-                @if(!empty($cultivation) && count((array)$cultivation)>0)
+                @if($cultivation->count()>0)                
                 <form action="{{ route('cultivationLogin') }}" class="login-form" method="POST">
                     @csrf
                     <div class="form-group">

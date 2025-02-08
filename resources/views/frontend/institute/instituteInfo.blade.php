@@ -47,15 +47,20 @@ Syllabus
                 <img  class="w-100 wow fadeIn animated" data-wow-delay="1s" src="{{ asset('/public/upload/image/cultivation/').'/'.$data->heroImg}}">
            </div>
              <div class="col-md-10 col-12 mx-auto">
-                 <p class="principalspace wow fadeIn animated" data-wow-delay="1s" >  {{$data->insDetails}}
+                <h4 class="mt-4">About Us</h4>
+                 <p class="wow fadeIn animated" data-wow-delay="1s" >  {{$data->insDetails}}
                  </p>
-                 <p class="principalspace wow fadeIn animated" data-wow-delay="1s" >  
+                 <h4>Establish Date</h4>
+                 <p class="wow fadeIn animated" data-wow-delay="1s" >  
                  {{$data->establishDate}}
-                 </p><p class="principalspace wow fadeIn animated" data-wow-delay="1s" >  
+                 <h4>Total Area</h4>
+                 </p><p class="wow fadeIn animated" data-wow-delay="1s" >  
                  {{$data->landSize}}
-                 </p><p class="principalspace wow fadeIn animated" data-wow-delay="1s" > 
+                 <h4>Our Mission</h4>
+                 </p><p class="wow fadeIn animated" data-wow-delay="1s" > 
                  {{$data->mission}}
-                 </p><p class="principalspace wow fadeIn animated" data-wow-delay="1s" > 
+                 <h4>Our Vision</h4>
+                 </p><p class="wow fadeIn animated" data-wow-delay="1s" > 
                  {{$data->vision}}
                  
                  </p>

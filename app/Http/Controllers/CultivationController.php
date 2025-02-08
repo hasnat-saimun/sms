@@ -15,7 +15,7 @@ class CultivationController extends Controller
         return view('cultivation.index');
     }
 
-    public function config(){
+    public function serverConfig(){
         return view('cultivation.configuration');
     }
 

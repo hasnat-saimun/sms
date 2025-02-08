@@ -120,19 +120,19 @@ Configuration
                             </div>
                             <div class="mb-3">
                                 <label for="facebookPage" class="form-label">Facebook Page</label>
-                                <input type="text" name="facebookPage" class="form-control" id="facebookPage" value="{{ $fbPage }}" placeholder="Enter facebook page link here" required>
+                                <input type="text" name="facebookPage" class="form-control" id="facebookPage" value="{{ $fbPage }}" placeholder="Enter facebook page link here">
                             </div>
                             <div class="mb-3">
                                 <label for="twitterLink" class="form-label">Twitter Profile</label>
-                                <input type="text" name="twitterLink" class="form-control" id="twitterLink" value="{{ $twitterLink }}" placeholder="Enter twitter profile Link" required>
+                                <input type="text" name="twitterLink" class="form-control" id="twitterLink" value="{{ $twitterLink }}" placeholder="Enter twitter profile Link">
                             </div>
                             <div class="mb-3">
                                 <label for="youtubeChanel" class="form-label">Youtube Chanel</label>
-                                <input type="text" name="youtubeChanel" class="form-control" id="youtubeChanel" value="{{ $youtubeLink }}" placeholder="Enter youtube chanel link" required>
+                                <input type="text" name="youtubeChanel" class="form-control" id="youtubeChanel" value="{{ $youtubeLink }}" placeholder="Enter youtube chanel link">
                             </div>
                             <div class="mb-3">
                                 <label for="establishDate" class="form-label">Establish Date</label>
-                                <input type="text" name="establishDate" class="form-control" id="establishDate" value="{{ $establishDate }}" placeholder="Enter establish date" required>
+                                <input type="text" name="establishDate" class="form-control" id="establishDate" value="{{ $establishDate }}" placeholder="Enter establish date">
                             </div>
                         </div>
                     </div>
@@ -189,7 +189,7 @@ Configuration
                             <form class="form" action="{{ route('saveFavicon') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" name="serverId" value="{{ $serverId }}">
-                                <input type="file" name="favicon" class="form-control" id="favicon" required>
+                                <input type="file" name="favicon" class="form-control" id="favicon">
                                 <button type="submit" class="btn btn-primary btn-lg mt-4">Update</button>
                             </form>
                             @else

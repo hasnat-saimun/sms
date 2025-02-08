@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('institute_details', function (Blueprint $table) {
             $table->id();
             $table->string('insHeadline')->nullable();
-            $table->string('insDetails')->nullable();
+            $table->longText('insDetails')->nullable();
             $table->string('landSize')->nullable();
             $table->string('establishDate')->nullable();
             $table->string('heroImg')->nullable();

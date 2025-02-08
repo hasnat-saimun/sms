@@ -9,6 +9,7 @@ use App\Models\ExPrincipal;
 use App\Models\ManagingComittee;
 use App\Models\TeacherManagement;
 use App\Models\StaffManagement;
+use App\Models\ServerConfig;
 use File;
 
 class InstituteController extends Controller
@@ -46,6 +47,22 @@ class InstituteController extends Controller
             return back()->with('error','Sorry! Data failed to save. Please try later');
         endif;
     }
+
+    public function delHeroImg($id){
+        $item = InstituteDetails::find($id);
+        // return public_path('upload/image/cultivation/syllabus/').$item->attachment;
+        if(!empty($item)):
+            if(File::exists(public_path('upload/image/cultivation/').$item->heroImg)):
+                File::delete(public_path('upload/image/cultivation/').$item->heroImg);
+            endif;
+            $item->heroImg = NULL;
+            $item->save();
+            return back()->with('success','Item deleted successfully');
+        else:
+            return back()->with('success','Item failed to delete');
+        endif;
+    }
+
 
     public function principalSpeech(){
         return view('academic.principalSpeech');
@@ -145,21 +162,6 @@ class InstituteController extends Controller
         endif;
     }
 
-    public function delImgContent($id){
-        $item = ManagingComittee::find($id);
-        // return public_path('upload/image/cultivation/syllabus/').$item->attachment;
-        if(!empty($item)):
-            if(File::exists(public_path('upload/image/cultivation/').$item->avatar)):
-                File::delete(public_path('upload/image/cultivation/').$item->avatar);
-            endif;
-            $item->avatar = NULL;
-            $item->save();
-            return back()->with('success','Item deleted successfully');
-        else:
-            return back()->with('success','Item failed to delete');
-        endif;
-    }
-
     public function delManagingCommittee($id){
         $committee = ManagingComittee::find($id);
         if($committee->delete()):
@@ -181,8 +183,12 @@ class InstituteController extends Controller
     }
     //principalSpeech
     public function principalSpeechPage(){
-        $syllabus  =   PrincipalSpeech::all();
-        return view('frontend.institute.principalSpeech',['Datakey'=>$syllabus]);
+        $pSpeech  =   PrincipalSpeech::orderBy('id','DESC')->first();
+
+        $principalData  = TeacherManagement::where(['designation'=>1])->orWhere(['designation'=>2])->first();
+        $cultivation    = ServerConfig::orderBy('id','DESC')->first();
+        // $cultivation->count();
+        return view('frontend.institute.principalSpeech',['pSpeech'=>$pSpeech,'cultivation'=>$cultivation,'principal'=>$principalData]);
     }
     //X-principal
     public function exprincipalPage(){

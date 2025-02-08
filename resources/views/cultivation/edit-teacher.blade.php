@@ -85,8 +85,9 @@ Edit Profile
                                             <option value="{{ $profileData->designation }}">Principal</option>
                                             <option value="">Select *</option>
                                             <option value="1">Principal</option>
-                                            <option value="2">Vice Principal</option>
-                                            <option value="B+">Teacher</option>
+                                            <option value="2">Principal(Incharge)</option>
+                                            <option value="3">Vice Principal</option>
+                                            <option value="4">Teacher</option>
                                         </select>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
