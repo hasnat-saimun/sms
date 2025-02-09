@@ -14,8 +14,8 @@ Syllabus
         <div class="row">
         @if(!empty($Datakey)) 
         @foreach($Datakey as $data)
-            <div class="col-md-4 mb-4  ">
-                <a class="wow fadeIn animated" data-wow-delay=".60s" href="{{ asset('/public/upload/image/photogallery/').'/'.$data->avatar}}" data-lightbox="mygallery" data-toggle="modal" data-target="#">
+            <div class="col-md-4 mb-4  " >
+                <a class="wow fadeIn animated " data-wow-delay=".60s" href="{{ asset('/public/upload/image/photogallery/').'/'.$data->avatar}}" data-lightbox="mygallery" data-toggle="modal" data-target="#">
                     <img data-bs-toggle="modal" data-bs-target="#staticBackdrop" src="{{ asset('/public/upload/image/photogallery/').'/'.$data->avatar}}" alt="" class="w-100 img-rounded"/>
                 </a>
             </div>
