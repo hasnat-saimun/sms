@@ -6,7 +6,7 @@ Enter to learn & Leave to serve
     @include('frontend.sliderinfo')
 @endsection
 @section('sideinfo')
-    @include('frontend.sideinfo')
+    @include('frontend.sideInfo')
 @endsection
 
 @section('frontcontent')
