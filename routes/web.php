@@ -42,7 +42,7 @@ use App\Http\Middleware\VerifyCsrfToken;
 |
 */
 
-Route::get('/home',[
+Route::get('/',[
     FrontController::class,
     'homePage'
 ])->name('homePage');
