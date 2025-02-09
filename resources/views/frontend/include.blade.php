@@ -122,12 +122,7 @@
         @yield('sliderninfo')
         <div class="container-fluid">
             <div class="row">
-                <div class="col-3 mx-auto">
-                    @yield('sideinfo')
-                </div>
-                <div class="col-8 mx-auto">
-                    @yield('frontcontent')
-                </div>
+                @yield('frontcontent')
             </div>
         </div>
         <footer class="mt-5 container-fluid">
