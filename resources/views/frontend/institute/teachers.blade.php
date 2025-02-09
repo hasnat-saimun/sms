@@ -53,7 +53,7 @@ Syllabus
                                 </tr>
                                 <tr>
                                     <th style="width:15%">Designation</th>
-                                    <td colspan="3">: {{$data->designation}}</td>
+                                    <td colspan="3">: @if($data->designation==1) Principal @elseif($data->designation==2) Principal(Incharge) @elseif($data->designation==3) Vice Principal @else Teacher @endif</td>
                                 </tr>
                                 <tr>
                                     <th style="width:15%">Mobile</th>
