@@ -74,7 +74,7 @@ Syllabus Management
                     <div class="mb-3">
                         <label for="assignDepartment">Department</label>
                         <select name="assignDepartment" class="form-select">
-                            @if(!empty($itemId))
+                            @if(!empty($deptId))
                             @php
                                 $existDept = \App\Models\Department::find($assignDepartment);
                             @endphp
