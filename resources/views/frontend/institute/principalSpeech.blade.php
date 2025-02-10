@@ -48,7 +48,7 @@ body {
            </div>
         </div>
         <div class="row align-items-center">
-            @if($pSpeech->count()>0)
+            @if(!empty($pSpeech))
             @php
                 if(!empty($cultivation)):
                     $insName = $cultivation->institueName;
