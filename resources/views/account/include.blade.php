@@ -67,7 +67,7 @@
             <div class="dashboard-content-one">
                 <!-- Breadcubs Area Start Here -->
                 <div class="breadcrumbs-area d-print-none">
-                    <h3>Academic Panel</h3>
+                    <h3>Account Panel</h3>
                     <ul>
                         <li>
                             <a href="{{ route('cultivationIndex') }}">Home</a>

@@ -52,7 +52,7 @@ Edit Student
                                 <div class="row"><div class="col-xl-3 col-lg-6 col-12 form-group mg-t-30">
                                         @if(!empty($stdData->avatar))
                                         <img class="w-75" src="{{ asset('/public/upload/image/student/') }}/{{$stdData->avatar}}" alt="$stdData->firstName.' '.$stdData->lastName"><br>
-                                        <a href="{{route('delStudentPhoto',['stdId'=>$stdData->id])}}" class="btn btn-danger btn-lg">Remove</a>
+                                        <a href="{{route('delStudentPhoto',['stdId'=>$stdData->id])}}" class=" mt-3 w-75 btn btn-danger btn-lg">Remove</a>
                                         @else
                                         <label class="text-dark-medium">Avatar (150px X 150px)</label>
                                         <input type="file" name="avatar" class="form-control-file">

@@ -86,11 +86,13 @@ class InstituteController extends Controller
 
     //ex principal
     public function editExPrincipal($id){
-        return view('academic.exPrincipal',['exId'=>$id]);
+        $placement = ExPrincipal::orderBy('id','DESC')->get();
+        return view('academic.exPrincipal',['exId'=>$id,'placementList'=>$placement]);
     }
 
     public function exPrincipal(){
-        return view('academic.exPrincipal');
+        $exp = ExPrincipal::orderBy('id','DESC')->get();
+        return view('academic.exPrincipal',['expList'=>$exp]);
     }
 
     public function saveExPrincipal(Request $requ){
@@ -106,6 +108,14 @@ class InstituteController extends Controller
         $exPrincipal->startFrom     = $requ->joinDate;
         $exPrincipal->endTo         = $requ->exitDate;
         $exPrincipal->designation   = $requ->designation;
+        if(!empty($requ->avatar)):
+            $stdAvatar = $requ->file('avatar');
+            $newAvatar = rand().date('Ymd').'.'.$stdAvatar->getClientOriginalExtension();
+            $stdAvatar->move(public_path('upload/image/exPrincipal/'),$newAvatar);
+
+            $exPrincipal->avatar = $newAvatar;
+        endif;
+
         if($exPrincipal->save()):
             return back()->with('success','Congrats! Data saved successfully');
         else:
@@ -113,12 +123,30 @@ class InstituteController extends Controller
         endif;
     }
 
+    public function delexPlcCon($id){
+        $item = ExPrincipal::find($id);
+        // return public_path('upload/image/cultivation/syllabus/').$item->attachment;
+        if(!empty($item)):
+            if(File::exists(public_path('upload/image/exPrincipal/').$item->avatar)):
+                File::delete(public_path('upload/image/exPrincipal/').$item->avatar);
+            endif;
+            $item->avatar = NULL;
+            $item->save();
+            return back()->with('success','Item deleted successfully');
+        else:
+            return back()->with('success','Item failed to delete');
+        endif;
+    }
     public function delExPrincipal($id){
         $exPrincipal = ExPrincipal::find($id);
-        if($exPrincipal->delete()):
-            return back()->with('success','Congrats! Data delete successfully');
+        if(!empty($item)):
+            if(File::exists(public_path('upload/image/exPrincipal/').$item->avatar)):
+                File::delete(public_path('upload/image/exPrincipal/').$item->avatar);
+            endif;
+            $item->delete();
+            return back()->with('success','Item deleted successfully');
         else:
-            return back()->with('error','Sorry! Data failed to delete. Please try later');
+            return back()->with('success','Item failed to delete');
         endif;
     }
 

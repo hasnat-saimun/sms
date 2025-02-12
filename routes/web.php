@@ -216,6 +216,10 @@ Route::get('/cultivation/institute/principal/exList/edit/{id}',[
     'editExPrincipal'
 ])->name('editExPrincipal');
 
+Route::get('/cultivation/academic/exPlc/content/delete/{id}',[
+    InstituteController::class ,
+    'delexPlcCon'
+])->name('delexPlcCon');
 Route::get('/cultivation/institute/principal/exList/del/{id}',[
     InstituteController::class ,
     'delExPrincipal'

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('startFrom')->nullable();
             $table->string('endTo')->nullable();
             $table->string('designation')->nullable();
+            $table->string('avatar')->nullable();
             $table->timestamps();
         });
     }

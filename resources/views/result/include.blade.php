@@ -119,7 +119,7 @@
             <div class="dashboard-content-one">
                 <!-- Breadcubs Area Start Here -->
                 <div class="breadcrumbs-area d-print-none">
-                    <h3>Cultivation | Result Management Panel</h3>
+                    <h3>Result Management Panel</h3>
                     <ul>
                         <li>
                             <a href="{{ route('resultPart') }}">Home</a>

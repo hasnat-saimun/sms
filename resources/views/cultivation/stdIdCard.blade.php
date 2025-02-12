@@ -18,7 +18,7 @@ Student ID Card
                                 $sessionData  = \App\Models\sessionManage::find($std->sessName);
                                 $classData  = \App\Models\classManage::find($std->className);
                                 $sectionData  = \App\Models\sectionManage::find($std->sectionName);
-                                if(isset($sessionData) && count($sessionData)>0){
+                                if(isset($sessionData)){
                                     $sessionName= $sessionData->session;
                                 }else{
                                     $sessionName= '-';

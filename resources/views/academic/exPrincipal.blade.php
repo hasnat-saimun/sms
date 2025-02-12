@@ -13,6 +13,7 @@
         $exJoin     = "";
         $exRetire   = "";
         $exDesig    = "";
+        $avatar     = "";
 
         if(!empty($exId)):
             $exList       = \App\Models\ExPrincipal::find($exId);
@@ -24,6 +25,7 @@
                 $exJoin     = $exList->startFrom;
                 $exRetire   = $exList->endTo;
                 $exDesig    = $exList->designation;
+                $avatar     = $exList->avatar;
             endif;
         endif;
     @endphp
@@ -81,6 +83,17 @@
                             </select>
                         </div>
                         <div class="mb-3">
+                            <label for="avatar">Avatar(PDF/Photo)</label>
+                            @if(!empty($avatar))
+                            <div>
+                                <img src="{{ asset('public/upload/image/exPrincipal/').'/'.$avatar }}" class="w-25"alt="#"><br>
+                                <a href="{{ route('delexPlcCon',['id'=>$explId]) }}" class="mt-3 w-25 btn btn-danger btn-lg">Delete</a>
+                            </div>
+                            @else
+                            <input type="file" name="avatar" class="form-control-file">
+                            @endif
+                        </div>
+                        <div class="my-5">
                             <button class="btn btn-success btn-lg mx-2" type="submit">Save</button>
                             <a class="btn btn-primary btn-lg mx-2" href="{{ route('exPrincipal') }}">New Profile</a>
                         </div>
