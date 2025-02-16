@@ -125,7 +125,6 @@ class InstituteController extends Controller
 
     public function delexPlcCon($id){
         $item = ExPrincipal::find($id);
-        // return public_path('upload/image/cultivation/syllabus/').$item->attachment;
         if(!empty($item)):
             if(File::exists(public_path('upload/image/exPrincipal/').$item->avatar)):
                 File::delete(public_path('upload/image/exPrincipal/').$item->avatar);
@@ -138,7 +137,7 @@ class InstituteController extends Controller
         endif;
     }
     public function delExPrincipal($id){
-        $exPrincipal = ExPrincipal::find($id);
+        $item = ExPrincipal::find($id);
         if(!empty($item)):
             if(File::exists(public_path('upload/image/exPrincipal/').$item->avatar)):
                 File::delete(public_path('upload/image/exPrincipal/').$item->avatar);
@@ -190,12 +189,31 @@ class InstituteController extends Controller
         endif;
     }
 
-    public function delManagingCommittee($id){
-        $committee = ManagingComittee::find($id);
-        if($committee->delete()):
-            return back()->with('success','Congrats! Data delete successfully');
+    
+
+    public function delImgContent($id){
+        $item = ManagingComittee::find($id);
+        if(!empty($item)):
+            if(File::exists(public_path('upload/image/cultivation/').$item->avatar)):
+                File::delete(public_path('upload/image/cultivation/').$item->avatar);
+            endif;
+            $item->avatar = NULL;
+            $item->save();
+            return back()->with('success','Item deleted successfully');
         else:
-            return back()->with('error','Sorry! Data failed to delete. Please try later');
+            return back()->with('success','Item failed to delete');
+        endif;
+    }
+    public function delManagingCommittee($id){
+        $item = ManagingComittee::find($id);
+        if(!empty($item)):
+            if(File::exists(public_path('upload/image/cultivation/').$item->avatar)):
+                File::delete(public_path('upload/image/cultivation/').$item->avatar);
+            endif;
+            $item->delete();
+            return back()->with('success','Item deleted successfully');
+        else:
+            return back()->with('success','Item failed to delete');
         endif;
     }
 

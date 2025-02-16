@@ -58,5 +58,15 @@ class NoticeController extends Controller
         else:
             return back()->with('error','Sorry! No data found');
         endif;
+
+        
+    }
+    public function delNotice($id){
+        $delNotice = Notice::find($id);
+        if($delNotice->delete()):
+            return back()->with('success','Congrats! Data delete successfully');
+        else:
+            return back()->with('error','Sorry! Data failed to delete. Please try later');
+        endif;
     }
 }

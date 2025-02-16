@@ -46,8 +46,7 @@ body {
                             <td>{{$data->fullName}}</td>
                             <td>{{$data->startFrom}}</td>
                             <td>{{$data->endTo}}</td>
-                            <td> <img src="" style="width:70px; height:70px;"/></td>
-                              
+                            <td> <img src="{{ asset('public/upload/image/exPrincipal').'/'.$data->avatar }}" style="width:70px; height:70px;"/></td>
                         </tr>
                         @endforeach
                         @else
