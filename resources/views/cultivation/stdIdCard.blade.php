@@ -19,8 +19,11 @@ Student ID Card
                                 $classData  = \App\Models\classManage::find($std->className);
                                 $sectionData  = \App\Models\sectionManage::find($std->sectionName);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                                 if(isset($sessionData)){
 =======
+=======
+>>>>>>> Stashed changes
                             @endphp 
                                 if(isset($sessionData) && count($sessionData)>0){
 >>>>>>> Stashed changes
