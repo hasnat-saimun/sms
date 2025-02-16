@@ -21,12 +21,12 @@
                         <div class="card dashboard-card-seven">
                             <div class="social-media bg-twitter hover-twitter">
                                 <div class="media media-none--lg">
-                                        <div class="social-icon">
-                                        <i class="fab fa-twitter"></i>
-                                        </div>
-                                        <div class="media-body space-sm">
-                                            <h6 class="item-title">Follow us on twitter</h6>
-                                        </div>
+                                    <div class="social-icon">
+                                    <i class="fab fa-twitter"></i>
+                                    </div>
+                                    <div class="media-body space-sm">
+                                        <h6 class="item-title">Follow us on twitter</h6>
+                                    </div>
                                 </div>
                                 <div class="social-like">1,11,000</div>
                             </div>
