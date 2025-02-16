@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Marksheet;
-use App\Models\StudentManagement;
+use App\Models\newAdmission;
 use App\Models\GradeList;
 
 class MarksheetController extends Controller
@@ -13,7 +13,7 @@ class MarksheetController extends Controller
         return view('result.add-marks');
     }
     public function getMarks(Request $requ){
-        $studentList = StudentManagement::where(['session'=>$requ->sessionId,'section'=>$requ->groupId])->get();
+        $studentList = newAdmission::where(['sessName'=>$requ->sessionId,'sectionName'=>$requ->groupId])->get();
         return view('result.get-marks',['studentList'=>$studentList,'groupId'=>$requ->groupId,'classId'=>$requ->classId,'sessionId'=>$requ->sessionId,'examId'=>$requ->examId,'subjectId'=>$requ->subjectId]);
     }
 
@@ -67,7 +67,7 @@ class MarksheetController extends Controller
 
     public function generateMarksheet(Request $requ){
         // return $requ->stdId;
-        $studentList = StudentManagement::where(['admitId'=>$requ->stdId])->first();
+        $studentList = newAdmission::where(['admitId'=>$requ->stdId])->first();
         return view('result.marksheetGenerate',['studentDetails'=>$studentList,'groupId'=>$requ->groupId,'classId'=>$requ->classId,'sessionId'=>$requ->sessionId,'examId'=>$requ->examId]);
     }
 
