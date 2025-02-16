@@ -34,7 +34,7 @@ Edit Department
                                 <div class="row">
                                     <div class="col-12 form-group">
                                         <label>Department Name *</label>
-                                        <input type="text" name="section" value="{{ $item->section }}" placeholder="Enter the class name" class="form-control" required>
+                                        <input type="text" name="section" value="{{ $item->section }}" placeholder="Enter the group name" class="form-control" required>
                                     </div>
                                     <div class="col-12 form-group mg-t-8">
                                         <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>

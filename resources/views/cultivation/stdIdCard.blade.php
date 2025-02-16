@@ -18,7 +18,12 @@ Student ID Card
                                 $sessionData  = \App\Models\sessionManage::find($std->sessName);
                                 $classData  = \App\Models\classManage::find($std->className);
                                 $sectionData  = \App\Models\sectionManage::find($std->sectionName);
+<<<<<<< Updated upstream
                                 if(isset($sessionData)){
+=======
+                            @endphp 
+                                if(isset($sessionData) && count($sessionData)>0){
+>>>>>>> Stashed changes
                                     $sessionName= $sessionData->session;
                                 }else{
                                     $sessionName= '-';
@@ -35,8 +40,6 @@ Student ID Card
                                 }else{
                                     $sectionName= '-';
                                 }
-                                
-                            @endphp
                             <div class="row">
                                 <div class="col-6 mx-auto">
                                     <div class="row" id="idCardOne">

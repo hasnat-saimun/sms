@@ -47,7 +47,7 @@ Create Exam
                                         <select name="examClass" id="" class="form-control" required>
                                             <option value="0">All Class</option>
                                             @php 
-                                                $itemData = \App\Models\Classes::orderBy('id','DESC')->get();
+                                                $itemData = \App\Models\classManage::orderBy('id','DESC')->get();
                                             @endphp
                                             @if(!empty($itemData))
                                             @foreach($itemData as $item)

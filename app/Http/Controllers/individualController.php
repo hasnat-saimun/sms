@@ -187,14 +187,14 @@ class individualController extends Controller
     public function updateDepartment(Request $requ){
         $chkData = sectionManage::where(['section'=>$requ->section])->get();
 
-        if(!empty($chkData) && count($chkData)>0):
+        if($chkData->isEmpty() && $chkData->count()>0):
             return back()->with('error','Data entry failed');
         else:
             $updateData =  sectionManage::find($requ->itemId);
             $updateData ->section = $requ->section;
 
             if($updateData->save()):
-                return redirect(route('sectionForm'))->with("success",'update successfully');
+                return back()->with("success",'update successfully');
             else:
                 return back()->with("error",'Data update failed');
             endif;

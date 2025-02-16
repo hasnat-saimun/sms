@@ -49,7 +49,7 @@ Add New Marks
                                         <select class="select2" name="classId" required>
                                             <option value="">Select *</option>
                                             @php
-                                                $classes = \App\Models\Classes::orderBy('id','DESC')->get();
+                                                $classes = \App\Models\classManage::orderBy('id','DESC')->get();
                                             @endphp
                                             @if(!empty($classes))
                                                 @foreach($classes as $cls)
@@ -63,11 +63,11 @@ Add New Marks
                                         <select class="select2" name="sessionId" required>
                                             <option value="">Select *</option>
                                             @php
-                                                $sessions = \App\Models\Session::orderBy('id','DESC')->get();
+                                                $sessions = \App\Models\sessionManage::orderBy('id','DESC')->get();
                                             @endphp
                                             @if(!empty($sessions))
                                                 @foreach($sessions as $sess)
-                                                <option value="{{ $sess->id }}">{{ $sess->sessionName }}</option>
+                                                <option value="{{ $sess->id }}">{{ $sess->session }}</option>
                                                 @endforeach
                                             @endif
                                         </select>
@@ -77,11 +77,11 @@ Add New Marks
                                         <select class="select2" name="groupId" required>
                                             <option value="">Select *</option>
                                             @php
-                                                $department = \App\Models\Department::orderBy('id','DESC')->get();
+                                                $department = \App\Models\sectionManage::orderBy('id','DESC')->get();
                                             @endphp
                                             @if(!empty($department))
                                                 @foreach($department as $dept)
-                                                <option value="{{ $dept->id }}">{{ $dept->departmentName }}</option>
+                                                <option value="{{ $dept->id }}">{{ $dept->section }}</option>
                                                 @endforeach
                                             @endif
                                         </select>
