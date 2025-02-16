@@ -30,7 +30,7 @@ class admissionController extends Controller
     
     
     public function confirmAdmit(Request $requ){
-        $chk = newAdmission::where(['rollNumber'=>$requ->rollNumber,'className'=>$requ->className,'sessName'=>$requ->sessName,'sectionName'=>$requ->sectionName])->get();
+        return $chk = newAdmission::where(['rollNumber'=>$requ->rollNumber,'className'=>$requ->className,'sessName'=>$requ->sessName,'sectionName'=>$requ->sectionName])->get();
         if(!empty($chk) && count($chk)>0):
             return back()->with('error','Data already exist');
         else:
@@ -102,39 +102,35 @@ class admissionController extends Controller
     //update
     public function updateAdmit(Request $requ){
             $data = newAdmission::find($requ->stdId);
+            if(!$data->isEmpty() && $data->count()>0):
 
-            $data->fullName         = $requ->fullName;
-            $data->sureName         = $requ->sureName;
-            $data->father           = $requ->fatherName;
-            $data->mother           = $requ->motherName;
-            $data->gender           = $requ->gender;
-            $data->dob              = $requ->dob;
-            $data->blGroup          = $requ->blGroup;
-            $data->religion         = $requ->religion;
-            $data->address          = $requ->address;
-            $data->mail             = $requ->mail;
-            $data->phone            = $requ->phone;
-            $data->sessName         = $requ->sessName;
-            $data->className        = $requ->className;
-            $data->sectionName      = $requ->sectionName;
-            $data->rollNumber       = $requ->rollNumber;
-            $data->gurdianName      = $requ->gurdian;
-            $data->gurdianMobile    = $requ->gurdianPhone;
-            $data->relationGurdian  = $requ->relationWithStd;
-            if(!empty($requ->avatar)):
-                $stdAvatar = $requ->file('avatar');
-                $newAvatar = rand().date('Ymd').'.'.$stdAvatar->getClientOriginalExtension();
-                $stdAvatar->move(public_path('upload/image/student/'),$newAvatar);
-
-                $data->avatar = $newAvatar;
-            endif;
-            
-            if($data->save()):
-                return redirect(route('studentList'))->with("success");
+                $data->fullName         = $requ->fullName;
+                $data->sureName         = $requ->sureName;
+                $data->father           = $requ->fatherName;
+                $data->mother           = $requ->motherName;
+                $data->gender           = $requ->gender;
+                $data->dob              = $requ->dob;
+                $data->blGroup          = $requ->blGroup;
+                $data->religion         = $requ->religion;
+                $data->address          = $requ->address;
+                $data->mail             = $requ->mail;
+                $data->phone            = $requ->phone;
+                $data->sessName         = $requ->sessName;
+                $data->className        = $requ->className;
+                $data->sectionName      = $requ->sectionName;
+                $data->rollNumber       = $requ->rollNumber;
+                $data->gurdianName      = $requ->gurdian;
+                $data->gurdianMobile    = $requ->gurdianPhone;
+                $data->relationGurdian  = $requ->relationWithStd;
+                
+                if($data->save()):
+                    return back()->with("success",'data update success');
+                else:
+                    return back()->with("error",'data update failed');
+                endif;
             else:
-                return back()->with("error");
+                return back()->with('error','Data update failed');
             endif;
-
      }
 
      public function delStudentPhoto($id){
@@ -150,6 +146,27 @@ class admissionController extends Controller
             $teacherProfileData->avatar        = "";
             $teacherProfileData->save();
             return back()->with('success','Success! Profile picture deleted successfully');
+        endif;
+    }
+
+    public function stdPhotoUpdate(Request $requ){
+        $data = newAdmission::find($requ->stdId);
+        if($data->count()>0):
+            if(!empty($requ->avatar)):
+                $stdAvatar = $requ->file('avatar');
+                $newAvatar = rand().date('Ymd').'.'.$stdAvatar->getClientOriginalExtension();
+                $stdAvatar->move(public_path('upload/image/student/'),$newAvatar);
+
+                $data->avatar = $newAvatar;
+            endif;
+                
+            if($data->save()):
+                return back()->with("success",'data update success');
+            else:
+                return back()->with("error",'data update failed');
+            endif;
+        else:
+            return back()->with('error','Data update failed');
         endif;
     }
      
