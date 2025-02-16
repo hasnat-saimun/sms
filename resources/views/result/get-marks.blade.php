@@ -16,7 +16,7 @@ Get Mark
                 </div>
                 <div class=" col-6  d-grid gap-2 mt-5">
                     <button class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" type="submit">Submit</button>
-                    <button class="btn-fill-lg bg-blue-dark btn-hover-bluedark" type="reset">Reset</button>
+                    <button class="btn-fill-lg bg-blue-dark btn-hover-bluedark" type="reset">Reset</button> 
                 </div>
             </form>
 @endsection
