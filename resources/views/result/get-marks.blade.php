@@ -3,20 +3,41 @@
 Get Mark
 @endsection
 @section('backIndex')
-<form method="POST" class="card-body form form-group" action="">
+    @if($studentList->count()>0)
+        <form method="POST" class="card-body form form-group" action="">
                 @csrf
-                <div class="mb-2">
-                    <label for="source" class="form-label ">Source</label>
-                    <input type="text" class="form-control form-control-sm" id="source" name="source" placeholder="" required>
-                    </select>
-                </div>
-                <div class="mb-2">
-                    <label for="amount" class="form-label ">Amount</label>
-                    <input type="number" class="form-control form-control-sm" id="amount" name="amount" placeholder="" required>
-                </div>
-                <div class=" col-6  d-grid gap-2 mt-5">
-                    <button class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark" type="submit">Submit</button>
-                    <button class="btn-fill-lg bg-blue-dark btn-hover-bluedark" type="reset">Reset</button>
-                </div>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Roll</th>
+                            <th>Student Name</th>
+                            <th>CQ</th>
+                            <th>MCQ</th>
+                            <th>Practical</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if($studentList->count()>0)
+                        @foreach($studentList as $std)
+                        <tr>
+                            <td>{{ $std->stdId }}</td>
+                            <td>{{ $std->fullName.' '.$std->sureName }}</td>
+                            <td><input type="text" class="form-control" name="cqMarks" value="" id="" placeholder="Enter CQ Marks"></td>
+                            <td><input type="text" class="form-control" name="mcqMarks" value="" id="" placeholder="Enter MCQ Marks"></td>
+                            <td><input type="text" class="form-control" name="practical" value="" id="" placeholder="Enter Practical Marks"></td>
+                        </tr>
+                        @endforeach
+                        @else
+                        <tr>
+                            <td colspan="5">Sorry! No data found</td>
+                        </tr>
+                        @endif
+                    </tbody>
+                </table>
             </form>
+    @else
+    <div class="alert alert-info">
+        Sorry! No data found
+    </div>
+    @endif
 @endsection
