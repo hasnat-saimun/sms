@@ -49,7 +49,7 @@ All Exam
                                                 <td>{{ $item->examName }}</td>
                                                 @if($item->className>0)
                                                 @php
-                                                    $items = \App\Models\Classes::find($item->className);
+                                                    $items = \App\Models\classManage::find($item->className);
                                                 @endphp
                                                 <td>{{ $items->className }}</td>
                                                 @else

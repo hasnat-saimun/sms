@@ -9,6 +9,7 @@ Get Mark
                 <table class="table table-bordered">
                     <thead>
                         <tr>
+                            <th>Std ID</th>
                             <th>Roll</th>
                             <th>Student Name</th>
                             <th>CQ</th>
@@ -21,6 +22,7 @@ Get Mark
                         @foreach($studentList as $std)
                         <tr>
                             <td>{{ $std->stdId }}</td>
+                            <td>{{ $std->rollNumber }}</td>
                             <td>{{ $std->fullName.' '.$std->sureName }}</td>
                             <td><input type="text" class="form-control" name="cqMarks" value="" id="" placeholder="Enter CQ Marks"></td>
                             <td><input type="text" class="form-control" name="mcqMarks" value="" id="" placeholder="Enter MCQ Marks"></td>
