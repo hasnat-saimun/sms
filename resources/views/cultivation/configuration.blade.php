@@ -140,27 +140,27 @@ Configuration
                     <div class="row">
                         <div class="col-md-6 col-12">
                             <div class="mb-3">
-                                <label for="insLogo" class="form-label">Logo</label>
-                                <input type="file" name="insLogo" class="form-control" id="insLogo" required>
+                                <label class="text-dark-medium">Logo</label>
+                                <input type="file" name="insLogo" class="form-control-file" id="insLogo" required>
                             </div>
                             <div class="mb-3">
                                 <label for="favicon" class="form-label">Favicon</label>
-                                <input type="file" name="favicon" class="form-control" id="favicon" required>
+                                <input type="file" name="favicon" class="form-control-file" id="favicon" required>
                             </div>
                         </div>
                         <div class="col-md-6 col-12">
                             <div class="mb-3">
                                 <label for="adminPhoto" class="form-label">Admin Photo</label>
-                                <input type="file" name="adminPhoto" class="form-control" id="adminPhoto" required>
+                                <input type="file" name="adminPhoto" class="form-control-file" id="adminPhoto" required>
                             </div>
                             <div class="mb-3">
                                 <label for="principalSign" class="form-label">Principal Sign</label>
-                                <input type="file" name="principalSign" class="form-control" id="principalSign" required>
+                                <input type="file" name="principalSign" class="form-control-file" id="principalSign" required>
                             </div>
                         </div>
                     </div>
                     @endif
-                    <button type="submit" class="btn btn-primary btn-lg">Save</button>
+                    <button type="submit" class="mt-4 btn btn-primary btn-lg">Save</button>
                 </form>
                 @if(!empty($serverId))
                 <div class="row mt-4">
@@ -171,7 +171,7 @@ Configuration
                             <form class="form" action="{{ route('saveLogo') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" name="serverId" value="{{ $serverId }}">
-                                <input type="file" name="insLogo" class="form-control" id="insLogo" required>
+                                <input type="file" name="insLogo" class="form-control-file" id="insLogo" required>
                                 <button type="submit" class="btn btn-primary btn-lg mt-4">Update</button>
                             </form>
                             @else
@@ -189,7 +189,7 @@ Configuration
                             <form class="form" action="{{ route('saveFavicon') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" name="serverId" value="{{ $serverId }}">
-                                <input type="file" name="favicon" class="form-control" id="favicon">
+                                <input type="file" name="favicon" class="form-control-file" id="favicon">
                                 <button type="submit" class="btn btn-primary btn-lg mt-4">Update</button>
                             </form>
                             @else
@@ -208,8 +208,8 @@ Configuration
                             @if(empty($avatar))
                             <form class="form" action="{{ route('saveAvatar') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <input type="hidden" name="serverId" value="{{ $serverId }}">
-                                <input type="file" name="adminPhoto" class="form-control" id="adminPhoto" required>
+                                <input type="hidden" name="serverId" value="{{ $serverId }}"class="form-control-file" >
+                                <input type="file" name="adminPhoto" id="adminPhoto" class="form-control-file" required>
                                 <button type="submit" class="btn btn-primary btn-lg mt-4">Update</button>
                             </form>
                             @else
