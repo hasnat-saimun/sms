@@ -26,7 +26,7 @@ class MarksheetController extends Controller
             if(isset($chkData) && !empty($chkData)):
                 $chkData->delete();
             endif;
-            $totalMarks = $requ->subjectMarks[$x]+$requ->objectMarks[$x]+$requ->practicalMarks[$x];
+            $totalMarks = $requ->cqMarks[$x]+$requ->mcqMarks[$x]+$requ->practical[$x];
             $grade = GradeList::whereRaw("'$totalMarks' BETWEEN minMark AND maxMark")->first();
             if(isset($grade) && !empty($grade)):
                 $gradePoint = $grade->gradePoint;
@@ -43,9 +43,9 @@ class MarksheetController extends Controller
             $marks->examId          = $requ->examId;
             $marks->subjectId       = $requ->subjectId;
             $marks->groupId         = $requ->groupId;
-            $marks->subjectMarks    = $requ->subjectMarks[$x];
-            $marks->objectMarks     = $requ->objectMarks[$x];
-            $marks->practicalMarks  = $requ->practicalMarks[$x];
+            $marks->subjectMarks    = $requ->cqMarks[$x];
+            $marks->objectMarks     = $requ->mcqMarks[$x];
+            $marks->practicalMarks  = $requ->practical[$x];
             $marks->totalMarks      = $totalMarks;
             $marks->laterGrade      = $laterGrade;
             $marks->gradePoint      = $gradePoint;
@@ -54,7 +54,7 @@ class MarksheetController extends Controller
             $x++;
         }
         // return $x;
-        if($x>0):
+        if($x>=$totalData):
             return redirect(route('addMarks'))->with('success','Marksentry successfull');
         else:
             return redirect(route('addMarks'))->with('error','Marksentry failed');

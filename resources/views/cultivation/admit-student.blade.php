@@ -20,6 +20,15 @@ New Admission
         $teacherIdPrefix    = "SBCTID";
         $staffIdPrefix      = "SBCSTFID";
     endif;
+            
+    $getId = \App\Models\newAdmission::latest()->first();
+    if(empty($getId)):
+        $uniqueId = 1;
+    else:
+        $uniqueId = $getId->id+1;
+    endif;
+    $newId = str_pad($uniqueId, 6, "0", STR_PAD_LEFT);
+    $stdId = date('Y').$newId;
 @endphp
                 <!-- Dashboard summery Start Here -->
                 <div class="row gutters-20 mb-4">
@@ -66,7 +75,7 @@ New Admission
                                 <div class="row">
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Admission ID</label>
-                                        <input type="text" name="stdId" value="{{ $stdIdPrefix }}-@if(empty($chk)) 1 @else {{ $chk->id+1 }} @endif" placeholder="Example:- {{ $stdIdPrefix }}-124734" class="form-control" required readonly>
+                                        <input type="text" name="stdId" value="{{ $stdId }}" placeholder="Example:- 2025000001" class="form-control" required readonly>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Full Name *</label>
