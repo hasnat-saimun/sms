@@ -2,7 +2,7 @@
             <div class="nav-bar-header-one">
                 <div class="header-logo">
                     <a href="{{ route('cultivationIndex') }}">
-                        <img src="{{ asset('/public/back-office/') }}/img/logo.png" alt="logo">
+                        <img src="{{ asset('/public/back-office/') }}/img/logo.png" class="logosize" alt="logo">
                     </a>
                 </div>
                  <div class="toggle-button sidebar-toggle">
