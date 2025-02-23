@@ -125,6 +125,6 @@
                 background:rgba(0,0,0,0.5);
             }
             .logosize{
-                width:120px;
+                width:180px;
             }
     </style>

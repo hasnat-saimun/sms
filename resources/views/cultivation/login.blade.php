@@ -28,6 +28,11 @@
     <link rel="stylesheet" href="{{ asset('/public/back-office/') }}/style.css">
     <!-- Modernize js -->
     <script src="{{ asset('/public/back-office/js/') }}/modernizr-3.6.0.min.js"></script>
+    <style>
+        .logosize{
+                width:180px;
+            }
+    </style>
 </head>
 
 <body>
@@ -39,7 +44,7 @@
         <div class="col-8 mx-auto login-page-content">
             <div class="card card-body login-box">
                 <div class="item-logo">
-                    <img src="{{ asset('/public/back-office/img/') }}/logo3.png" alt="logo">
+                    <img src="{{ asset('/public/back-office/img/') }}/logo3.png" class="logosize" alt="logo">
                 </div>
                 <div class="row">
                     <div class="col-12">

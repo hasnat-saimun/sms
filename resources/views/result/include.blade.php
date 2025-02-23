@@ -99,6 +99,10 @@
                                     <a href="{{ route('createExam') }}" class="nav-link"><i class="fas fa-angle-right"></i>Create
                                         Exam</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('admitCard') }}" class="nav-link"><i class="fas fa-angle-right"></i>Admit
+                                        Card</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item sidebar-nav-item">

@@ -891,6 +891,23 @@ Route::post('/cultivation/marksheet/generate',[
     'generateMarksheet'
 ])->name('generateMarksheet');
 
+
+//Admit Card route declaration
+
+Route::get('/admit/card/creation',[
+    MarksheetController::class ,
+    'admitCard'
+])->name('admitCard');
+Route::post('/admit/card/getData',[
+    MarksheetController::class ,
+    'getAdmitCard'
+])->name('getAdmitCard');
+
+Route::get('/admit/card/print/',[
+    MarksheetController::class ,
+    'printAdmitCard'
+])->name('printAdmitCard');
+
 //grade route declaration
 
 Route::get('/cultivation/grade/create',[
