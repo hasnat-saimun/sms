@@ -15,43 +15,27 @@ Student ID Card
                             </div>
                             @if(isset($std))
                             @php 
-                                $sessionData  = \App\Models\sessionManage::find($std->sessName);
-                                $classData  = \App\Models\classManage::find($std->className);
-                                $sectionData  = \App\Models\sectionManage::find($std->sectionName);
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-                                if(isset($sessionData)){
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-                            @endphp 
-                                if(isset($sessionData) && count($sessionData)>0){
->>>>>>> Stashed changes
+                            $sessionData  = \App\Models\sessionManage::find($std->sessName);
+                            $classData  = \App\Models\classManage::find($std->className);
+                            $sectionData  = \App\Models\sectionManage::find($std->sectionName);
+                                if(null !== $sessionData && $sessionData->count()>0){
                                     $sessionName= $sessionData->session;
                                 }else{
                                     $sessionName= '-';
                                 }
 
-                                if(!empty($classData->className)){
+                                if(null !== $classData && $classData->count()>0){
                                     $className = $classData->className;
                                 }else{
                                     $className= '-';
                                 }
 
-                                if(!empty($sectionData->section)){
+                                if(null !== $sectionData && $sectionData->count()>0){
                                     $sectionName = $sectionData->section;
                                 }else{
                                     $sectionName= '-';
                                 }
+                            @endphp 
                             <div class="row">
                                 <div class="col-6 mx-auto">
                                     <div class="row" id="idCardOne">
