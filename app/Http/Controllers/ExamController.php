@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Exam;
+use App\Models\newAdmission;
 
 class ExamController extends Controller
 {
@@ -70,5 +71,16 @@ class ExamController extends Controller
             $itemData->delete();
             return back()->with('success','Success! Alias successfully delete');
         endif;
+    }
+
+    // admit card controller
+
+    public function admitCard(){
+        return view('result.admitCard');
+    }
+
+    public function getAdmitCard(Request $requ){
+        $studentList = newAdmission::where(['sessName'=>$requ->sessionId,'sectionName'=>$requ->groupId,'className'=>$requ->classId])->get();
+        return view('result.get-admitCard',['studentList'=>$studentList,'groupId'=>$requ->groupId,'classId'=>$requ->classId,'sessionId'=>$requ->sessionId,'examId'=>$requ->examId]);
     }
 }

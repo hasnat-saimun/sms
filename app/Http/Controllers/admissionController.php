@@ -30,7 +30,7 @@ class admissionController extends Controller
     
     
     public function confirmAdmit(Request $requ){
-        return $chk = newAdmission::where(['rollNumber'=>$requ->rollNumber,'className'=>$requ->className,'sessName'=>$requ->sessName,'sectionName'=>$requ->sectionName])->get();
+        $chk = newAdmission::where(['rollNumber'=>$requ->rollNumber,'className'=>$requ->className,'sessName'=>$requ->sessName,'sectionName'=>$requ->sectionName])->get();
         if(!empty($chk) && count($chk)>0):
             return back()->with('error','Data already exist');
         else:

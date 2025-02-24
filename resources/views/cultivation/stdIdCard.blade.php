@@ -133,7 +133,7 @@ Student ID Card
                                                         </div>
                                                         <div class="col-8 text-left text-dark">
                                                             <p class="mb-0"><span class="fw-bold"> Student ID:</span> {{ $std->stdId }}</p>
-                                                            <p class="mb-0"><span class="fw-bold"> Name:</span> {{ $std->fullName }} {{ $std->lastName }}</p>
+                                                            <p class="mb-0"><span class="fw-bold"> Name:</span> {{ $std->fullName }} {{ $std->sureName }}</p>
                                                             <p class="mb-0"><span class="fw-bold"> Roll Number:</span> {{ $std->rollNumber}}</p>
                                                             <p class="mb-0"><span class="fw-bold"> Class:</span> {{ $className }}</p>
                                                             <p class="mb-0"><span class="fw-bold"> Session:</span> {{ $sessionName }}</p>

@@ -89,10 +89,14 @@ Configuration
                                 <input type="text" name="officeMobile" class="form-control" id="officeMobile" value="{{ $officeMobile }}" placeholder="Enter office mobile number" required>
                             </div>
                             <div class="mb-3">
-                                <label for="officeMail" class="form-label">Official Email</label>
-                                <input type="text" name="officeMail" class="form-control" id="officeMail" value="{{ $officeMail }}" placeholder="Enter office email address" required>
+                                <label for="establishDate" class="form-label">Establish Date</label>
+                                <input type="text" name="establishDate" class="form-control" id="establishDate" value="{{ $establishDate }}" placeholder="Enter establish date">
                             </div>
                             <div class="mb-3">
+                                <label for="youtubeChanel" class="form-label">Youtube Chanel</label>
+                                <input type="text" name="youtubeChanel" class="form-control" id="youtubeChanel" value="{{ $youtubeLink }}" placeholder="Enter youtube chanel link">
+                            </div>
+                            <!-- <div class="mb-3">
                                 <label for="studentIdPrefix" class="form-label">Student ID Prefix</label>
                                 <input type="text" name="studentIdPrefix" class="form-control" id="studentIdPrefix" value="{{ $studentIdPrefix }}" placeholder="Example: STDID" required>
                             </div>
@@ -103,7 +107,7 @@ Configuration
                             <div class="mb-3">
                                 <label for="staffIdPrefix" class="form-label">Staff ID Prefix</label>
                                 <input type="text" name="staffIdPrefix" class="form-control" id="staffIdPrefix" value="{{ $staffIdPrefix }}" placeholder="Example: STFID" required>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="col-md-6 col-12">
                             <div class="mb-3">
@@ -119,20 +123,16 @@ Configuration
                                 <input type="text" name="principalMail" class="form-control" id="principalMail" value="{{ $principalMail }}" placeholder="Enter principal email address" required>
                             </div>
                             <div class="mb-3">
+                                <label for="officeMail" class="form-label">Official Email</label>
+                                <input type="text" name="officeMail" class="form-control" id="officeMail" value="{{ $officeMail }}" placeholder="Enter office email address" required>
+                            </div>
+                            <div class="mb-3">
                                 <label for="facebookPage" class="form-label">Facebook Page</label>
                                 <input type="text" name="facebookPage" class="form-control" id="facebookPage" value="{{ $fbPage }}" placeholder="Enter facebook page link here">
                             </div>
                             <div class="mb-3">
                                 <label for="twitterLink" class="form-label">Twitter Profile</label>
                                 <input type="text" name="twitterLink" class="form-control" id="twitterLink" value="{{ $twitterLink }}" placeholder="Enter twitter profile Link">
-                            </div>
-                            <div class="mb-3">
-                                <label for="youtubeChanel" class="form-label">Youtube Chanel</label>
-                                <input type="text" name="youtubeChanel" class="form-control" id="youtubeChanel" value="{{ $youtubeLink }}" placeholder="Enter youtube chanel link">
-                            </div>
-                            <div class="mb-3">
-                                <label for="establishDate" class="form-label">Establish Date</label>
-                                <input type="text" name="establishDate" class="form-control" id="establishDate" value="{{ $establishDate }}" placeholder="Enter establish date">
                             </div>
                         </div>
                     </div>
