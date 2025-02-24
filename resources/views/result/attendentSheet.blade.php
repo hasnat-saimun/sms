@@ -1,6 +1,6 @@
 @extends('result.include')
 @section('backTitle')
-Admit Card
+A
 @endsection
 @section('backIndex')
                 <!-- Dashboard summery Start Here -->
