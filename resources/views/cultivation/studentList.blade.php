@@ -33,6 +33,7 @@ Student List
                                             <th>Session</th>
                                             <th>Section</th>
                                             <th>Mobile</th>
+                                            <th>ID Card</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -59,9 +60,9 @@ Student List
                                             <td>-</td>
                                             @endif
                                             <td>{{ $std->phone }}</td>
+                                            <td class="text-center"><a href="{{ route('stdIdCard',['stdId'=>$std->id]) }}"><i class="fa-solid fa-id-card mx-2" style="color:#19761f;"></i></a></td>
                                             <td>
-
-                                                <a href="{{ route('stdIdCard',['stdId'=>$std->id]) }}"><i class="fa-solid fa-eye mx-2" style="color:rgb(35 170 211);"></i></a>
+                                                <a href="{{ route('viewAdmission',['stdId'=>$std->id]) }}"><i class="fa-solid fa-eye mx-2" style="color:rgb(35 170 211);"></i></a>
                                                 <a href="{{ route('editStudent',['stdId'=>$std->id]) }}" ><i class="fa-solid fa-pen-to-square mx-2" style="color: #4125b1;"></i></a>
                                                 <a href="{{ route('delStudent',['stdId'=>$std->id]) }}" onclick="return confirm('Are you sure you want to delete this item?');" title="Get Id Card"><i class="fa-solid fa-trash mx-2" style="color: #c10b26;"></i></a>
                                             </td>

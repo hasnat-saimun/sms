@@ -66,11 +66,11 @@ New Profile
                                         <input type="text" name="teacherId" value="{{ $teacherIdPrefix }}-@if(empty($chk)) 1 @else {{ $chk->id+1 }} @endif" placeholder="Example: {{ $teacherIdPrefix }}-127420" class="form-control" reauired readonly>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                        <label>First Name *</label>
+                                        <label>Full Name *</label>
                                         <input type="text" name="firstName" placeholder="Enter first name" class="form-control">
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                        <label>Last Name *</label>
+                                        <label>Sure Name *</label>
                                         <input type="text" name="lastName" placeholder="Enter last name" class="form-control">
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">

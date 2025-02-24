@@ -41,14 +41,15 @@ Teacher List
                                         @if(!empty($profileData))
                                         @foreach($profileData as $teacher)
                                             <tr>
-                                                <td>{{ $teacher->admitId }}</td>
+                                                <td>{{ $teacher->teacherId }}</td>
                                                 <td>{{ $teacher->firstName." ".$teacher->lastName }}</td>
                                                 <td>{{ $teacher->joinDate }}</td>
                                                 <td>{{ $teacher->email }}</td>
                                                 <td>{{ $teacher->mobile }}</td>
                                                 <td>
-                                                    <a href="{{ route('editTeacher',['profileId'=>$teacher->id]) }}"><i class="fa-light fa-pen-to-square fa-xl"></i></a>
-                                                    <a href="{{ route('delTeacher',['profileId'=>$teacher->id]) }}" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fa-thin fa-circle-trash fa-xl"></i></a>
+                                                    <a href="{{ route('viewTeacher',  ['profileId'=>$teacher->id]) }}"><i class="fa-solid fa-eye mx-2" style="color:rgb(35 170 211);"></i></a>
+                                                    <a href="{{ route('editTeacher',['profileId'=>$teacher->id]) }}"><i class="fa-solid fa-pen-to-square mx-2" style="color: #4125b1;"></i></a>
+                                                    <a href="{{ route('delTeacher',['profileId'=>$teacher->id]) }}" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fa-solid fa-trash mx-2" style="color: #c10b26;"></i></a>
                                                 </td>
                                             </tr>
                                         @endforeach

@@ -613,6 +613,10 @@ Route::post('/cultivation/student/admit/confirm',[
     admissionController::class ,
     'confirmAdmit'
 ])->name('confirmAdmit');
+Route::get('/view/student/{stdId}',[
+    admissionController::class,
+    'viewAdmission'
+])->name('viewAdmission');
 Route::get('/cultivation/student/edit/{stdId}',[
     admissionController::class ,
     'editStudent'
@@ -648,7 +652,6 @@ Route::get('/cultivation/student/list',[
     admissionController::class,
     'studentList'
 ])->name('studentList');
-
 Route::get('/cultivation/student/idCard/{stdId}',[
     admissionController::class ,
     'stdIdCard'
@@ -668,6 +671,10 @@ Route::post('/cultivation/teacher/admit/confirm',[
     TeacherController::class ,
     'confirmTeacher'
 ])->name('confirmTeacher');
+Route::get('/view/teacher/{profileId}',[
+    TeacherController::class,
+    'viewTeacher'
+])->name('viewTeacher');
 Route::get('/cultivation/teacher/edit/{profileId}',[
     TeacherController::class ,
     'editTeacher'
@@ -700,6 +707,10 @@ Route::post('/cultivation/staff/admit/confirm',[
     StaffController::class ,
     'confirmStaff'
 ])->name('confirmStaff');
+Route::get('/view/staff/{profileId}',[
+    StaffController::class,
+    'viewStaff'
+])->name('viewStaff');
 Route::get('/cultivation/staff/edit/{profileId}',[
     StaffController::class ,
     'editStaff'

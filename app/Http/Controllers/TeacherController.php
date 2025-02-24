@@ -52,7 +52,11 @@ class TeacherController extends Controller
         $profileData = TeacherManagement::all();
         return view('cultivation.teacherList',['profileData'=>$profileData]);
     }
-
+    
+    public function viewTeacher($id){
+        $singleData= TeacherManagement::find($id);
+        return view('cultivation.viewTeacher',['singleData'=>$singleData]);
+    }
     public function editTeacher($id){
         $profileData = TeacherManagement::find($id);
         return view('cultivation.edit-teacher',['profileData'=>$profileData]);

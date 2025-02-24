@@ -53,7 +53,12 @@ class StaffController extends Controller
         $profileData = StaffManagement::all();
         return view('cultivation.staffList',['profileData'=>$profileData]);
     }
-
+    
+    
+    public function viewStaff($id){
+        $singleData= StaffManagement::find($id);
+        return view('cultivation.viewStaff',['singleData'=>$singleData]);
+    }
     public function editStaff($id){
         $profileData = StaffManagement::find($id);
         return view('cultivation.edit-staff',['profileData'=>$profileData]);

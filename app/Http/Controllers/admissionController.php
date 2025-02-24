@@ -75,6 +75,10 @@ class admissionController extends Controller
             endif;
         endif;
     }
+    public function viewAdmission($id){
+        $singleData= newAdmission::find($id);
+        return view('cultivation.viewStudent',['singleData'=>$singleData]);
+    }
 
 
     public function stdIdCard($id){

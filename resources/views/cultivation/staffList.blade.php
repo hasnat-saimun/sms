@@ -5,7 +5,7 @@ All Staffs
 @section('backIndex')
                 <!-- Social Media Start Here -->
                 <div class="row gutters-20 mt-4">
-                    <div class="col-12 col-md-10 mx-auto">
+                    <div class="col-12  mx-auto">
                         <div class="card card-default">
                             <div class="card-header bg-light">
                                 <h3>All Staff</h3>
@@ -42,11 +42,12 @@ All Staffs
                                         @foreach($profileData as $staff)
                                             <tr>
                                                 <td>{{ $staff->staffId }}</td>
-                                                <td>{{ $staff->firstName." ".$staff->lastName }}</td>
+                                                <td>{{ $staff->firstName}}</td>
                                                 <td>{{ $staff->joinDate }}</td>
                                                 <td>{{ $staff->email }}</td>
                                                 <td>{{ $staff->mobile }}</td>
                                                 <td>
+                                                    <a href="{{ route('viewStaff',  ['profileId'=>$staff->id]) }}"><i class="fa-solid fa-eye mx-2" style="color:rgb(35 170 211);"></i></a>
                                                     <a href="{{ route('editStaff',['profileId'=>$staff->id]) }}"><i class="fa-solid fa-pen-to-square mx-2" style="color: #4125b1;"></i></a>
                                                     <a href="{{ route('delStaff',['profileId'=>$staff->id]) }}"onclick="return confirm('Are you sure you want to delete this item?');" title="Get Id Card" ><i class="fa-solid fa-trash mx-2" style="color: #c10b26;"></i></a>
                                                 </td>

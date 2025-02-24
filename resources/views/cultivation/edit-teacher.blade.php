@@ -50,11 +50,11 @@ Edit Profile
                                         <input type="text" value="{{ $profileData->teacherId }}" class="form-control">
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                        <label>First Name *</label>
+                                        <label>Full Name *</label>
                                         <input type="text" name="firstName" placeholder="Enter first name" class="form-control" value="{{ $profileData->firstName }}">
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                        <label>Last Name *</label>
+                                        <label>Sure Name *</label>
                                         <input type="text" name="lastName" placeholder="Enter last name" class="form-control" value="{{ $profileData->lastName }}">
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
