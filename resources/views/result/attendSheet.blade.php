@@ -1,6 +1,6 @@
 @extends('result.include')
 @section('backTitle')
-A
+Attendent Sheet
 @endsection
 @section('backIndex')
                 <!-- Dashboard summery Start Here -->
@@ -24,10 +24,10 @@ A
                             </div>
                             <div class="heading-layout1">
                                 <div class="item-title">
-                                    <h3>Admit Card Generate</h3>
+                                    <h3>Sheet Generate</h3>
                                 </div>
                             </div>
-                            <form class="new-added-form" action="{{ route('getAdmitCard') }}" method="POST">
+                            <form class="new-added-form" action="{{ route('getAttendSheet') }}" method="POST">
                                 @csrf
                                 <div class="row">
                                     <div class="col-12 form-group">

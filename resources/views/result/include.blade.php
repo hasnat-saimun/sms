@@ -103,6 +103,10 @@
                                     <a href="{{ route('admitCard') }}" class="nav-link"><i class="fas fa-angle-right"></i>Admit
                                         Card</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('attendSheet') }}" class="nav-link"><i class="fas fa-angle-right"></i>Attended Sheet
+                                        Card</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item sidebar-nav-item">
