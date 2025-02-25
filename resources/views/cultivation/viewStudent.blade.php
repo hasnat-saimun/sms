@@ -47,10 +47,10 @@
 <div class="single-info-details">
     <div class="item-content">
         <div class="header-inline item-header">
-            <div class="header-elements">
+            <div class="header-elements d-print-none">
                 <ul>
                     <li><a href="{{route('studentList')}}"><i class="fa-solid fa-arrow-left"></i></a></li>
-                    <li><a href="#"><i class="fas fa-print"></i></a></li>
+                    <li><a href="#" onclick="printDiv('userView')"><i class="fas fa-print"></i></a></li>
                     <li><a href="#"><i class="fas fa-download"></i></a></li>
                 </ul>
             </div>
@@ -60,7 +60,7 @@
 
 
 <!-- Student Profile -->
-    <div class="student-profile py-4">
+    <div class="student-profile py-4" id="userView">
         @php
             $sessionData =\App\Models\sessionManage::find($singleData->sessName);
             $classData   =\App\Models\classManage::find($singleData->className);
@@ -215,4 +215,13 @@
             </div>
     </div>
 
+    <script type="text/javascript">
+        function printDiv(e){
+            var printContents = document.getElementById(e).innerHTML;
+            var originalContents = document.body.innerHTML;
+            document.body.innerHTML = printContents;
+            window.print();
+            document.body.innerHTML = originalContents; 
+        }
+    </script>
 @endsection
