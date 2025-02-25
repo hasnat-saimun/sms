@@ -82,8 +82,8 @@ New Admission
                                         <input type="text" name="fullName" placeholder="Enter student first name" class="form-control" required>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                        <label>Sure Name *</label>
-                                        <input type="text" name="sureName" placeholder="Enter student last name" class="form-control" required>
+                                        <label>Sure Name</label>
+                                        <input type="text" name="sureName" placeholder="Enter student last name" class="form-control">
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Father's Name *</label>
@@ -103,9 +103,8 @@ New Admission
                                         </select>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
-                                        <label>Date Of Birth *</label>
-                                        <input type="date" name="dob" placeholder="dd/mm/yyyy" class="form-control "
-                                            required>
+                                        <label>Date Of Birth</label>
+                                        <input type="date" name="dob" placeholder="dd/mm/yyyy" class="form-control">
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Blood Group *</label>
