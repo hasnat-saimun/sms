@@ -914,10 +914,16 @@ Route::post('/admit/card/getData',[
     'getAdmitCard'
 ])->name('getAdmitCard');
 
-Route::get('/admit/card/print/',[
+//Attend Sheet route declaration
+
+Route::get('/attend/sheet/creation',[
     ExamController::class ,
-    'printAdmitCard'
-])->name('printAdmitCard');
+    'attendSheet'
+])->name('attendSheet');
+Route::post('/attend/sheet/getData',[
+    ExamController::class ,
+    'getAttendSheet'
+])->name('getAttendSheet');
 
 //grade route declaration
 

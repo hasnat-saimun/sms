@@ -40,10 +40,13 @@ Get Admit Card
             <div class="card-header">Admit Card</div>
             <div class="card-body" id="idCardFull">
                 <div class="row">
+                    <div class="col-12">
+                        <button class="btn btn-success btn-lg mb-4 d-print-none mt-4" onclick="printDiv('idCardFull')"><i class="fa-light fa-print"></i> All Print</button>
+                        <a href="{{ route('admitCard') }}" class="btn btn-lg btn-primary d-print-none"><i class="fa-solid fa-arrow-left"></i> Go Back</a>
+                    </div>
                     @foreach($studentList as $std)
                     <div class="col-6">
-                        
-                    <div class="row" id="idCard-{{ $std->id }}">
+                        <div class="row" id="idCard-{{ $std->id }}">
                             <!-- ID CARD DESIGN ONE -->
                             <div class="col-12 row mb-4">
                                 <div class="col-md-12">
@@ -82,8 +85,10 @@ Get Admit Card
                         </div>
                     </div>
                     @endforeach
-                    
-                    <button class="btn btn-success btn-lg mb-4 d-print-none mt-4" onclick="printDiv('idCardFull')">All Print</button>
+                    <div class="col-12">
+                        <button class="btn btn-success btn-lg mb-4 d-print-none mt-4" onclick="printDiv('idCardFull')"><i class="fa-light fa-print"></i> All Print</button>
+                        <a href="{{ route('admitCard') }}" class="btn btn-lg btn-primary d-print-none"><i class="fa-solid fa-arrow-left"></i> Go Back</a>
+                    </div>
                 </div>
             </div>
         </div>
