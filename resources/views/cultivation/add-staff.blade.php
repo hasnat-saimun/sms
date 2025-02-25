@@ -87,7 +87,7 @@ New Profile
                                             <option value="">Select *</option>
                                             <option value="1">Principal</option>
                                             <option value="2">Vice Principal</option>
-                                            <option value="B+">Staff</option>
+                                            <option value="Staff">Staff</option>
                                         </select>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
