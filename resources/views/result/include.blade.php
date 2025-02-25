@@ -104,8 +104,7 @@
                                         Card</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('attendSheet') }}" class="nav-link"><i class="fas fa-angle-right"></i>Attended Sheet
-                                        Card</a>
+                                    <a href="{{ route('attendSheet') }}" class="nav-link"><i class="fas fa-angle-right"></i>Attended Sheet</a>
                                 </li>
                             </ul>
                         </li>
