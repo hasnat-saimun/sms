@@ -27,6 +27,38 @@ class admissionController extends Controller
         $stdData = newAdmission::all();
         return view('cultivation.studentList',['studentData'=>$stdData]);
     }
+
+    public function studentPromotion(){
+        return view('cultivation.promotStd');
+    }
+
+    public function confirmPromotData(Request $requ){
+        
+        $studentId = $requ->studentId;
+        $totalData = count($studentId);
+        $x = 0;
+        while($x<$totalData){
+            if($requ->checkbox[$x] == $requ->studentId[$x]):
+                return $update = newAdmission::where(['stdId'=>$requ->studentId[$x]])->first();
+
+                $update->className         = $requ->promotId;
+                $update->save();
+            endif;
+
+            $x++;
+        }
+        // return $x;
+        if($x>=$totalData):
+            return redirect(route('studentPromotion'))->with('success','Student profile promoted successfull');
+        else:
+            return redirect(route('studentPromotion'))->with('error','Student profile promoted failed');
+        endif;
+    }
+
+    public function getPromotionData(Request $requ){
+        $studentList = newAdmission::where(['sessName'=>$requ->sessionId,'sectionName'=>$requ->groupId,'className'=>$requ->classId])->get();
+        return view('cultivation.promotData',['studentList'=>$studentList,'groupId'=>$requ->groupId,'classId'=>$requ->classId,'sessionId'=>$requ->sessionId]);
+    }
     
     
     public function confirmAdmit(Request $requ){

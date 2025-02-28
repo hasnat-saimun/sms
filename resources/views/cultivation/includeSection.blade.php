@@ -65,9 +65,40 @@
         .fw-bold{
             font-weight:bold;
         }
+        .print-border{
+            border-bottom:1px dotted gray; 
+        }
+        #bothChecked {
+            display: none;
+        }
+
+        #bothBox:checked ~ #bothChecked{
+            display: block;
+        }
+
+#bothBox:checked ~ #bothUnchecked{
+  display: none;
+}
         @media print
            {
-        * { -webkit-print-color-adjust: exact !important; /*Chrome, Safari */ color-adjust: exact !important; /*Firefox*/ }
+            .print-border{
+                border-bottom:0px dotted gray; 
+            }
+            
+            @page {
+                size: A4;
+                margin: 2rem;
+            }
+            .page-break:last-child {
+                page-break-after: avoid !important;
+            }
+            * { -webkit-print-color-adjust: exact !important; /*Chrome, Safari */ color-adjust: exact !important; /*Firefox*/ }
+        
+            html, body {
+                width: 210mm;
+                height: 297mm;
+            }
+            /* ... the rest of the rules ... */
             .marksheet{
                 border: 3px solid black;
             }

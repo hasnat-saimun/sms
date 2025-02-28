@@ -48,70 +48,70 @@ Route::get('/',[
 ])->name('homePage');
 
 //Result Part
-Route::get('/cultivation/result',[
+Route::get('/result',[
     BackofficeController::class,
     'resultPart'
 ])->name('resultPart');
 
-Route::post('/cultivation/login/confirm',[
+Route::post('/login/confirm',[
     FrontController::class ,
     'cultivationLogin'
 ])->name('cultivationLogin');
-Route::get('/cultivation/login',[
+Route::get('/login',[
     FrontController::class,
     'adminLogin'
 ])->name('adminLogin');
-Route::get('/cultivation/logout',[
+Route::get('/logout',[
     FrontController::class,
     'adminLogout'
 ])->name('adminLogout');
-Route::post('/cultivation/register',[
+Route::post('/register',[
     FrontController::class ,
     'adminRegister'
 ])->name('adminRegister');
 
 //Cultivation Part
-Route::get('/cultivation/dashboard',[
+Route::get('/dashboard',[
     CultivationController::class,
     'cultivationIndex'
 ])->name('cultivationIndex');
-Route::get('/cultivation/profile',[
+Route::get('/profile',[
     CultivationController::class,
     'adminProfile'
 ])->name('adminProfile');
-Route::post('/cultivation/profile/save',[
+Route::post('/profile/save',[
     CultivationController::class ,
     'saveAdminProfile'
 ])->name('saveAdminProfile');
-Route::post('/cultivation/profile/password/save',[
+Route::post('/profile/password/save',[
     CultivationController::class ,
     'changeAdminPassword'
 ])->name('changeAdminPassword');
-Route::get('/cultivation/notice/list',[
+Route::get('/notice/list',[
     NoticeController::class ,
     'noticeList'
 ])->name('noticeList');
-Route::get('/cultivation/notice/new',[
+Route::get('/notice/new',[
     NoticeController::class ,
     'newNotice'
 ])->name('newNotice');
-Route::post('/cultivation/notice/save',[
+Route::post('/notice/save',[
     NoticeController::class ,
     'saveNotice'
 ])->name('saveNotice');
-Route::get('/cultivation/notice/edit/{id}',[
+Route::get('/notice/edit/{id}',[
     NoticeController::class ,
     'editNotice'
 ])->name('editNotice');
-Route::post('/cultivation/notice/update',[
+Route::post('/notice/update',[
     NoticeController::class ,
     'updateNotice'
 ])->name('updateNotice');
-Route::get('/cultivation/notice/delete/{id}',[
+Route::get('/notice/delete/{id}',[
     NoticeController::class ,
     'delNotice'
 ])->name('delNotice');
-Route::get('/cultivation/notice/preview/{id}',[
+Route::get('/notice/preview/{id}',[
     NoticeController::class ,
     'prevNotice'
 ])->name('prevNotice');
@@ -120,27 +120,27 @@ Route::get('/cultivation/notice/preview/{id}',[
 
 //Image str
 
-Route::get('/cultivation/institute/photo/',[
+Route::get('/institute/photo/',[
     GalleryController::class,
     'newPhoto'
 ])->name('newPhoto');
 
-Route::post('/cultivation/photo/save',[
+Route::post('/photo/save',[
     GalleryController::class ,
     'savePhoto'
 ])->name('savePhoto');
 
-Route::get('/cultivation/photo/edit/{id}',[
+Route::get('/photo/edit/{id}',[
     GalleryController::class ,
     'editPhoto'
 ])->name('editPhoto');
 
-Route::get('/cultivation/photo/content/delete/{id}',[
+Route::get('/photo/content/delete/{id}',[
     GalleryController::class ,
     'delPhotoContent'
 ])->name('delPhotoContent');
 
-Route::get('/cultivation/photo/delete/{id}',[
+Route::get('/photo/delete/{id}',[
     GalleryController::class ,
     'delPhoto'
 ])->name('delPhoto');
@@ -149,311 +149,311 @@ Route::get('/cultivation/photo/delete/{id}',[
 
 //video str
 
-Route::get('/cultivation/institute/video/',[
+Route::get('/institute/video/',[
     GalleryController::class,
     'newVideo'
 ])->name('newVideo');
 
-Route::post('/cultivation/video/save',[
+Route::post('/video/save',[
     GalleryController::class ,
     'saveVideo'
 ])->name('saveVideo');
 
-Route::get('/cultivation/video/edit/{id}',[
+Route::get('/video/edit/{id}',[
     GalleryController::class ,
     'editVideo'
 ])->name('editVideo');
 
-Route::get('/cultivation/video/content/delete/{id}',[
+Route::get('/video/content/delete/{id}',[
     GalleryController::class ,
     'delVideoContent'
 ])->name('delVideoContent');
 
-Route::get('/cultivation/video/delete/{id}',[
+Route::get('/video/delete/{id}',[
     GalleryController::class ,
     'delVideo'
 ])->name('delVideo');
 
 //video end
 
-Route::get('/cultivation/institute/info/',[
+Route::get('/institute/info/',[
     InstituteController::class,
     'insInfo'
 ])->name('insInfo');
 
-Route::get('/cultivation/institute/info/img/del/{id}',[
+Route::get('/institute/info/img/del/{id}',[
     InstituteController::class ,
     'delHeroImg'
 ])->name('delHeroImg');
 
-Route::post('/cultivation/institute/details/',[
+Route::post('/institute/details/',[
     InstituteController::class ,
     'insDetails'
 ])->name('insDetails');
 
-Route::get('/cultivation/institute/principal/speech',[
+Route::get('/institute/principal/speech',[
     InstituteController::class ,
     'principalSpeech'
 ])->name('principalSpeech');
 
-Route::post('/cultivation/institute/principal/speech/save',[
+Route::post('/institute/principal/speech/save',[
     InstituteController::class ,
     'savePrincipalSpeech'
 ])->name('savePrincipalSpeech');
 
-Route::get('/cultivation/institute/principal/exList',[
+Route::get('/institute/principal/exList',[
     InstituteController::class,
     'exPrincipal'
 ])->name('exPrincipal');
 
-Route::post('/cultivation/institute/principal/exList/save',[
+Route::post('/institute/principal/exList/save',[
     InstituteController::class ,
     'saveExPrincipal'
 ])->name('saveExPrincipal');
 
-Route::get('/cultivation/institute/principal/exList/edit/{id}',[
+Route::get('/institute/principal/exList/edit/{id}',[
     InstituteController::class ,
     'editExPrincipal'
 ])->name('editExPrincipal');
 
-Route::get('/cultivation/academic/exPlc/content/delete/{id}',[
+Route::get('/academic/exPlc/content/delete/{id}',[
     InstituteController::class ,
     'delexPlcCon'
 ])->name('delexPlcCon');
-Route::get('/cultivation/institute/principal/exList/del/{id}',[
+Route::get('/institute/principal/exList/del/{id}',[
     InstituteController::class ,
     'delExPrincipal'
 ])->name('delExPrincipal');
 
-Route::get('/cultivation/institute/committee/',[
+Route::get('/institute/committee/',[
     InstituteController::class ,
     'managingCommittee'
 ])->name('managingCommittee');
 
-Route::post('/cultivation/institute/committee/save',[
+Route::post('/institute/committee/save',[
     InstituteController::class ,
     'saveManagingCommittee'
 ])->name('saveManagingCommittee');
 
-Route::get('/cultivation/institute/committee/edit/{id}',[
+Route::get('/institute/committee/edit/{id}',[
     InstituteController::class ,
     'editManagingCommittee'
 ])->name('editManagingCommittee');
 
-Route::get('/cultivation/institute/committee/dlt/image/{id}',[
+Route::get('/institute/committee/dlt/image/{id}',[
     InstituteController::class ,
     'delImgContent'
 ])->name('delImgContent');
 
-Route::get('/cultivation/institute/committee/del/{id}',[
+Route::get('/institute/committee/del/{id}',[
     InstituteController::class ,
     'delManagingCommittee'
 ])->name('delManagingCommittee');
 
 // institute info ends here
 
-Route::get('/cultivation/academic/syllabus/',[
+Route::get('/academic/syllabus/',[
     AcademicController::class ,
     'syllabusManage'
 ])->name('syllabusManage');
 
-Route::post('/cultivation/academic/syllabus/save',[
+Route::post('/academic/syllabus/save',[
     AcademicController::class ,
     'saveSyllabus'
 ])->name('saveSyllabus');
 
-Route::get('/cultivation/academic/syllabus/edit/{id}',[
+Route::get('/academic/syllabus/edit/{id}',[
     AcademicController::class ,
     'editSyllabus'
 ])->name('editSyllabus');
 
-Route::get('/cultivation/academic/syllabus/content/delete/{id}',[
+Route::get('/academic/syllabus/content/delete/{id}',[
     AcademicController::class ,
     'delSyllabusContent'
 ])->name('delSyllabusContent');
 
-Route::get('/cultivation/academic/syllabus/del/{id}',[
+Route::get('/academic/syllabus/del/{id}',[
     AcademicController::class ,
     'delSyllabus'
 ])->name('delSyllabus');
 
 
-Route::get('/cultivation/academic/classRoutine/',[
+Route::get('/academic/classRoutine/',[
     AcademicController::class ,
     'classRoutineManage'
 ])->name('classRoutineManage');
 
-Route::post('/cultivation/academic/classRoutine/save',[
+Route::post('/academic/classRoutine/save',[
     AcademicController::class ,
     'saveClassRoutine'
 ])->name('saveClassRoutine');
 
-Route::get('/cultivation/academic/classRoutine/edit/{id}',[
+Route::get('/academic/classRoutine/edit/{id}',[
     AcademicController::class ,
     'editClassRoutine'
 ])->name('editClassRoutine');
 
-Route::get('/cultivation/academic/classRoutine/del/{id}',[
+Route::get('/academic/classRoutine/del/{id}',[
     AcademicController::class ,
     'delClassRoutine'
 ])->name('delClassRoutine');
 
-Route::get('/cultivation/academic/classRoutine/content/delete/{id}',[
+Route::get('/academic/classRoutine/content/delete/{id}',[
     AcademicController::class ,
     'delClassRoutineContent'
 ])->name('delClassRoutineContent');
 
-Route::get('/cultivation/academic/examRoutine/',[
+Route::get('/academic/examRoutine/',[
     AcademicController::class ,
     'examRoutineManage'
 ])->name('examRoutineManage');
 
-Route::post('/cultivation/academic/examRoutine/save',[
+Route::post('/academic/examRoutine/save',[
     AcademicController::class ,
     'saveExamRoutine'
 ])->name('saveExamRoutine');
 
-Route::get('/cultivation/academic/examRoutine/edit/{id}',[
+Route::get('/academic/examRoutine/edit/{id}',[
     AcademicController::class ,
     'editExamRoutine'
 ])->name('editExamRoutine');
 
-Route::get('/cultivation/academic/examRoutine/del/{id}',[
+Route::get('/academic/examRoutine/del/{id}',[
     AcademicController::class ,
     'delExamRoutine'
 ])->name('delExamRoutine');
 
-Route::get('/cultivation/academic/examRoutine/content/delete/{id}',[
+Route::get('/academic/examRoutine/content/delete/{id}',[
     AcademicController::class ,
     'delExamRoutineContent'
 ])->name('delExamRoutineContent');
 
-Route::get('/cultivation/academic/semisterPlan/',[
+Route::get('/academic/semisterPlan/',[
     AcademicController::class,
     'semisterPlanManage'
 ])->name('semisterPlanManage');
 
-Route::post('/cultivation/academic/semisterPlan/save',[
+Route::post('/academic/semisterPlan/save',[
     AcademicController::class ,
     'saveSemisterPlan'
 ])->name('saveSemisterPlan');
 
-Route::get('/cultivation/academic/semisterPlan/edit/{id}',[
+Route::get('/academic/semisterPlan/edit/{id}',[
     AcademicController::class ,
     'editSemisterPlan'
 ])->name('editSemisterPlan');
 
-Route::get('/cultivation/academic/semisterPlan/del/{id}',[
+Route::get('/academic/semisterPlan/del/{id}',[
     AcademicController::class ,
     'delSemisterPlan'
 ])->name('delSemisterPlan');
 
-Route::get('/cultivation/academic/semisterPlan/content/delete/{id}',[
+Route::get('/academic/semisterPlan/content/delete/{id}',[
     AcademicController::class ,
     'delSemisterPlanContent'
 ])->name('delSemisterPlanContent');
 
-Route::get('/cultivation/placement/jobPlacement/',[
+Route::get('/placement/jobPlacement/',[
     PlacementCellController::class ,
     'placementCell'
 ])->name('placementCell');
 
-Route::post('/cultivation/placement/placementCell/save',[
+Route::post('/placement/placementCell/save',[
     PlacementCellController::class ,
     'savePlacementCell'
 ])->name('savePlacementCell');
 
-Route::get('/cultivation/placement/placementCell/edit/{id}',[
+Route::get('/placement/placementCell/edit/{id}',[
     PlacementCellController::class ,
     'editPlc'
 ])->name('editPlc');
 
 
-Route::get('/cultivation/academic/placementCell/content/delete/{id}',[
+Route::get('/academic/placementCell/content/delete/{id}',[
     PlacementCellController::class ,
     'delPlcCon'
 ])->name('delPlcCon');
 
-Route::get('/cultivation/placement/placementCell/delete/{id}',[
+Route::get('/placement/placementCell/delete/{id}',[
     PlacementCellController::class ,
     'delPlc'
 ])->name('delPlc');
 
-Route::get('/cultivation/placement/needyStudentPanel/',[
+Route::get('/placement/needyStudentPanel/',[
     PlacementCellController::class ,
     'needyStudentPanel'
 ])->name('needyStudentPanel');
 
-Route::post('/cultivation/placement/needyStudentPanel/save',[
+Route::post('/placement/needyStudentPanel/save',[
     PlacementCellController::class ,
     'saveNeedyStdPanel'
 ])->name('saveNeedyStdPanel');
 
-Route::get('/cultivation/placement/needyStudentPanel/edit/{id}',[
+Route::get('/placement/needyStudentPanel/edit/{id}',[
     PlacementCellController::class ,
     'editNeedyStdPanel'
 ])->name('editNeedyStdPanel');
 
 
-Route::get('/cultivation/academic/needyStudentPanel/photo/delete/{id}',[
+Route::get('/academic/needyStudentPanel/photo/delete/{id}',[
     PlacementCellController::class ,
     'delNeedyStdPanelCon'
 ])->name('delNeedyStdPanelCon');
-Route::get('/cultivation/academic/needyStudentPanel/documents/delete/{id}',[
+Route::get('/academic/needyStudentPanel/documents/delete/{id}',[
     PlacementCellController::class ,
     'delNeedyStdPaneldoc'
 ])->name('delNeedyStdPaneldoc');
 
-Route::get('/cultivation/placement/needyStudentPanel/delete/{id}',[
+Route::get('/placement/needyStudentPanel/delete/{id}',[
     PlacementCellController::class ,
     'delNeedyStdPanel'
 ])->name('delNeedyStdPanel');
 //academic info ends here
 
 //
-Route::get('/cultivation/configuration',[
+Route::get('/configuration',[
     CultivationController::class ,
     'serverConfig'
 ])->name('serverConfig');
-Route::post('/cultivation/configuration/save',[
+Route::post('/configuration/save',[
     CultivationController::class ,
     'saveConfig'
 ])->name('saveConfig');
-Route::get('/cultivation/sign/del/{id}',[
+Route::get('/sign/del/{id}',[
     CultivationController::class ,
     'delSign'
 ])->name('delSign');
-Route::post('/cultivation/sign/save',[
+Route::post('/sign/save',[
     CultivationController::class,
     'saveSign'
 ])->name('saveSign');
-Route::get('/cultivation/logo/del/{id}',[
+Route::get('/logo/del/{id}',[
     CultivationController::class ,
     'delLogo'
 ])->name('delLogo');
-Route::post('/cultivation/logo/save',[
+Route::post('/logo/save',[
     CultivationController::class ,
     'saveLogo'
 ])->name('saveLogo');
-Route::get('/cultivation/favicon/del/{id}',[
+Route::get('/favicon/del/{id}',[
     CultivationController::class ,
     'delFavicon'
 ])->name('delFavicon');
-Route::post('/cultivation/favicon/save',[
+Route::post('/favicon/save',[
     CultivationController::class ,
     'saveFavicon'
 ])->name('saveFavicon');
-Route::get('/cultivation/avatar/del/{id}',[
+Route::get('/avatar/del/{id}',[
     CultivationController::class ,
     'delAvatar'
 ])->name('delAvatar');
-Route::post('/cultivation/avatar/save',[
+Route::post('/avatar/save',[
     CultivationController::class ,
     'saveAvatar'
 ])->name('saveAvatar');
 
 //Account Part
-Route::get('/cultivation/account',[
+Route::get('/account',[
     BackofficeController::class ,
     'accountPart'
 ])->name('accountPart');
@@ -600,16 +600,16 @@ Route::get('/delete-fees-data/{id}',[
 //Account part end
 
 //Academic Part
-Route::get('/cultivation/academic',[
+Route::get('/academic',[
     BackofficeController::class ,
     'index'
 ])->name('academicPart');
 //Student route declaration
-Route::get('/cultivation/student/admit',[
-    admissionController::class ,
+Route::get('/student/admit',[
+    Controller::class ,
     'admitStudent'
 ])->name('admitStudent');
-Route::post('/cultivation/student/admit/confirm',[
+Route::post('/student/admit/confirm',[
     admissionController::class ,
     'confirmAdmit'
 ])->name('confirmAdmit');
@@ -617,11 +617,12 @@ Route::get('/view/student/{stdId}',[
     admissionController::class,
     'viewAdmission'
 ])->name('viewAdmission');
-Route::get('/cultivation/student/edit/{stdId}',[
+Route::get('/student/edit/{stdId}',[
     admissionController::class ,
     'editStudent'
 ])->name('editStudent');
-Route::post('/cultivation/student/edit/confirm',[
+
+Route::post('/student/edit/confirm',[
     admissionController::class ,
     'updateAdmit'
 ])->name('updateAdmit');
@@ -633,41 +634,55 @@ Route::post('/student/photo/update',[
 ])->name('stdPhotoUpdate');
 
 
-Route::get('/cultivation/teacher/del/avatar/{stdId}',[
+Route::get('/teacher/del/avatar/{stdId}',[
     admissionController::class ,
     'delStudentPhoto'
 ])->name('delStudentPhoto');
 
-Route::get('/cultivation/student/del/{stdId}',[
+Route::get('/student/del/{stdId}',[
     admissionController::class ,
     'delStudent'
 ])->name('delStudent');
 
-Route::get('/cultivation/student/del/avatar/{stdId}',[
+Route::get('/student/del/avatar/{stdId}',[
     admissionController::class ,
     'delStdAvatar'
 ])->name('delStdAvatar');
 
-Route::get('/cultivation/student/list',[
+Route::get('/student/list',[
     admissionController::class,
     'studentList'
 ])->name('studentList');
-Route::get('/cultivation/student/idCard/{stdId}',[
+
+Route::get('/student/idCard/{stdId}',[
     admissionController::class ,
     'stdIdCard'
 ])->name('stdIdCard');
-Route::get('/cultivation/student/promotion',[
+
+Route::get('/student/promotion',[
     admissionController::class ,
     'studentPromotion'
 ])->name('studentPromotion');
 
+
+Route::post('/student/promotion/getData',[
+    admissionController::class ,
+    'getPromotionData'
+])->name('getPromotionData');
+
+Route::post('/student/promotion/confirm',[
+    admissionController::class ,
+    'confirmPromotData'
+])->name('confirmPromotData');
+
+
 //Teacher route declaration
 
-Route::get('/cultivation/teacher/admit',[
+Route::get('/teacher/admit',[
     TeacherController::class ,
     'addTeacher'
 ])->name('addTeacher');
-Route::post('/cultivation/teacher/admit/confirm',[
+Route::post('/teacher/admit/confirm',[
     TeacherController::class ,
     'confirmTeacher'
 ])->name('confirmTeacher');
@@ -675,35 +690,35 @@ Route::get('/view/teacher/{profileId}',[
     TeacherController::class,
     'viewTeacher'
 ])->name('viewTeacher');
-Route::get('/cultivation/teacher/edit/{profileId}',[
+Route::get('/teacher/edit/{profileId}',[
     TeacherController::class ,
     'editTeacher'
 ])->name('editTeacher');
-Route::post('/cultivation/teacher/edit/confirm',[
+Route::post('/teacher/edit/confirm',[
     TeacherController::class ,
     'updateTeacher'
 ])->name('updateTeacher');
-Route::get('/cultivation/teacher/del/{profileId}',[
+Route::get('/teacher/del/{profileId}',[
     TeacherController::class ,
     'delTeacher'
 ])->name('delTeacher');
-Route::get('/cultivation/teacher/del/avatar/{profileId}',[
+Route::get('/teacher/del/avatar/{profileId}',[
     TeacherController::class ,
     'delTeacherPhoto'
 ])->name('delTeacherPhoto');
 
-Route::get('/cultivation/teacher/list',[
+Route::get('/teacher/list',[
     TeacherController::class ,
     'teacherList'
 ])->name('teacherList');
 
 //Teacher route declaration
 
-Route::get('/cultivation/staff/admit',[
+Route::get('/staff/admit',[
     StaffController::class ,
     'addStaff'
 ])->name('addStaff');
-Route::post('/cultivation/staff/admit/confirm',[
+Route::post('/staff/admit/confirm',[
     StaffController::class ,
     'confirmStaff'
 ])->name('confirmStaff');
@@ -711,24 +726,24 @@ Route::get('/view/staff/{profileId}',[
     StaffController::class,
     'viewStaff'
 ])->name('viewStaff');
-Route::get('/cultivation/staff/edit/{profileId}',[
+Route::get('/staff/edit/{profileId}',[
     StaffController::class ,
     'editStaff'
 ])->name('editStaff');
-Route::post('/cultivation/staff/edit/confirm',[
+Route::post('/staff/edit/confirm',[
     StaffController::class ,
     'updateStaff'
 ])->name('updateStaff');
-Route::get('/cultivation/staff/del/{profileId}',[
+Route::get('/staff/del/{profileId}',[
     StaffController::class ,
     'delStaff'
 ])->name('delStaff');
-Route::get('/cultivation/staff/del/avatar/{profileId}',[
+Route::get('/staff/del/avatar/{profileId}',[
     StaffController::class ,
     'delStaffPhoto'
 ])->name('delStaffPhoto');
 
-Route::get('/cultivation/staff/list',[
+Route::get('/staff/list',[
     StaffController::class ,
     'staffList'
 ])->name('staffList');
@@ -736,28 +751,28 @@ Route::get('/cultivation/staff/list',[
 
 //Classes route declaration
 
-Route::get('/cultivation/class/create',[
+Route::get('/class/create',[
     individualController::class ,
     'createClass'
 ])->name('createClass');
-Route::post('/cultivation/class/create/confirm',[
+Route::post('/class/create/confirm',[
     individualController::class ,
     'confirmClass'
 ])->name('confirmClass');
-Route::get('/cultivation/class/edit/{itemId}',[
+Route::get('/class/edit/{itemId}',[
     individualController::class ,
     ''
 ])->name('editClass');
-Route::post('/cultivation/class/edit/confirm',[
+Route::post('/class/edit/confirm',[
     individualController::class ,
     'updateClass'
 ])->name('updateClass');
-Route::get('/cultivation/class/del/{itemId}',[
+Route::get('/class/del/{itemId}',[
     individualController::class ,
     'delClass'
 ])->name('delClass');
 
-Route::get('/cultivation/class/list',[
+Route::get('/class/list',[
     individualController::class ,
     'allClasses'
 ])->name('allClasses');
@@ -765,84 +780,84 @@ Route::get('/cultivation/class/list',[
 
 //Department route declaration
 
-Route::get('/cultivation/department/create',[
+Route::get('/department/create',[
     individualController::class ,
     'createDepartment'
 ])->name('createDepartment');
-Route::post('/cultivation/department/create/confirm',[
+Route::post('/department/create/confirm',[
     individualController::class ,
     'confirmDepartment'
 ])->name('confirmDepartment');
-Route::get('/cultivation/department/edit/{itemId}',[
+Route::get('/department/edit/{itemId}',[
     individualController::class ,
     'editDepartment'
 ])->name('editDepartment');
-Route::post('/cultivation/department/edit/confirm',[
+Route::post('/department/edit/confirm',[
     individualController::class ,
     'updateDepartment'
 ])->name('updateDepartment');
-Route::get('/cultivation/department/del/{itemId}',[
+Route::get('/department/del/{itemId}',[
     individualController::class ,
     'delDepartment'
 ])->name('delDepartment');
 
-Route::get('/cultivation/department/list',[
+Route::get('/department/list',[
     individualController::class ,
     'allDepartment'
 ])->name('allDepartment');
 
 //Session route declaration
 
-Route::get('/cultivation/session/create',[
+Route::get('/session/create',[
     individualController::class ,
     'createSession'
 ])->name('createSession');
-Route::post('/cultivation/session/create/confirm',[
+Route::post('/session/create/confirm',[
     individualController::class ,
     'confirmSession'
 ])->name('confirmSession');
-Route::get('/cultivation/session/edit/{itemId}',[
+Route::get('/session/edit/{itemId}',[
     individualController::class ,
     'editSession'
 ])->name('editSession');
-Route::post('/cultivation/session/edit/confirm',[
+Route::post('/session/edit/confirm',[
     individualController::class ,
     'updateSession'
 ])->name('updateSession');
-Route::get('/cultivation/session/del/{itemId}',[
+Route::get('/session/del/{itemId}',[
     individualController::class ,
     'delSession'
 ])->name('delSession');
 
-Route::get('/cultivation/session/list',[
+Route::get('/session/list',[
     individualController::class ,
     'allSession'
 ])->name('allSession');
 
 //Subject route declaration
 
-Route::get('/cultivation/subject/create',[
+Route::get('/subject/create',[
     SubjectController::class ,
     'createSubject'
 ])->name('createSubject');
-Route::post('/cultivation/subject/create/confirm',[
+Route::post('/subject/create/confirm',[
     SubjectController::class ,
     'confirmSubject'
 ])->name('confirmSubject');
-Route::get('/cultivation/subject/edit/{itemId}',[
+Route::get('/subject/edit/{itemId}',[
     SubjectController::class ,
     'editSubject'
 ])->name('editSubject');
-Route::post('/cultivation/subject/edit/confirm',[
+Route::post('/subject/edit/confirm',[
     SubjectController::class ,
     'updateSubject'
 ])->name('updateSubject');
-Route::get('/cultivation/subject/del/{itemId}',[
+Route::get('/subject/del/{itemId}',[
     SubjectController::class ,
     'delSubject'
 ])->name('delSubject');
 
-Route::get('/cultivation/subject/list',[
+Route::get('/subject/list',[
     SubjectController::class,
     'allSubject'
 ])->name('allSubject');
@@ -850,28 +865,28 @@ Route::get('/cultivation/subject/list',[
 
 //Exam route declaration
 
-Route::get('/cultivation/exam/create',[
+Route::get('/exam/create',[
     ExamController::class ,
     'createExam'
 ])->name('createExam');
-Route::post('/cultivation/exam/create/confirm',[
+Route::post('/exam/create/confirm',[
     ExamController::class ,
     'confirmExam'
 ])->name('confirmExam');
-Route::get('/cultivation/exam/edit/{itemId}',[
+Route::get('/exam/edit/{itemId}',[
     ExamController::class ,
     'editExam'
 ])->name('editExam');
-Route::post('/cultivation/exam/edit/confirm',[
+Route::post('/exam/edit/confirm',[
     ExamController::class ,
     'updateExam'
 ])->name('updateExam');
-Route::get('/cultivation/exam/del/{itemId}',[
+Route::get('/exam/del/{itemId}',[
     ExamController::class ,
     'delExam'
 ])->name('delExam');
 
-Route::get('/cultivation/exam/list',[
+Route::get('/exam/list',[
     ExamController::class ,
     'allExam'
 ])->name('allExam');
@@ -879,25 +894,25 @@ Route::get('/cultivation/exam/list',[
 
 //Marks route declaration
 
-Route::get('/cultivation/marks/add',[
+Route::get('/marks/add',[
     MarksheetController::class ,
     'addMarks'
 ])->name('addMarks');
-Route::post('/cultivation/marks/add/getData',[
+Route::post('/marks/add/getData',[
     MarksheetController::class ,
     'getMarks'
 ])->name('getMarks');
-Route::post('/cultivation/marks/add/confirm',[
+Route::post('/marks/add/confirm',[
     MarksheetController::class ,
     'confirmMarks'
 ])->name('confirmMarks');
 
-Route::get('/cultivation/marksheet/create',[
+Route::get('/marksheet/create',[
     MarksheetController::class ,
     'createMarksheet'
 ])->name('createMarksheet');
 
-Route::post('/cultivation/marksheet/generate',[
+Route::post('/marksheet/generate',[
     MarksheetController::class ,
     'generateMarksheet'
 ])->name('generateMarksheet');
@@ -927,28 +942,28 @@ Route::post('/attend/sheet/getData',[
 
 //grade route declaration
 
-Route::get('/cultivation/grade/create',[
+Route::get('/grade/create',[
     GradeListController::class ,
     'createGrade'
 ])->name('createGrade');
-Route::post('/cultivation/grade/create/confirm',[
+Route::post('/grade/create/confirm',[
     GradeListController::class ,
     'confirmGrade'
 ])->name('confirmGrade');
-Route::get('/cultivation/grade/edit/{itemId}',[
+Route::get('/grade/edit/{itemId}',[
     GradeListController::class ,
     'editGrade'
 ])->name('editGrade');
-Route::post('/cultivation/grade/edit/confirm',[
+Route::post('/grade/edit/confirm',[
     GradeListController::class ,
     'updateGrade'
 ])->name('updateGrade');
-Route::get('/cultivation/grade/del/{itemId}',[
+Route::get('/grade/del/{itemId}',[
     GradeListController::class ,
     'delGrade'
 ])->name('delGrade');
 
-Route::get('/cultivation/grade/list',[
+Route::get('/grade/list',[
     GradeListController::class ,
     'allGrade'
 ])->name('allGrade');
