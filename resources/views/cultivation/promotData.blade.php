@@ -26,6 +26,7 @@ Get Promotional Student Data
     @if($studentList->count()>0)
         <form method="POST" class="card-body form form-group" action="{{ route('confirmPromotData') }}">
                 <div class="row">
+                    <div class="col-12"><h1>Manage the promotion of student from the list</h1></div>
                     <div class="col-6 col-md-4 mb-2"><b>Group/Section:</b>  {{ $sectionName }}</div>
                     <div class="col-6 col-md-4 mb-2"><b>Current Class:</b>  {{ $className }}</div>
                     <div class="col-6 col-md-4 mb-2"><b>Session:</b> {{ $session_name }}</div>
@@ -88,6 +89,7 @@ Get Promotional Student Data
     <div class="alert alert-info">
         Sorry! No data found
     </div>
+    <div class="mb-4"> <a href="{{ route('studentPromotion') }}" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i> Back</a></div>
     @endif
     <script>
         // Listen for click on toggle checkbox

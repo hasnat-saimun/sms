@@ -24,7 +24,7 @@ Student Promotion
                             </div>
                             <div class="heading-layout1">
                                 <div class="item-title">
-                                    <h3>Get Student Data</h3>
+                                    <h3>Get Student Data-Promotion Manager</h3>
                                 </div>
                             </div>
                             <form class="new-added-form" action="{{ route('getPromotionData') }}" method="POST">

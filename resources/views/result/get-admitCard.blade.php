@@ -96,6 +96,7 @@ Get Admit Card
     <div class="alert alert-info">
         Sorry! No data found
     </div>
+    <div class="mb-4"> <a href="{{ route('admitCard') }}" class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i> Back</a></div>
     @endif
     <script type="text/javascript">
         function printDiv(e){

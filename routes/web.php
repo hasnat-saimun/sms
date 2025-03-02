@@ -606,7 +606,7 @@ Route::get('/academic',[
 ])->name('academicPart');
 //Student route declaration
 Route::get('/student/admit',[
-    Controller::class ,
+    admissionController::class ,
     'admitStudent'
 ])->name('admitStudent');
 Route::post('/student/admit/confirm',[

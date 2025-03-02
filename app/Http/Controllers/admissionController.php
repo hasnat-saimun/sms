@@ -34,17 +34,15 @@ class admissionController extends Controller
 
     public function confirmPromotData(Request $requ){
         
-        $studentId = $requ->studentId;
+        $studentId = $requ->checkbox;
         $totalData = count($studentId);
+        // return $studentId;
         $x = 0;
         while($x<$totalData){
-            if($requ->checkbox[$x] == $requ->studentId[$x]):
-                return $update = newAdmission::where(['stdId'=>$requ->studentId[$x]])->first();
+            $update = newAdmission::where(['stdId'=>$requ->studentId[$x]])->first();
 
-                $update->className         = $requ->promotId;
-                $update->save();
-            endif;
-
+            $update->className         = $requ->promotId;
+            $update->save();
             $x++;
         }
         // return $x;
@@ -129,7 +127,7 @@ class admissionController extends Controller
     //update
     public function updateAdmit(Request $requ){
             $data = newAdmission::find($requ->stdId);
-            if(!$data->isEmpty() && $data->count()>0):
+            if($data->count()>0):
 
                 $data->fullName         = $requ->fullName;
                 $data->sureName         = $requ->sureName;
