@@ -126,9 +126,9 @@ Managing Committee
                     </div>
                 </form>
             </div>
-            <div class="card-header">Committee List</div>
-            <div class="card-body cultivation">
-                <table id="myTable" class="table table-striped">
+            <div class="card-header mt-5">Committee List</div>
+            <div class="card card-body cultivation">
+                <table id="myTable" class="table table-responsive">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -160,8 +160,9 @@ Managing Committee
                                 <td>{{ $profile->validYear }}</td>
                                 <td>{{ $profile->status }}</td>
                                 <td>
-                                    <a href="{{ route('editManagingCommittee',['id'=>$profile->id]) }}"><i class="fa-light fa-pen-to-square fa-xl"></i></a>
-                                    <a href="{{ route('delManagingCommittee',['id'=>$profile->id]) }}"><i class="fa-thin fa-circle-trash fa-xl"></i></a>
+                                        <a href="{{ route('editManagingCommittee',  ['id'=>$profile->id]) }}"><i class="fa-solid fa-eye mx-2" style="color:rgb(35 170 211);"></i></a>
+                                        <a href="{{ route('editManagingCommittee',['id'=>$profile->id]) }}"><i class="fa-solid fa-pen-to-square mx-2" style="color: #4125b1;"></i></a>
+                                        <a href="{{ route('delManagingCommittee',['id'=>$profile->id]) }}"onclick="return confirm('Are you sure you want to delete this item?');" title="Get Id Card" ><i class="fa-solid fa-trash mx-2" style="color: #c10b26;"></i></a>
                                 </td>
                             </tr>
                         @endforeach
