@@ -49,7 +49,7 @@
         <div class="header-inline item-header">
             <div class="header-elements">
                 <ul>
-                    <li><a href="{{route('teacherList')}}"><i class="fa-solid fa-arrow-left"></i></a></li>
+                    <li><a href="{{route('exPrincipal')}}"><i class="fa-solid fa-arrow-left"></i></a></li>
                     <li><a href="#"><i class="fas fa-print"></i></a></li>
                     <li><a href="#"><i class="fas fa-download"></i></a></li>
                 </ul>
@@ -67,11 +67,11 @@
                 <div class="col-lg-4">
                     <div class="card shadow-sm">
                     <div class="card-header bg-transparent text-center">
-                        <img class="rounded:100" style="width:150px;height:150px; border-radius: 80px ;" src="{{ asset('/public/upload/image/teacher/') }}/{{$singleData->avatar}}" alt="student">
-                        <h3 class="mt-2">{{$singleData->firstName}}</h3>
+                        <img class="rounded:100" style="width:150px;height:150px; border-radius: 80px ;" src="{{ asset('/public/upload/image/exPrincipal/') }}/{{$singleData->avatar}}" alt="Ex Principal">
+                        <h3 class="mt-2">{{$singleData->fullName}}</h3>
                     </div>
                     <div class="card-body">
-                        <p class="mb-0"><strong class="pr-1">Staff ID:</strong>{{$singleData->teacherId}}</p>
+                        <p class="mb-0"><strong class="pr-1">Name: </strong>{{$singleData->fullName}}</p>
                         <p class="mb-0"><strong class="pr-1">Designation:</strong>{{$singleData->designation}}</p>
                         <p class="mb-0"><strong class="pr-1">Mobile:</strong> {{$singleData->mobile}}</p>
                         <p class="mb-0"><strong class="pr-1">E-mail:</strong>{{$singleData->email}}
@@ -89,52 +89,22 @@
                         <tr>
                             <th width="30%">Name</th>
                             <td width="2%">:</td>
-                            <td>{{$singleData->firstName}}</td>
+                            <td>{{$singleData->fullName}}</td>
                         </tr>
                         <tr>
-                            <th width="30%">Sure Name</th>
+                            <th width="30%">Designation</th>
                             <td width="2%">:</td>
-                            <td>{{$singleData->lastName}}</td>
+                            <td>{{$singleData->designation}}</td>
                         </tr>
                         <tr>
-                            <th width="30%">Father Name</th>
+                            <th width="30%">Start Form</th>
                             <td width="2%">:</td>
-                            <td>{{$singleData->fathersName}}</td>
+                            <td>{{$singleData->startFrom}}</td>
                         </tr>
                         <tr>
-                            <th width="30%">Mother Name</th>
+                            <th width="30%">End To</th>
                             <td width="2%">:</td>
-                            <td>{{$singleData->mothersName}}</td>
-                        </tr>
-                        <tr>
-                            <th width="30%">Gender</th>
-                            <td width="2%">:</td>
-                            <td>{{$singleData->gender}}</td>
-                        </tr>
-                        <tr>
-                            <th width="30%">Birth Date</th>
-                            <td width="2%">:</td>
-                            <td>{{$singleData->dob}}</td>
-                        </tr>
-                        <tr>
-                            <th width="30%">Blood Group</th>
-                            <td width="2%">:</td>
-                            <td>{{$singleData->blGroup}}</td>
-                        </tr>
-                        <tr>
-                            <th width="30%">Religion</th>
-                            <td width="2%">:</td>
-                            <td>{{$singleData->religion}}</td>
-                        </tr>
-                        <tr>
-                            <th width="30%">Location</th>
-                            <td width="2%">:</td>
-                            <td>{{$singleData->address}}</td>
-                        </tr>
-                        <tr>
-                            <th width="30%">Join Date</th>
-                            <td width="2%">:</td>
-                            <td>{{$singleData->joinDate}}</td>
+                            <td>{{$singleData->endTo}}</td>
                         </tr>
                         <tr>
                             <th width="30%">E-mail</th>

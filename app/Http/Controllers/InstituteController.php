@@ -123,6 +123,11 @@ class InstituteController extends Controller
         endif;
     }
 
+    public function viewExPrincipal($id){
+        $singleData= ExPrincipal::find($id);
+        return view('academic.viewExPrincipal',['singleData'=>$singleData]);
+    }
+
     public function delexPlcCon($id){
         $item = ExPrincipal::find($id);
         if(!empty($item)):

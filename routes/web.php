@@ -206,6 +206,11 @@ Route::get('/institute/principal/exList',[
     'exPrincipal'
 ])->name('exPrincipal');
 
+Route::get('/institute/view/exPrincipal/{id}',[
+    InstituteController::class,
+    'viewExPrincipal'
+])->name('viewExPrincipal');
+
 Route::post('/institute/principal/exList/save',[
     InstituteController::class ,
     'saveExPrincipal'
