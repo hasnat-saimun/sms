@@ -1,6 +1,6 @@
 @extends('account.include')
 @section('backTitle')
-Institute Info
+Report Into Date
 @endsection
 @section('backIndex')
 <div class="row gutters-20 mb-4">

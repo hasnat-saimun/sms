@@ -1,6 +1,6 @@
 @extends('account.include')
 @section('backTitle')
-Institute Info
+Edit Tuition Fee
 @endsection
 @section('backIndex')
 <div class="row gutters-20 mb-4">

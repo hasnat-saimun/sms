@@ -1,4 +1,4 @@
-@extends('cultivation.include')
+@extends('academic.include')
 @section('backTitle')
 All Notice
 @endsection
@@ -46,9 +46,9 @@ All Notice
                                                 <td>{{ $notice->headline }}</td>
                                                 <td>{!! Str::limit($notice->body,'30','......') !!}</td>
                                                 <td>
-                                                    <a href="{{ route('editNotice',['id'=>$notice->id]) }}"><i class="fa-light fa-pen-to-square fa-xl"></i></a>
-                                                    <a href="{{ route('delNotice',['id'=>$notice->id]) }}" onclick="return confirm('Are you sure to delete?')"><i class="fa-thin fa-circle-trash fa-xl"></i></a>
-                                                    <a href="{{ route('prevNotice',['id'=>$notice->id]) }}"><i class="fa-sharp fa-regular fa-eye fa-xl"></i></a>
+                                        <a href="{{ route('prevNotice',  ['id'=>$notice->id]) }}"><i class="fa-solid fa-eye mx-2" style="color:rgb(35 170 211);"></i></a>
+                                        <a href="{{ route('editNotice',['id'=>$notice->id]) }}"><i class="fa-solid fa-pen-to-square mx-2" style="color: #4125b1;"></i></a>
+                                        <a href="{{ route('delNotice',['id'=>$notice->id]) }}"onclick="return confirm('Are you sure you want to delete this item?');" title="Get Id Card" ><i class="fa-solid fa-trash mx-2" style="color: #c10b26;"></i></a>
                                                     
                                                 </td>
                                             </tr>

@@ -10,7 +10,7 @@
   color: #000;
 }
 .card{
-    background-color:#c5b4b4 !important;
+    background-color:#c0c2e1 !important;
     padding-bottom: 20px !important;
 
 }
@@ -49,7 +49,7 @@
         <div class="header-inline item-header">
             <div class="header-elements">
                 <ul>
-                    <li><a href="{{route('exPrincipal')}}"><i class="fa-solid fa-arrow-left"></i></a></li>
+                    <li><a href="{{route('managingCommittee')}}"><i class="fa-solid fa-arrow-left"></i></a></li>
                     <li><a href="#"><i class="fas fa-print"></i></a></li>
                     <li><a href="#"><i class="fas fa-download"></i></a></li>
                 </ul>
@@ -67,7 +67,7 @@
                 <div class="col-lg-4">
                     <div class="card shadow-sm">
                     <div class="card-header bg-transparent text-center">
-                        <img class="rounded:100" style="width:150px;height:150px; border-radius: 80px ;" src="{{ asset('/public/upload/image/exPrincipal/') }}/{{$singleData->avatar}}" alt="Ex Principal">
+                        <img class="rounded:100" style="width:150px;height:150px; border-radius: 80px ;" src="{{ asset('/public/upload/image/cultivation/') }}/{{$singleData->avatar}}" alt="Ex Principal">
                         <h3 class="mt-2">{{$singleData->fullName}}</h3>
                     </div>
                     <div class="card-body">
@@ -92,19 +92,14 @@
                             <td>{{$singleData->fullName}}</td>
                         </tr>
                         <tr>
-                            <th width="30%">Designation</th>
+                            <th width="30%">Qualification</th>
                             <td width="2%">:</td>
-                            <td>{{$singleData->designation}}</td>
+                            <td>{{$singleData->qualification}}</td>
                         </tr>
                         <tr>
-                            <th width="30%">Start Form</th>
+                            <th width="30%">Job Details</th>
                             <td width="2%">:</td>
-                            <td>{{$singleData->startFrom}}</td>
-                        </tr>
-                        <tr>
-                            <th width="30%">End To</th>
-                            <td width="2%">:</td>
-                            <td>{{$singleData->endTo}}</td>
+                            <td>{{$singleData->jobDetails}}</td>
                         </tr>
                         <tr>
                             <th width="30%">E-mail</th>

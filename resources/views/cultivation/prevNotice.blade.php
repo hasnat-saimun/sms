@@ -1,4 +1,4 @@
-@extends('cultivation.include')
+@extends('academic.include')
 @section('backTitle')
 Configuration
 @endsection

@@ -1,6 +1,6 @@
 @extends('account.include')
 @section('backTitle')
-Academic
+Account
 @endsection
 @section('backIndex')
                 <!-- Dashboard Content Start Here -->

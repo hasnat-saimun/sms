@@ -161,9 +161,8 @@ Syllabus Management
                                 <td>{{ $itemDepartment->departmentName }}</td>
                                 <td>{{ $itemSession->session }}</td>
                                 <td>
-
-                                    <a href="{{ route('editSyllabus',['id'=>$item->id]) }}"><i class="fa-light fa-pen-to-square fa-xl"></i></a>
-                                    <a href="{{ route('delSyllabus',['id'=>$item->id]) }}" onclick="return confirm('Are you sure to delete?')"><i class="fa-thin fa-circle-trash fa-xl"></i></a>
+                                        <a href="{{ route('editSyllabus',['id'=>$item->id]) }}"><i class="fa-solid fa-pen-to-square mx-2" style="color: #4125b1;"></i></a>
+                                        <a href="{{ route('delSyllabus',['id'=>$item->id]) }}"onclick="return confirm('Are you sure you want to delete this item?');" title="Get Id Card" ><i class="fa-solid fa-trash mx-2" style="color: #c10b26;"></i></a>
                                 </td>
                             </tr>
                         @endforeach

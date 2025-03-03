@@ -163,6 +163,11 @@ class InstituteController extends Controller
         return view('academic.managingCommittee');
     }
 
+    public function viewManagingCommittee($id){
+        $singleData= ManagingComittee::find($id);
+        return view('academic.viewManagingCommittee',['singleData'=>$singleData]);
+    }
+
     public function saveManagingCommittee(Request $requ){
         if(empty($requ->proId)):
             $committee = new ManagingComittee();

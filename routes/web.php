@@ -240,6 +240,11 @@ Route::post('/institute/committee/save',[
     'saveManagingCommittee'
 ])->name('saveManagingCommittee');
 
+Route::get('/institute/committee/view/{id}',[
+    InstituteController::class ,
+    'viewManagingCommittee'
+])->name('viewManagingCommittee');
+
 Route::get('/institute/committee/edit/{id}',[
     InstituteController::class ,
     'editManagingCommittee'

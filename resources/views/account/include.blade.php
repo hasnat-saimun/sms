@@ -57,8 +57,8 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item sidebar-nav-item">
-                            <a href="{{route('feesForm')}}" class="nav-link"><i class="fa-thin fa-database"></i> <span>Add Fees</span></a>
+                        <li class="nav-item ">
+                            <a href="{{route('feesForm')}}" class="nav-link"><i class="fa-thin fa-database"></i> <span>Add Fees Name</span></a>
                         </li>
                     </ul>
                 </div>
