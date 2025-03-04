@@ -34,6 +34,9 @@
                                 <li class="nav-item">
                                     <a href="{{ route('createMarksheet') }}" class="nav-link"><i class="fas fa-angle-right"></i>Marksheet Generate</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('allMarksheet') }}" class="nav-link"><i class="fas fa-angle-right"></i>Marksheet</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item sidebar-nav-item">

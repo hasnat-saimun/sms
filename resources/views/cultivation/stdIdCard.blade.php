@@ -1,6 +1,6 @@
 @extends('cultivation.include')
 @section('backTitle')
-Student ID Card
+{{$std->fullName}} ID Card
 @endsection
 @section('backIndex')
                 <!-- Dashboard summery Start Here -->

@@ -771,7 +771,7 @@ Route::post('/class/create/confirm',[
 ])->name('confirmClass');
 Route::get('/class/edit/{itemId}',[
     individualController::class ,
-    ''
+    'editClass'
 ])->name('editClass');
 Route::post('/class/edit/confirm',[
     individualController::class ,
@@ -921,6 +921,11 @@ Route::get('/marksheet/create',[
     MarksheetController::class ,
     'createMarksheet'
 ])->name('createMarksheet');
+
+Route::get('/marksheet/all',[
+    MarksheetController::class ,
+    'allMarksheet'
+])->name('allMarksheet');
 
 Route::post('/marksheet/generate',[
     MarksheetController::class ,

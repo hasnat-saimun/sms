@@ -65,6 +65,10 @@ class MarksheetController extends Controller
         return view('result.createMarksheet');
     }
 
+    public function allMarksheet(){
+        return view('result.allMarksheet');
+    }
+
     public function generateMarksheet(Request $requ){
         // return $requ->stdId;
         $studentList = newAdmission::where(['admitId'=>$requ->stdId])->first();

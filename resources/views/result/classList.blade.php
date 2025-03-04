@@ -1,6 +1,6 @@
 @extends('result.include')
 @section('backTitle')
-Dashboard
+Class List
 @endsection
 @section('backIndex')
                 <!-- Social Media Start Here -->
@@ -9,19 +9,19 @@ Dashboard
                         <div class="card card-default">
                             <div class="card-header bg-light">
                                 <h3>Class List</h3>
-                                <a href="{{ route('createClass') }}" class="btn btn-success">Create Class</a>
+                                <a href="{{route('createClass')}}" class="btn btn-success">Create Class</a>
                             </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-12">
                                         @if(session()->has('success'))
                                             <div class="alert alert-success w-100">
-                                                {{ session()->get('success') }}
+                                                {{session()->get('success')}}
                                             </div>
                                         @endif
                                         @if(session()->has('error'))
                                             <div class="alert alert-danger w-100">
-                                                {{ session()->get('error') }}
+                                                {{session()->get('error')}}
                                             </div>
                                         @endif
                                     </div>
@@ -44,8 +44,8 @@ Dashboard
                                                 <td>{{ $x }}</td>
                                                 <td>{{ $item->className }}</td>
                                                 <td>
-                                                    <a href="{{ route('editClass',['itemId'=>$item->id]) }}"><i class="fa-light fa-pen-to-square fa-xl"></i></a>
-                                                    <a href="{{ route('delClass',['itemId'=>$item->id]) }}"><i class="fa-thin fa-circle-trash fa-xl"></i></a>
+                                                    <a href="{{ route('editClass',['itemId'=>$item->id]) }}"><i class="fa-solid fa-pen-to-square mx-2" style="color: #4125b1;"></i></a>
+                                                    <a href="{{ route('delClass',['itemId'=>$item->id]) }}"onclick="return confirm('Are you sure you want to delete this item?');" title="Get Id Card" ><i class="fa-solid fa-trash mx-2" style="color: #c10b26;"></i></a>
                                                 </td>
                                             </tr>
                                         @php
