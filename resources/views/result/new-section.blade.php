@@ -1,6 +1,6 @@
 @extends('result.include')
 @section('backTitle')
-Create Class
+Create Section
 @endsection
 @section('backIndex')
                 <!-- Dashboard summery Start Here -->
@@ -8,7 +8,7 @@ Create Class
                     <!-- Admit Form Area Start Here -->
                     <div class="card height-auto">
                         <div class="card-header bg-light">
-                            <a href="{{ route('allClasses') }}" class="btn btn-success">Class List</a>
+                            <a href="{{ route('allSection') }}" class="btn btn-success">Section List</a>
                         </div>
                         <div class="card-body">
                             <div class="row">
@@ -27,19 +27,19 @@ Create Class
                             </div>
                             <div class="heading-layout1">
                                 <div class="item-title">
-                                    <h3>Add New Class</h3>
+                                    <h3>Add New Section</h3>
                                 </div>
                             </div>
-                            <form class="new-added-form" action="{{ route('confirmClass') }}" method="POST" enctype="multipart/form-data">
+                            <form class="new-added-form" action="{{ route('confirmSection') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
                                     <div class="col-12 form-group">
-                                        <label>Class Name *</label>
-                                        <input type="text" name="className" placeholder="Enter the class name" class="form-control" required>
+                                        <label>Section Name *</label>
+                                        <input type="text" name="section" placeholder="Enter Section name" class="form-control" required>
                                     </div>
                                     <div class="col-12 form-group mg-t-8">
                                         <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
-                                        <button type="reset" class="btn-fill-lg bg-blue-dark  btn-hover-bluedark">Reset</button>
+                                        <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-bluedark">Reset</button>
                                     </div>
                                 </div>
                             </form>

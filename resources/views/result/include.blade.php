@@ -54,20 +54,36 @@
                             </ul>
                         </li>
                         <li class="nav-item sidebar-nav-item">
-                            <a href="#" class="nav-link"><i class="flaticon-books"></i><span>Group</span></a>
+                            <a href="#" class="nav-link"><i
+                                    class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Department</span></a>
                             <ul class="nav sub-group-menu">
                                 <li class="nav-item">
                                     <a href="{{ route('allDepartment') }}" class="nav-link"><i class="fas fa-angle-right"></i>All
-                                        Group</a>
+                                    Department</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('createDepartment') }}" class="nav-link"><i class="fas fa-angle-right"></i>Add New
-                                        Group</a>
+                                    Department</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item sidebar-nav-item">
-                            <a href="#" class="nav-link"><i class="flaticon-list"></i><span>Session</span></a>
+                            <a href="#" class="nav-link"><i
+                                    class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Section</span></a>
+                            <ul class="nav sub-group-menu">
+                                <li class="nav-item">
+                                    <a href="{{ route('allSection') }}" class="nav-link"><i class="fas fa-angle-right"></i>All
+                                        Section</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('createSection') }}" class="nav-link"><i class="fas fa-angle-right"></i>Add New
+                                        Section</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item sidebar-nav-item">
+                            <a href="#" class="nav-link"><i
+                                    class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i><span>Session</span></a>
                             <ul class="nav sub-group-menu">
                                 <li class="nav-item">
                                     <a href="{{ route('allSession') }}" class="nav-link"><i class="fas fa-angle-right"></i>All

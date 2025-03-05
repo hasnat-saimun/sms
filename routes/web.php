@@ -816,6 +816,34 @@ Route::get('/department/list',[
     'allDepartment'
 ])->name('allDepartment');
 
+//Section route declaration
+
+Route::get('/section/create',[
+    individualController::class ,
+    'createSection'
+])->name('createSection');
+Route::post('/Section/create/confirm',[
+    individualController::class ,
+    'confirmSection'
+])->name('confirmSection');
+Route::get('/Section/edit/{itemId}',[
+    individualController::class ,
+    'editSection'
+])->name('editSection');
+Route::post('/Section/edit/confirm',[
+    individualController::class ,
+    'updateSection'
+])->name('updateSection');
+Route::get('/Section/del/{itemId}',[
+    individualController::class ,
+    'delSection'
+])->name('delSection');
+
+Route::get('/Section/list',[
+    individualController::class ,
+    'allSection'
+])->name('allSection');
+
 //Session route declaration
 
 Route::get('/session/create',[

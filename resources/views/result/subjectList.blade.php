@@ -44,8 +44,8 @@ All Subject
                                                 <td>{{ $x }}</td>
                                                 <td>{{ $item->subjectName }}</td>
                                                 <td>
-                                                    <a href="{{ route('editSubject',['itemId'=>$item->id]) }}"><i class="fa-light fa-pen-to-square fa-xl"></i></a>
-                                                    <a href="{{ route('delSubject',['itemId'=>$item->id]) }}"><i class="fa-thin fa-circle-trash fa-xl"></i></a>
+                                                    <a href="{{ route('editSubject',['itemId'=>$item->id]) }}"><i class="fa-solid fa-pen-to-square mx-2" style="color: #4125b1;"></i></a>
+                                                    <a href="{{ route('delSubject',['itemId'=>$item->id]) }}"onclick="return confirm('Are you sure you want to delete this item?');" title="Get Id Card" ><i class="fa-solid fa-trash mx-2" style="color: #c10b26;"></i></a>
                                                 </td>
                                             </tr>
                                         @php

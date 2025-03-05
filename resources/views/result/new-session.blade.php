@@ -7,6 +7,9 @@ Create Session
                 <div class="row gutters-20 mb-4">
                     <!-- Admit Form Area Start Here -->
                     <div class="card height-auto">
+                        <div class="card-header bg-light">
+                            <a href="{{ route('allSession') }}" class="btn btn-success">Session List</a>
+                        </div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-12">

@@ -32,8 +32,7 @@ All Marksheet
 }
 /* logo part start */
 .main-logo-part {
-  background-color: #eceeee;
-  text-align: center;
+  text-align: end;
   padding: 31px 0px;
   box-sizing: border-box;
 }
@@ -55,7 +54,8 @@ img{
     max-width: 100%;
 }
 p{
-  margin: 0;
+  line-height: .4 !important;
+  padding: auto;
 }
 
 /* deafult css */
@@ -70,10 +70,9 @@ p{
   
   padding-left: 14px;
 }
-.header-top h1,h2,h3,h4,h5,h6, {
-    
+.header-top h1,h2,h3,h4,h5,h6 {
   line-height: .4 !important;
-  font-size: 28px;
+  font-size: 23px;
   font-weight: bold;
 }
 /* header top end */
@@ -162,28 +161,6 @@ p{
   font-weight: 400;
 }
 
-/* footer-right */
-.footer-right{
-
-}
-.footer-right p {
-  margin: 0;
-  padding: 26px 0px;
-  font-weight: 400;
-}
-
-.footer-right-image {
-  width: 121px;
-}
-
-/* footer section end */
-
-/* footer bottom start */
-.footter-bottom{
-  margin-top: 40px;
-  padding-bottom: 10px;
-}
-/* footer bottom end */
 </style>
     <div class="container header-top1">
         <div class="row">
@@ -203,29 +180,18 @@ p{
                     <div class="container">
                         <div class="row">
                             
-                            <div class="col-lg-2 p-0">
+                            <div class="col-lg-4 p-0 text-end">
                                 <div class="main-logo-part">
                                     <img src="https://i.ibb.co/58VBYrj/bd-logo.png" alt="">
                                 </div>
                             </div>
-                            <div class="col-lg-8 p-0">
-                               <div class="row">
-                                   <div class="col-lg-12">
-                                        <div class="header-top text-center">
-                                            <h5>Institute name</h5>
-                                            <h4>Burichong,Cumilla</h4>
-                                            <p class="fw-bold">instiution@gmail.com,10755048017</p>
+                            <div class="col-lg-4 mt-5">
+                                <div class="header-top text-center mt-2">
+                                  <h5>Institute name</h5>
+                                  <h4>Burichong,Cumilla</h4>
+                                  <p class="fw-bold">instiution@gmail.com,10755048017</p>
 
-                                        </div>
-                                   </div>
-                               </div>
-                               <div class="row">
-                                   <div class="col-lg-12">
-                                       <div class="header-bottomm">
-                                            <p class="text-right">Official Website of Education Bord</p>
-                                       </div>
-                                   </div>
-                               </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -408,20 +374,6 @@ p{
                 <!-- mark sheet end -->
                 <!-- footer  section start -->
                 <!-- footer  section end -->
-            </div>
-        </div>
-    </div>
-
-
-    <div class="footter-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <p>www.educationboardresults.gov.bd/heigherresult.php</p>
-                </div>
-                <div class="col-lg-6">
-                    <p class="text-right">1/1</p>
-                </div>
             </div>
         </div>
     </div>
