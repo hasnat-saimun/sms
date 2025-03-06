@@ -47,15 +47,15 @@ Create Subject
                                     <div class="col-12 form-group">
                                         <label>Available Feature *</label>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="CQ" value="CQ">
+                                            <input class="form-check-input" name="cqValue" type="checkbox" id="CQ" value="CQ">
                                             <label class="form-check-label" for="CQ">CQ</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="MCQ" value="MCQ">
+                                            <input class="form-check-input" name="mcqValue" type="checkbox" id="MCQ" value="MCQ">
                                             <label class="form-check-label" for="MCQ">MCQ</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" id="Practical" value="Practical">
+                                            <input class="form-check-input" name="practicalValue" type="checkbox" id="Practical" value="Practical">
                                             <label class="form-check-label" for="Practical">Practical</label>
                                         </div>
                                     </div>
