@@ -65,6 +65,7 @@
             $sessionData =\App\Models\sessionManage::find($singleData->sessName);
             $classData   =\App\Models\classManage::find($singleData->className);
             $sectionData =\App\Models\sectionManage::find($singleData->sectionName);
+            $departmentData =\App\Models\Department::find($singleData->departmentName);
         @endphp
         <div class="container">
             <div class="row">
@@ -81,9 +82,9 @@
                         @else
                         <td>-</td>
                         @endif</p>
-                        <p class="mb-0"><strong class="pr-1">Section:</strong>
-                        @if(!empty($sectionData))
-                            <td class="font-medium text-dark-medium">{{$sectionData->section}}</td>
+                        <p class="mb-0"><strong class="pr-1">Department:</strong>
+                        @if(!empty($departmentData))
+                            <td class="font-medium text-dark-medium">{{$departmentData->departmentName}}</td>
                         @else
                             <td>-</td>
                         @endif</p>
@@ -180,6 +181,17 @@
                             @else
                             <td>-</td>
                         @endif
+                        </tr>
+                        <tr>
+                            <th width="30%">Department</th>
+                            <td width="2%">:</td>
+                            @if(!empty($departmentData))
+                            <td class="font-medium text-dark-medium">
+                                {{$departmentData->departmentName}}
+                            </td>
+                            @else
+                            <td>-</td>
+                            @endif
                         </tr>
                         <tr>
                             <th width="30%">Scition</th>

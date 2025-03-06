@@ -7,6 +7,9 @@ Edit Student
                 <div class="row gutters-20 mb-4">
                     <!-- Admit Form Area Start Here -->
                     <div class="card height-auto">
+                            <div class="card-header bg-light">
+                                <a href="{{route('studentList')}}" class="btn btn-success">Student List</a>
+                            </div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-12">
@@ -72,23 +75,23 @@ Edit Student
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>First Name *</label>
-                                        <input type="text" name="fullName" placeholder="Enter student first name" class="form-control" value="{{ $stdData->fullName }}" required>
+                                        <input type="text" name="fullName" placeholder="Enter student first name" class="form-control" value="{{ $stdData->fullName }}" >
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Last Name *</label>
-                                        <input type="text" name="sureName" placeholder="Enter student last name" class="form-control" value="{{ $stdData->sureName }}" required>
+                                        <input type="text" name="sureName" placeholder="Enter student last name" class="form-control" value="{{ $stdData->sureName }}" >
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Father's Name *</label>
-                                        <input type="text" name="fatherName" placeholder="Enter fathers name" class="form-control" value="{{$stdData->father}}" required>
+                                        <input type="text" name="fatherName" placeholder="Enter fathers name" class="form-control" value="{{$stdData->father}}" >
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Mother's Name *</label>
-                                        <input type="text" name="motherName" placeholder="Enter mothers name" class="form-control" value="{{ $stdData->mother}}" required>
+                                        <input type="text" name="motherName" placeholder="Enter mothers name" class="form-control" value="{{ $stdData->mother}}" >
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Gender *</label>
-                                        <select class="select2" name="gender" required>
+                                        <select class="select2" name="gender" >
                                             <option value="{{ $stdData->gender}}">Male</option>
                                             <option value="">Select *</option>
                                             <option value="1">Male</option>
@@ -98,7 +101,7 @@ Edit Student
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Date Of Birth *</label>
-                                        <input type="date" name="dob" placeholder="dd/mm/yyyy" class="form-control "value="{{ $stdData->dob}}" required>
+                                        <input type="date" name="dob" placeholder="dd/mm/yyyy" class="form-control "value="{{ $stdData->dob}}" >
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Blood Group *</label>
@@ -117,7 +120,7 @@ Edit Student
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Religion *</label>
-                                        <select class="select2" name="religion" required>
+                                        <select class="select2" name="religion" >
                                             <option value="{{ $stdData->religion}}">Islam</option>
                                             <option value="">Select *</option>
                                             <option value="Islam">Islam</option>
@@ -133,7 +136,7 @@ Edit Student
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Phone</label>
-                                        <input type="text" name="phone" placeholder="Enter gurdian mobile number" class="form-control" value="{{ $stdData->phone}}" required>
+                                        <input type="text" name="phone" placeholder="Enter gurdian mobile number" class="form-control" value="{{ $stdData->phone}}" >
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group  ">
                                         <label>Address</label>
@@ -150,9 +153,10 @@ Edit Student
                                             $sessionData  = \App\Models\sessionManage::find($stdData->sessName);
                                             $classData  = \App\Models\classManage::find($stdData->className);
                                             $sectionData  = \App\Models\sectionManage::find($stdData->sectionName);
+                                            $departmentData  = \App\Models\department::find($stdData->departmentName);
                                         @endphp
                                         <label>Session *</label>
-                                        <select class="select2" name="sessionName" required>
+                                        <select class="select2" name="sessName" >
                                         @if(!empty($sessionData))
                                         <option value="{{$sessionData->id}}">{{$sessionData->session}}</option>
                                         @endif
@@ -165,7 +169,7 @@ Edit Student
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Class *</label>
-                                        <select class="select2" name="className" required>
+                                        <select class="select2" name="className" >
                                         @if(!empty($classData))
                                         <option value="{{$classData->id}}">{{$classData->className}} </option>
                                         @endif
@@ -177,8 +181,21 @@ Edit Student
                                         </select>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
+                                        <label>Department *</label>
+                                        <select class="select2" name="departmentName" >
+                                        @if(!empty($departmentData))
+                                        <option value="{{$departmentData->id}}">{{$departmentData->departmentName}} </option>
+                                        @endif
+                                        @if(!empty($departmentDetails) && count($departmentDetails)>0)
+                                            @foreach($departmentDetails as $dd)
+                                            <option value="{{ $cd->id}}">{{ $dd->departmentName}}</option>
+                                            @endforeach
+                                        @endif
+                                        </select>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Section/Group *</label>
-                                        <select class="select2" name="sectionName" required>
+                                        <select class="select2" name="sectionName" >
                                         @if(!empty($sectionData))
                                         <option value="{{$sectionData->id}}">{{$sectionData->section}} </option>
                                         @endif
@@ -191,7 +208,7 @@ Edit Student
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Roll</label>
-                                        <input type="text" name="rollNumber" placeholder="Enter student class roll" class="form-control" value="{{ $stdData->rollNumber}}" required>
+                                        <input type="text" name="rollNumber" placeholder="Enter student class roll" class="form-control" value="{{ $stdData->rollNumber}}" >
                                     </div>
                                 </div>
                                 <div class="row mb-2 mt-5">
@@ -200,11 +217,11 @@ Edit Student
                                 <div class="row">
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label for="gurdian">Guardian Name</label>
-                                        <input type="text" class="form-control" placeholder="Enter guardian name" name="gurdian" id="gurdian" value="{{ $stdData->gurdianName}}"  required>
+                                        <input type="text" class="form-control" placeholder="Enter guardian name" name="gurdian" id="gurdian" value="{{ $stdData->gurdianName}}"  >
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label for="gurdianPhone">Mobile Number</label>
-                                        <input type="number" class="form-control" placeholder="Enter phone number" name="gurdianPhone" id="gurdianPhone" value="{{ $stdData->gurdianMobile}}" required>
+                                        <input type="number" class="form-control" placeholder="Enter phone number" name="gurdianPhone" id="gurdianPhone" value="{{ $stdData->gurdianMobile}}" >
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label for="relationWithStd" >Relation *</label>

@@ -7,7 +7,7 @@ Tuition Fee List
     <div class="col-10 mx-auto">
         <div class="row">
             <div class="card card-body  border  ">
-                <table class=" table table-striped table-hover text-center shadow-lg p-3 rounded" >
+                <table id="myTable"class="  table table-striped table-hover shadow-lg p-3 rounded" >
                     <thead class="table-info">
                         <tr>
                         <th>Date</th>

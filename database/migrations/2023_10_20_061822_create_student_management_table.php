@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('mobile')->nullable();
             $table->string('blGroup')->nullable();
             $table->string('class')->nullable();
+            $table->string('departmentName')->nullable();
             $table->string('email')->nullable();
             $table->string('session')->nullable();
             $table->string('section')->nullable();

@@ -37,6 +37,9 @@ New Admission
                     </div>
                     <!-- Admit Form Area Start Here -->
                     <div class="card height-auto">
+                            <div class="card-header bg-light">
+                                <a href="{{route('studentList')}}" class="btn btn-success">Student List</a>
+                            </div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-12">
@@ -75,11 +78,11 @@ New Admission
                                 <div class="row">
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Admission ID</label>
-                                        <input type="text" name="stdId" value="{{ $stdId }}" placeholder="Example:- 2025000001" class="form-control" required readonly>
+                                        <input type="text" name="stdId" value="{{ $stdId }}" placeholder="Example:- 2025000001" class="form-control"  readonly>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Full Name *</label>
-                                        <input type="text" name="fullName" placeholder="Enter student first name" class="form-control" required>
+                                        <input type="text" name="fullName" placeholder="Enter student first name" class="form-control" >
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Sure Name</label>
@@ -87,15 +90,15 @@ New Admission
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Father's Name *</label>
-                                        <input type="text" name="fatherName" placeholder="Enter fathers name" class="form-control" required>
+                                        <input type="text" name="fatherName" placeholder="Enter fathers name" class="form-control" >
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Mother's Name *</label>
-                                        <input type="text" name="motherName" placeholder="Enter mothers name" class="form-control" required>
+                                        <input type="text" name="motherName" placeholder="Enter mothers name" class="form-control" >
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Gender *</label>
-                                        <select class="select2" name="gender" required>
+                                        <select class="select2" name="gender" >
                                             <option value="">Select *</option>
                                             <option value="1">Male</option>
                                             <option value="2">Female</option>
@@ -122,7 +125,7 @@ New Admission
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Religion *</label>
-                                        <select class="select2" name="religion" required>
+                                        <select class="select2" name="religion" >
                                             <option value="">Select *</option>
                                             <option value="Islam">Islam</option>
                                             <option value="Hindu">Hindu</option>
@@ -137,7 +140,7 @@ New Admission
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Phone</label>
-                                        <input type="number" name="phone" placeholder="Enter gurdian mobile number" class="form-control" required>
+                                        <input type="number" name="phone" placeholder="Enter gurdian mobile number" class="form-control" >
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Address</label>
@@ -154,7 +157,7 @@ New Admission
                                 <div class="row">
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Session *</label>
-                                        <select class="select2" name="sessName" required>
+                                        <select class="select2" name="sessName" >
                                             <option value="">Select *</option>
                                             @php 
                                                 $sessionDetails = \App\Models\sessionManage::all();
@@ -168,17 +171,30 @@ New Admission
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Class *</label>
-                                        <select class="select2" name="className" required>
+                                        <select class="select2" name="className" >
                                             <option value="">Select *</option>@if(!empty($classDetails) && count($classDetails)>0)
                                             @foreach($classDetails as $cd)
                                                 <option value="{{ $cd->id }}">{{ $cd->className}}</option>
                                                 @endforeach
                                             @endif
                                         </select>
+                                    </div><div class="col-xl-3 col-lg-6 col-12 form-group">
+                                        <label>Department *</label>
+                                        <select class="select2" name="departmentName" >
+                                            <option value="">Select *</option>
+                                            @php 
+                                                $departmentDetails = \App\Models\Department::all();
+                                            @endphp
+                                            @if(!empty($departmentDetails) && count($departmentDetails)>0)
+                                            @foreach($departmentDetails as $sd)
+                                                <option value="{{ $sd->id }}">{{ $sd->departmentName}}</option>
+                                                @endforeach
+                                            @endif
+                                        </select>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Section/Group *</label>
-                                        <select class="select2" name="sectionName" required>
+                                        <select class="select2" name="sectionName" >
                                             <option value="">Select *</option>
                                             @if(!empty($sectionDatails) && count($sectionDatails)>0)
                                             @foreach($sectionDatails as $sec)
@@ -189,7 +205,7 @@ New Admission
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label>Roll</label>
-                                        <input type="text" name="rollNumber" placeholder="Enter student class roll" class="form-control" required>
+                                        <input type="text" name="rollNumber" placeholder="Enter student class roll" class="form-control" >
                                     </div>
                                 </div>
                                 <div class="row mb-2 mt-5">
@@ -198,11 +214,11 @@ New Admission
                                 <div class="row">
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label for="gurdian">Guardian Name</label>
-                                        <input type="text" class="form-control" placeholder="Enter guardian name" name="gurdian" id="gurdian" required>
+                                        <input type="text" class="form-control" placeholder="Enter guardian name" name="gurdian" id="gurdian" >
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label for="gurdianPhone">Mobile Number</label>
-                                        <input type="number" class="form-control" placeholder="Enter phone number" name="gurdianPhone" id="gurdianPhone" required>
+                                        <input type="number" class="form-control" placeholder="Enter phone number" name="gurdianPhone" id="gurdianPhone" >
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-12 form-group">
                                         <label for="relationWithStd" >Relation *</label>

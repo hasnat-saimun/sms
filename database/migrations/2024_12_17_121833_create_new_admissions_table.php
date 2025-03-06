@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string('avatar')->nullable();
             $table->string('sessName')->nullable();
             $table->string('className')->nullable();
+            $table->string('departmentName')->nullable();
             $table->string('sectionName')->nullable();
             $table->string('rollNumber')->nullable();
             $table->string('gurdianName')->nullable();

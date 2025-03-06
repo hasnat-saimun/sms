@@ -7,6 +7,9 @@ Edit Profile
                 <div class="row gutters-20 mb-4">
                     <!-- Admit Form Area Start Here -->
                     <div class="card height-auto">
+                            <div class="card-header bg-light">
+                                <a href="{{route('staffList')}}" class="btn btn-success">Staff List</a>
+                            </div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-12">
@@ -135,7 +138,7 @@ Edit Profile
                                     <div class="col-xl-3 col-lg-6 col-12 form-group mg-t-30">
                                         @if(!empty($profileData->avatar))
                                             <img class="w-75" src="{{ asset('/public/upload/image/staff/') }}/{{ $profileData->avatar }}" alt="$profileData->firstName.' '.$profileData->lastName"><br>
-                                            <a href="{{ route('delTeacherPhoto',['profileId'=>$profileData->id]) }}" class="btn btn-danger btn-lg">Remove</a>
+                                            <a href="{{ route('delTeacherPhoto',['profileId'=>$profileData->id]) }}" class="btn btn-danger btn-lg mt-2 ">Remove</a>
                                         @else
                                             <label class="text-dark-medium">Avatar (150px X 150px)</label>
                                             <input type="file" name="avatar" class="form-control-file">

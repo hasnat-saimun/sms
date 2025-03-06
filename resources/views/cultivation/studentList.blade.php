@@ -8,6 +8,9 @@ Student List
                     <div class="col-12 col-md-12 mx-auto">
                         <div class="card card-default">
                             <div class="card-header bg-light">
+                                <a href="{{route('admitStudent')}}" class="btn btn-success">New Admission</a>
+                            </div>
+                            <div class="card-header bg-light">
                                 <h3>Student List</h3>
                             </div>
                             <div class="card-body">
@@ -31,6 +34,8 @@ Student List
                                             <th>ID</th>
                                             <th>Name</th>
                                             <th>Session</th>
+                                            <th>Class</th>
+                                            <th>Department</th>
                                             <th>Section</th>
                                             <th>Mobile</th>
                                             <th>ID Card</th>
@@ -45,12 +50,23 @@ Student List
                                             $sessionData  = \App\Models\sessionManage::find($std->sessName);
                                             $classData  = \App\Models\classManage::find($std->className);
                                             $sectionData  = \App\Models\sectionManage::find($std->sectionName);
+                                            $departmentData  = \App\Models\Department::find($std->departmentName);
                                         @endphp
                                         <tr>
                                             <td>{{ $std->stdId }}</td>
                                             <td>{{ $std->fullName." ".$std->sureName }}</td>
                                             @if(!empty($sessionData))
                                             <td>{{$sessionData->session}}</td>
+                                            @else
+                                            <td>-</td>
+                                            @endif
+                                            @if(!empty($classData))
+                                            <td>{{$classData->className}}</td>
+                                            @else
+                                            <td>-</td>
+                                            @endif
+                                            @if(!empty($departmentData))
+                                            <td>{{$departmentData->departmentName}}</td>
                                             @else
                                             <td>-</td>
                                             @endif
@@ -73,6 +89,8 @@ Student List
                                             <td>SBC02</td>
                                             <td>Rasek Khondokar</td>
                                             <td>2023-2024</td>
+                                            <td>Science</td>
+                                            <td>01234567890</td>
                                             <td>Science</td>
                                             <td>01234567890</td>
                                             <td>Edit</td>
