@@ -46,6 +46,21 @@ Edit Subject
                                             <option value="Optional">Optional</option>
                                         </select>
                                     </div>
+                                    <div class="col-12 form-group">
+                                        <label>Available Feature *</label>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="CQ" value="CQ">
+                                            <label class="form-check-label" for="CQ">CQ</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="MCQ" value="MCQ">
+                                            <label class="form-check-label" for="MCQ">MCQ</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="Practical" value="Practical">
+                                            <label class="form-check-label" for="Practical">Practical</label>
+                                        </div>
+                                    </div>
                                     <div class="col-12 form-group mg-t-8">
                                         <button type="submit" class="btn-fill-lg btn-gradient-yellow btn-hover-bluedark">Save</button>
                                         <button type="reset" class="btn-fill-lg bg-blue-dark btn-hover-yellow">Reset</button>

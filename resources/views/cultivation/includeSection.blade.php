@@ -76,9 +76,9 @@
             display: block;
         }
 
-#bothBox:checked ~ #bothUnchecked{
-  display: none;
-}
+        #bothBox:checked ~ #bothUnchecked{
+        display: none;
+        }
         @media print
            {
             .print-border{
@@ -158,5 +158,8 @@
             }
             .logosize{
                 width:180px;
+            }
+            .form-check label {
+                padding-left: 25px;
             }
     </style>
