@@ -166,6 +166,13 @@
     </div>
     
     <!-- jquery-->
+    <script>
+        $(document).ready(function() {
+            $(".alert").fadeTo(2000, 500).slideUp(500, function() {
+                $(".alert").slideUp(500);
+            });
+        });
+    </script>
     <!-- Plugins js -->
     <script src="{{ asset('/public/back-office/') }}/js/plugins.js"></script>
     <!-- Popper js -->
