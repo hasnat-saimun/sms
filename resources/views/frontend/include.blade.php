@@ -166,6 +166,15 @@
                 </div>
             </div>
         </footer>
+    
+    <!-- jquery-->
+    <script>
+        $(document).ready(function() {
+            $(".alert").fadeTo(2000, 500).slideUp(500, function() {
+                $(".alert").slideUp(500);
+            });
+        });
+    </script>
         <script src="{{ asset('/public/') }}/assets/js/jquery-1.9.1.min.js"></script>
         <script src="{{ asset('/public/') }}/owl-carousel/owl.carousel.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
